@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CC Studios — Case Studies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #080808;
+  --off-black: #111111;
+  --card: #161616;
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-muted: #7A6230;
+  --gold-dim: rgba(201,168,76,0.10);
+  --gold-border: rgba(201,168,76,0.22);
+  --white: #F5F2EC;
+  --gray: #888580;
+  --gray-dim: rgba(245,242,236,0.5);
+  --gray-faint: rgba(245,242,236,0.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Instrument Sans',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  padding:24px 48px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(201,168,76,0.08);
+}
+.nav-brand{
+  font-family:'Playfair Display',serif;
+  font-size:15px;letter-spacing:0.12em;
+  color:var(--gold);text-transform:uppercase;
+  text-decoration:none;
+}
+.nav-link{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:0.16em;
+  color:var(--gray);text-transform:uppercase;
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-link:hover{color:var(--gold)}
+.nav-cta{
+  font-size:12px;font-weight:600;
+  color:var(--black);background:var(--gold);
+  padding:8px 20px;border-radius:2px;
+  text-decoration:none;letter-spacing:0.04em;
+  transition:background 0.2s;
+}
+.nav-cta:hover{background:var(--gold-light)}
+
+/* HERO */
+.hero{
+  max-width:1200px;margin:0 auto;
+  padding:100px 48px 72px;
+}
+.hero-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:0.22em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:20px;opacity:0.85;
+}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(40px,6vw,80px);
+  font-weight:900;line-height:1.02;
+  letter-spacing:-0.02em;
+  color:var(--white);
+  margin-bottom:20px;
+}
+.hero-title em{color:var(--gold);font-style:italic}
+.hero-desc{
+  font-size:16px;line-height:1.75;
+  color:var(--gray-dim);
+  max-width:560px;
+  margin-bottom:48px;
+}
+.hero-rule{
+  width:100%;height:1px;
+  background:linear-gradient(90deg,var(--gold-border),transparent);
+}
+
+/* FILTER BAR */
+.filter-bar{
+  max-width:1200px;margin:0 auto;
+  padding:32px 48px;
+  display:flex;align-items:center;
+  gap:8px;flex-wrap:wrap;
+}
+.filter-btn{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.16em;
+  text-transform:uppercase;
+  padding:6px 16px;border-radius:2px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:transparent;
+  color:var(--gray);
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.filter-btn:hover{border-color:var(--gold-border);color:var(--gold)}
+.filter-btn.active{
+  background:var(--gold-dim);
+  border-color:var(--gold-border);
+  color:var(--gold);
+}
+
+/* CASE STUDY GRID */
+.grid{
+  max-width:1200px;margin:0 auto;
+  padding:0 48px 100px;
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:16px;
+}
+
+/* FEATURED CARD — spans full width */
+.card-featured{
+  grid-column:span 12;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:4px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:380px;
+  text-decoration:none;
+  transition:border-color 0.3s,transform 0.3s;
+  position:relative;
+}
+.card-featured:hover{
+  border-color:var(--gold-border);
+  transform:translateY(-3px);
+}
+
+.card-img{
+  position:relative;
+  overflow:hidden;
+  background:#0d1a0d;
+}
+.card-img-bg{
+  position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1598901945025-0df23db7b7c8?w=800&q=70');
+  background-size:cover;background-position:center;
+  opacity:0.35;
+  transition:opacity 0.4s,transform 0.4s;
+}
+.card-featured:hover .card-img-bg{opacity:0.5;transform:scale(1.03)}
+.card-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(8,8,8,0.2),rgba(8,8,8,0.6));
+}
+.card-img-tag{
+  position:absolute;bottom:24px;left:24px;
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.16em;
+  color:var(--gold);text-transform:uppercase;
+  background:rgba(8,8,8,0.7);
+  padding:4px 10px;border-radius:2px;
+  border:1px solid var(--gold-border);
+}
+
+.card-body{
+  padding:48px;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+}
+.card-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.2em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:16px;
+}
+.card-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(24px,2.5vw,36px);
+  font-weight:700;line-height:1.1;
+  color:var(--white);
+  margin-bottom:16px;
+  letter-spacing:-0.01em;
+}
+.card-title em{color:var(--gold);font-style:italic}
+.card-desc{
+  font-size:14px;line-height:1.7;
+  color:var(--gray-dim);
+  margin-bottom:32px;
+  flex:1;
+}
+.card-stats{
+  display:flex;gap:32px;
+  padding-top:24px;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.cs-stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:24px;font-weight:700;
+  color:var(--gold);
+}
+.cs-stat-label{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.12em;
+  color:var(--gray);text-transform:uppercase;
+  margin-top:2px;
+}
+.card-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:0.14em;
+  color:var(--gold);text-transform:uppercase;
+  margin-top:24px;
+}
+.card-cta::after{
+  content:'→';
+  transition:transform 0.2s;
+}
+.card-featured:hover .card-cta::after{transform:translateX(4px)}
+
+/* HALF CARDS */
+.card-half{
+  grid-column:span 6;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:4px;
+  padding:40px;
+  text-decoration:none;
+  display:flex;flex-direction:column;
+  min-height:280px;
+  position:relative;
+  overflow:hidden;
+  transition:border-color 0.3s,transform 0.3s;
+}
+.card-half:hover{
+  border-color:var(--gold-border);
+  transform:translateY(-3px);
+}
+.card-half.coming-soon{
+  opacity:0.45;cursor:default;
+  pointer-events:none;
+}
+.coming-tag{
+  position:absolute;top:20px;right:20px;
+  font-family:'DM Mono',monospace;
+  font-size:8px;letter-spacing:0.14em;
+  color:var(--gray);text-transform:uppercase;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:3px 8px;border-radius:2px;
+}
+.card-sector{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.18em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:12px;opacity:0.8;
+}
+.card-half-title{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;
+  color:var(--white);line-height:1.2;
+  margin-bottom:12px;
+  letter-spacing:-0.01em;
+}
+.card-half-client{
+  font-size:12px;color:var(--gray);
+  margin-bottom:auto;
+}
+.card-half-outcome{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.1em;
+  color:var(--gray-dim);
+}
+.card-half-outcome span{color:var(--gold)}
+
+/* THIRD CARDS */
+.card-third{
+  grid-column:span 4;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:4px;
+  padding:32px;
+  min-height:200px;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  opacity:0.35;
+  position:relative;
+}
+.card-third-label{
+  font-family:'DM Mono',monospace;
+  font-size:8px;letter-spacing:0.16em;
+  color:var(--gray);text-transform:uppercase;
+  margin-bottom:10px;
+}
+.card-third-title{
+  font-family:'Playfair Display',serif;
+  font-size:17px;font-weight:700;
+  color:var(--white);line-height:1.25;
+}
+.card-third-note{
+  font-size:11px;color:var(--gray);
+  margin-top:auto;padding-top:16px;
+}
+
+/* BOTTOM STRIP */
+.bottom-strip{
+  border-top:1px solid rgba(255,255,255,0.05);
+  max-width:1200px;margin:0 auto;
+  padding:48px 48px 80px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;gap:24px;
+}
+.strip-text{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;
+  color:var(--white);
+  max-width:400px;line-height:1.3;
+}
+.strip-text em{color:var(--gold);font-style:italic}
+.strip-cta{
+  font-size:13px;font-weight:600;
+  color:var(--black);background:var(--gold);
+  padding:14px 32px;border-radius:2px;
+  text-decoration:none;letter-spacing:0.04em;
+  transition:background 0.2s;
+  white-space:nowrap;
+}
+.strip-cta:hover{background:var(--gold-light)}
+
+/* FOOTER */
+footer{
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:28px 48px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-brand{
+  font-family:'Playfair Display',serif;
+  font-size:12px;letter-spacing:0.1em;
+  color:var(--gold-muted);
+}
+.footer-info{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:0.06em;
+  color:var(--gray);
+}
+
+/* REVEAL ANIMATIONS */
+.reveal{
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.6s ease,transform 0.6s ease;
+}
+.reveal.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.05s}
+.d2{transition-delay:0.15s}
+.d3{transition-delay:0.25s}
+.d4{transition-delay:0.35s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .hero{padding:60px 24px 48px}
+  .filter-bar{padding:24px 24px}
+  .grid{padding:0 24px 72px;gap:12px}
+  .card-featured{grid-template-columns:1fr}
+  .card-featured .card-img{min-height:220px}
+  .card-body{padding:32px}
+  .card-half{grid-column:span 12}
+  .card-third{grid-column:span 12}
+  .bottom-strip{padding:40px 24px 60px}
+  footer{padding:24px;flex-direction:column;text-align:center}
+}
+@media(max-width:520px){
+  .card-stats{flex-wrap:wrap;gap:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://saigemills.com" class="nav-brand">CC Studios</a>
+  <a href="https://saigemills.com" class="nav-link">Portfolio</a>
+  <a href="mailto:ccsaigemills@gmail.com" class="nav-cta">Work Together</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero reveal">
+  <div class="hero-eyebrow">CC Studios · Work Archive</div>
+  <h1 class="hero-title">The work.<br><em>Documented.</em></h1>
+  <p class="hero-desc">We identify, extract, package, and distribute organizational value that hasn't been translated into strategic assets yet. These are the outcomes.</p>
+  <div class="hero-rule"></div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filter-bar reveal">
+  <button class="filter-btn active">All</button>
+  <button class="filter-btn">Real Estate</button>
+  <button class="filter-btn">Civic</button>
+  <button class="filter-btn">Trades</button>
+  <button class="filter-btn">Founders</button>
+  <button class="filter-btn">Technology</button>
+</div>
+
+<!-- GRID -->
+<main class="grid">
+
+  <!-- FEATURED: Gardens Residences -->
+  <a href="gardens-residences/index.html" class="card-featured reveal">
+    <div class="card-img">
+      <div class="card-img-bg"></div>
+      <div class="card-img-overlay"></div>
+      <div class="card-img-tag">Featured Case Study</div>
+    </div>
+    <div class="card-body">
+      <div>
+        <div class="card-eyebrow">Real Estate · Go-To-Market · Narrative Infrastructure</div>
+        <h2 class="card-title">The Gardens<br><em>Residences</em></h2>
+        <p class="card-desc">How CC Studios engineered the consumer-facing digital pipeline for a 358-unit Class-A multifamily development in North Miami — backed by a $15M CRA subsidy and anchored to a 7-acre live-work-play master plan. From zero digital presence to 70% occupancy in six months.</p>
+      </div>
+      <div>
+        <div class="card-stats">
+          <div>
+            <div class="cs-stat-num">70%</div>
+            <div class="cs-stat-label">Occupancy · 6 Months</div>
+          </div>
+          <div>
+            <div class="cs-stat-num">$130M</div>
+            <div class="cs-stat-label">HUD Refinance · Largest in FL</div>
+          </div>
+          <div>
+            <div class="cs-stat-num">358</div>
+            <div class="cs-stat-label">Units · Class-A</div>
+          </div>
+        </div>
+        <div class="card-cta">Read the case study</div>
+      </div>
+    </div>
+  </a>
+
+  <!-- HALF: North Miami CRA -->
+  <div class="card-half coming-soon reveal d2">
+    <span class="coming-tag">Coming Soon</span>
+    <div class="card-sector">Civic · Economic Development</div>
+    <div class="card-half-title">North Miami Community Redevelopment Authority</div>
+    <div class="card-half-client">City of North Miami · North Miami CRA</div>
+    <div class="card-half-outcome">Business spotlights · Restaurant expansions · Community events — <span>Caribe Arts Festival, Ricky Thai Bistro, Griffin Park</span></div>
+  </div>
+
+  <!-- HALF: IFP -->
+  <div class="card-half coming-soon reveal d3">
+    <span class="coming-tag">Coming Soon</span>
+    <div class="card-sector">Trades · Corporate · L&D</div>
+    <div class="card-half-title">International Fire Protection Inc.</div>
+    <div class="card-half-client">IFP · APi Group Portfolio Company</div>
+    <div class="card-half-outcome">Internal communications · Leadership development · Talent acquisition — <span>IFP University, iDP Series, Field Operations</span></div>
+  </div>
+
+  <!-- THIRDS: Additional coming -->
+  <div class="card-third reveal d1">
+    <div>
+      <div class="card-third-label">Technology · GovTech</div>
+      <div class="card-third-title">Prokur.io</div>
+    </div>
+    <div class="card-third-note">AI-powered government procurement · South Florida launch</div>
+  </div>
+
+  <div class="card-third reveal d2">
+    <div>
+      <div class="card-third-label">Founder · Fintech</div>
+      <div class="card-third-title">Xendoo</div>
+    </div>
+    <div class="card-third-note">Founder brand content · Lil Roberts, CEO</div>
+  </div>
+
+  <div class="card-third reveal d3">
+    <div>
+      <div class="card-third-label">Civic · Education</div>
+      <div class="card-third-title">Miami-Dade County Public Schools</div>
+    </div>
+    <div class="card-third-note">M-DCPS Your Best Choice campaign · Multi-platform production</div>
+  </div>
+
+</main>
+
+<!-- BOTTOM CTA STRIP -->
+<div class="bottom-strip reveal">
+  <div class="strip-text">Building something worth<br><em>knowing about?</em></div>
+  <a href="mailto:ccsaigemills@gmail.com" class="strip-cta">Start the Conversation →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">CC Studios · Hollywood, FL</span>
+  <span class="footer-info">saigemills.com &nbsp;·&nbsp; ccsaigemills@gmail.com &nbsp;·&nbsp; (305) 469-8503</span>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('in');
+  });
+},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Filter buttons (visual only for now)
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
