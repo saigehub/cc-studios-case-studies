@@ -1,170 +1,1067 @@
-CC STUDIOS
-CASE STUDY / REAL ESTATE
-Work Together
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gardens Residences — CC Studios Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #080808;
+  --off-black: #111111;
+  --card: #161616;
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-muted: #7A6230;
+  --gold-dim: rgba(201,168,76,0.12);
+  --gold-border: rgba(201,168,76,0.22);
+  --white: #F5F2EC;
+  --cream: #EDE9DF;
+  --gray: #888580;
+  --gray-dim: rgba(245,242,236,0.45);
+  --gray-faint: rgba(245,242,236,0.12);
+}
 
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Instrument Sans',sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
 
-CC STUDIOS · NARRATIVE INFRASTRUCTURE · 2024–2025
-The Gardens Residences
-OMEGA REAL ESTATE MANAGEMENT GROUP · NORTH MIAMI, FL
-70%
-OCCUPANCY ACHIEVED
-6mo
-RETAINED ENGAGEMENT
-$130M
-HUD REFINANCE · LARGEST IN FLORIDA
-358
-UNITS · CLASS-A MULTIFAMILY
-OVERVIEW
-Engineering the Digital Pipeline
-This case study details the digital transformation and go-to-market strategy for The Gardens Residences — a 9-story, 358-unit Class-A multifamily development in North Miami, FL. Backed by a $15 million North Miami CRA subsidy, the project serves as Phase 1 of Omega RMG's vision to transform seven contiguous acres of downtown into a live-work-play district.
-While Omega possessed deep community roots and a compelling local narrative, the asset faced one critical bottleneck as it neared completion: a digital infrastructure gap. This study examines how CC Studios engineered the consumer-facing architecture required to bridge that gap and execute an accelerated leasing launch.
-Real Estate
-Narrative Infrastructure
-Go-To-Market
-Digital Build
-North Miami CRA
-THE CORE INSIGHT
-"CC Studios did not create the story. We engineered the digital pipeline that allowed Omega's community equity to scale."
-SCOPE OF ENGAGEMENT
-Consumer portal development · Content production · On-site embedded production · Investor-facing materials · Go-to-market strategy · District narrative architecture
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(8,8,8,0.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,168,76,0.08);
+}
+.nav-brand{
+  font-family:'Playfair Display',serif;
+  font-size:14px;letter-spacing:0.12em;
+  color:var(--gold);text-transform:uppercase;
+  text-decoration:none;
+}
+.nav-breadcrumb{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:0.16em;
+  color:var(--gray);text-transform:uppercase;
+}
+.nav-back{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:0.14em;
+  color:var(--gray);text-transform:uppercase;
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-back:hover{color:var(--gold)}
+.nav-cta{
+  font-size:12px;font-weight:600;
+  color:var(--black);background:var(--gold);
+  padding:8px 20px;border-radius:2px;
+  text-decoration:none;letter-spacing:0.04em;
+  transition:background 0.2s;
+}
+.nav-cta:hover{background:var(--gold-light)}
 
-01 · THE SITUATION
-Digital Infrastructure Gap, Not Identity Gap
-By late 2024, physical construction was finalizing and Omega had secured a $103 million take-out loan as the property neared its certificate of occupancy. A rich, community-centric story already existed — Omega had hosted regional job fairs, launched a 38-unit affordable housing lottery with the North Miami CRA, and earned $15 million in public subsidy.
-The asset did not lack an identity. It lacked a direct-to-consumer vehicle.
-THE BACKEND SILO
-Property details, pricing, and leasing mechanics existed exclusively inside AppFolio — a property management database invisible to public search engines and organic web traffic.
-THE MISSING CONDUIT
-Omega's community-first story and master-plan vision lived offline in civic meetings and press releases, with no searchable consumer touchpoint online.
-THE STRATEGIC CHALLENGE
-Without a consumer-facing digital platform, there was no scalable mechanism to capture regional rental demand, educate prospects, or convert traffic into active pre-leases.
-THE OPPORTUNITY
-A 358-unit development with CRA backing, Brightline transit proximity, Vice City Bean in the lobby, and a 7-acre master plan — all waiting for a channel to carry it.
+/* HERO */
+.hero{
+  position:relative;
+  height:100vh;min-height:680px;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('assets/images/gardens-hero.jpg');
+  background-size:cover;background-position:center 40%;
+  opacity:0.42;
+  transform:scale(1.04);
+  animation:heroZoom 18s ease-out forwards;
+}
+@keyframes heroZoom{
+  from{transform:scale(1.04)}
+  to{transform:scale(1)}
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,
+    rgba(8,8,8,0.2) 0%,
+    rgba(8,8,8,0.4) 40%,
+    rgba(8,8,8,0.85) 75%,
+    var(--black) 100%
+  );
+}
+.hero-content{
+  position:relative;z-index:2;
+  width:100%;max-width:1200px;
+  margin:0 auto;
+  padding:0 48px 80px;
+}
+.hero-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:0.22em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:20px;opacity:0.9;
+}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(42px,6vw,88px);
+  font-weight:900;line-height:1.02;
+  letter-spacing:-0.02em;
+  color:var(--white);
+  margin-bottom:8px;
+}
+.hero-title em{color:var(--gold);font-style:italic}
+.hero-client{
+  font-family:'DM Mono',monospace;
+  font-size:11px;letter-spacing:0.18em;
+  color:var(--gray);text-transform:uppercase;
+  margin-bottom:48px;
+}
+.hero-stats{
+  display:flex;gap:0;
+  border-top:1px solid var(--gold-border);
+  padding-top:32px;
+  flex-wrap:wrap;
+}
+.hero-stat{
+  padding-right:48px;margin-right:48px;
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+.hero-stat:last-child{border-right:none;padding-right:0;margin-right:0}
+.stat-number{
+  font-family:'Playfair Display',serif;
+  font-size:36px;font-weight:900;
+  color:var(--gold);line-height:1;
+  margin-bottom:4px;
+}
+.stat-label{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.16em;
+  color:var(--gray);text-transform:uppercase;
+}
 
-02 · STRATEGIC OBJECTIVES
-Three Mandates. One Pipeline.
-01
-Create Narrative Infrastructure
-The physical asset was complete. The market-facing infrastructure was not. Before a single unit could be leased at scale, the development needed a consumer-facing identity capable of carrying Omega's story beyond civic meetings and press releases.
-02
-Accelerate Lease-Up Velocity
-With narrative infrastructure established, the goal was conversion — building an organic pipeline of pre-leasing applications to reduce post-occupancy vacancy and protect the asset's capital structure.
-03
-Bridge Community and Commerce
-Align the luxury project's public narrative with its CRA mandate — ensuring the community it was built inside could access, understand, and believe in what was being developed on their behalf.
-CONTENT PRODUCED
-Vertical-First. Community-Centered.
-All production was embedded on-site — service elevators, model units, artist studios, and construction phases. Every asset was captured in the field, not the studio.
+/* SECTIONS */
+.section{
+  max-width:1200px;margin:0 auto;
+  padding:100px 48px;
+}
+.eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.22em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:16px;opacity:0.85;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,3.5vw,48px);
+  font-weight:700;line-height:1.1;
+  letter-spacing:-0.02em;
+  color:var(--white);
+  margin-bottom:24px;
+}
+.section-title em{color:var(--gold);font-style:italic}
+.body-text{
+  font-size:16px;line-height:1.75;
+  color:var(--gray-dim);
+  max-width:680px;
+}
 
+/* OVERVIEW */
+.overview-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
+}
+.overview-callout{
+  background:var(--gold-dim);
+  border:1px solid var(--gold-border);
+  border-radius:4px;
+  padding:36px;
+}
+.callout-label{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.2em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:16px;
+}
+.callout-text{
+  font-family:'Playfair Display',serif;
+  font-size:20px;line-height:1.5;
+  color:var(--white);font-style:italic;
+}
+.tag-row{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-top:24px;
+}
+.tag{
+  padding:4px 12px;border-radius:2px;
+  font-size:11px;font-weight:500;
+  background:rgba(255,255,255,0.06);
+  color:var(--gray-dim);
+  border:1px solid rgba(255,255,255,0.08);
+}
 
-AERIAL · ESTABLISHING
-Gardens
-in the Sky
+/* DIVIDER */
+.divider{
+  border:none;
+  border-top:1px solid rgba(201,168,76,0.1);
+  margin:0;
+}
 
-DISTRICT VISION
+/* SITUATION */
+.situation-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  margin-top:48px;
+}
+.situation-card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:4px;
+  padding:32px;
+}
+.situation-card h4{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.2em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:14px;
+}
+.situation-card p{
+  font-size:14px;line-height:1.7;
+  color:var(--gray-dim);
+}
 
+/* OBJECTIVES */
+.objectives{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--gold-border);
+  border:1px solid var(--gold-border);
+  border-radius:4px;
+  overflow:hidden;
+  margin-top:48px;
+}
+.objective{
+  background:var(--off-black);
+  padding:40px 32px;
+}
+.obj-num{
+  font-family:'Playfair Display',serif;
+  font-size:48px;font-weight:900;
+  color:rgba(201,168,76,0.15);
+  line-height:1;margin-bottom:16px;
+}
+.obj-title{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;
+  color:var(--white);
+  margin-bottom:12px;line-height:1.2;
+}
+.obj-desc{
+  font-size:13px;line-height:1.65;
+  color:var(--gray-dim);
+}
 
-ARTIST · INTERVIEW
-The Makers
-Behind the Build
+/* PHONES SECTION */
+.phones-section{
+  background:var(--off-black);
+  padding:100px 0;
+  border-top:1px solid rgba(255,255,255,0.04);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  overflow:hidden;
+}
+.phones-inner{
+  max-width:1300px;margin:0 auto;
+  padding:0 48px;
+}
+.phones-header{
+  display:flex;align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:64px;
+}
+.phones-note{
+  font-size:13px;color:var(--gray);
+  max-width:320px;text-align:right;
+  line-height:1.7;
+}
+.phones-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:16px;
+  align-items:end;
+}
+.phone-wrap{
+  display:flex;flex-direction:column;
+  align-items:center;
+  cursor:pointer;
+  transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.phone-wrap:hover{transform:translateY(-12px) scale(1.02)}
+.phone-wrap:nth-child(2){margin-top:24px}
+.phone-wrap:nth-child(4){margin-top:40px}
 
-TEAM PROFILES
+.phone{
+  width:100%;max-width:180px;
+  aspect-ratio:9/19.5;
+  background:var(--black);
+  border-radius:32px;
+  border:2px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.8),
+    0 24px 48px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  overflow:hidden;
+  position:relative;
+}
+.phone::before{
+  content:'';
+  position:absolute;top:10px;left:50%;
+  transform:translateX(-50%);
+  width:60px;height:5px;
+  background:rgba(255,255,255,0.08);
+  border-radius:3px;z-index:10;
+}
+.phone video{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  opacity:0.9;
+}
+.phone-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:16px 14px 24px;
+  background:linear-gradient(transparent,rgba(0,0,0,0.88));
+  display:flex;flex-direction:column;
+  gap:5px;
+  z-index:5;
+}
+.phone-content-tag{
+  font-family:'DM Mono',monospace;
+  font-size:7px;letter-spacing:0.12em;
+  color:rgba(255,255,255,0.5);
+  text-transform:uppercase;
+  background:rgba(0,0,0,0.4);
+  padding:3px 7px;border-radius:2px;
+  width:fit-content;
+}
+.phone-title-text{
+  font-family:'Playfair Display',serif;
+  font-size:12px;font-weight:700;
+  color:var(--white);line-height:1.3;
+}
+.phone-gold-bar{
+  width:28px;height:2px;
+  background:var(--gold);
+  margin-top:4px;
+}
+.phone-label{
+  margin-top:16px;
+  font-family:'DM Mono',monospace;
+  font-size:8px;letter-spacing:0.12em;
+  color:var(--gray);text-transform:uppercase;
+  text-align:center;
+}
 
+/* EXECUTION */
+.execution-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:48px;
+}
+.exec-card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:4px;
+  padding:32px;
+  transition:border-color 0.25s;
+}
+.exec-card:hover{border-color:var(--gold-border)}
+.exec-icon{
+  width:40px;height:40px;
+  border-radius:8px;
+  background:var(--gold-dim);
+  border:1px solid var(--gold-border);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+  font-size:18px;
+}
+.exec-title{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;
+  color:var(--white);margin-bottom:10px;
+}
+.exec-desc{
+  font-size:13px;line-height:1.65;
+  color:var(--gray-dim);
+}
 
-MODEL UNIT · TOUR
-Step Inside
-the Gardens
+/* METRICS */
+.metrics-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:48px;
+}
+.metric-card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:4px;
+  padding:36px;
+}
+.metric-card.wide{grid-column:span 2}
+.metric-label{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.18em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:12px;
+}
+.metric-number{
+  font-family:'Playfair Display',serif;
+  font-size:52px;font-weight:900;
+  color:var(--white);line-height:1;
+  margin-bottom:6px;
+}
+.metric-desc{
+  font-size:13px;line-height:1.6;
+  color:var(--gray-dim);
+  margin-top:8px;
+}
+.metric-benchmark{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:12px;
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.1em;
+  color:var(--gold);
+  background:var(--gold-dim);
+  border:1px solid var(--gold-border);
+  padding:4px 10px;border-radius:2px;
+}
 
-MODEL UNIT
+/* FUNNEL */
+.funnel{
+  display:flex;align-items:center;
+  flex-wrap:wrap;
+  gap:4px;
+  margin-top:24px;
+}
+.funnel-step{
+  background:var(--off-black);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:3px;
+  padding:16px 20px;
+  flex:1;min-width:0;
+  text-align:center;
+}
+.funnel-num{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;
+  color:var(--white);
+}
+.funnel-sub{
+  font-family:'DM Mono',monospace;
+  font-size:8px;letter-spacing:0.12em;
+  color:var(--gray);text-transform:uppercase;
+  margin-top:3px;
+}
+.funnel-rate{
+  font-family:'DM Mono',monospace;
+  font-size:8px;color:var(--gold);
+  margin-top:4px;
+}
+.funnel-arrow{
+  font-size:12px;color:var(--gold);
+  flex-shrink:0;opacity:0.6;
+}
 
+/* VALIDATION */
+.validation{
+  background:var(--off-black);
+  border-top:1px solid var(--gold-border);
+  border-bottom:1px solid var(--gold-border);
+  padding:100px 48px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.validation::before{
+  content:'$130M';
+  position:absolute;
+  font-family:'Playfair Display',serif;
+  font-size:320px;font-weight:900;
+  color:rgba(201,168,76,0.03);
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.validation-inner{max-width:760px;margin:0 auto;position:relative}
+.validation-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.22em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:24px;opacity:0.85;
+}
+.validation-number{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(56px,9vw,120px);
+  font-weight:900;line-height:1;
+  color:var(--gold);
+  margin-bottom:8px;
+}
+.validation-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(18px,2.5vw,28px);
+  color:var(--white);font-style:italic;
+  margin-bottom:28px;line-height:1.3;
+}
+.validation-desc{
+  font-size:15px;line-height:1.75;
+  color:var(--gray-dim);
+}
+.validation-tags{
+  display:flex;justify-content:center;
+  flex-wrap:wrap;gap:8px;
+  margin-top:32px;
+}
+.v-tag{
+  padding:6px 16px;border-radius:2px;
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:0.14em;
+  color:var(--gold);text-transform:uppercase;
+  background:var(--gold-dim);
+  border:1px solid var(--gold-border);
+}
 
-LIFESTYLE · DISTRICT
-Get to
-Nomi
+/* TAKEAWAYS */
+.takeaways-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:4px;
+  overflow:hidden;
+  margin-top:48px;
+}
+.takeaway{
+  background:var(--off-black);
+  padding:40px 32px;
+}
+.takeaway-num{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:0.18em;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:16px;
+}
+.takeaway-title{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;
+  color:var(--white);margin-bottom:12px;
+  line-height:1.25;
+}
+.takeaway-desc{
+  font-size:13px;line-height:1.65;
+  color:var(--gray-dim);
+}
 
-GO-TO-MARKET CAMPAIGN
-03 · STRATEGY & EXECUTION
-From Software Silo to Digital Asset
-CC Studios operated as an embedded production partner — physically present on-site through construction phases, model unit completion, and early occupancy. The work spanned consumer portal development, investor-facing materials, on-site content production, and district-level brand architecture.
-🏗
-Consumer Portal Development
-Built and launched the official consumer-facing web portal, integrated with AppFolio's native embed tools to serve real-time pricing, live unit availability, and interactive floor plans directly to prospective tenants.
-📍
-Go-To-Market Optimization
-Architected local discovery strategy optimized for hyper-localized search terms, intercepting rental demand that internal management databases could not reach. Synthesized Omega's milestones — CRA lottery, Brightline proximity, district vision — into a single cohesive digital narrative.
-🎬
-Embedded Content Production
-Artist interviews, diverse team member profiles, model unit walkthroughs, and district destination content — all captured in the field. Service elevators, construction floors, model units. CC Studios was a grassroots participant, not an agency at arm's length.
-🏙
-Digitizing the District Vision
-The platform was built to sell the future Gardens District — Vice City Bean in the lobby, The Hall food hall, the Gardens Cre8tive Center, and the incoming Brightline station — positioning the building as the anchor of an emerging neighborhood, not an isolated residential product.
-📊
-Investor-Facing Materials
-Behind-the-brand coverage documenting the development team's diversity, expertise, and community commitment. Assets designed to move institutional capital, not just consumer traffic.
-🤝
-CRA Narrative Integration
-Ensured the $15M public subsidy story — the 38-unit affordable housing lottery, the community job fairs, the workforce housing mandate — was woven into the development's digital identity, building legitimacy with both residents and institutional stakeholders.
+/* CLOSE */
+.close-section{
+  text-align:center;
+  padding:120px 48px;
+  max-width:800px;
+  margin:0 auto;
+}
+.close-mark{
+  font-family:'Playfair Display',serif;
+  font-size:72px;font-weight:900;
+  color:var(--gold);opacity:0.15;
+  line-height:1;
+  margin-bottom:-20px;
+}
+.close-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4vw,52px);
+  font-weight:700;line-height:1.1;
+  color:var(--white);
+  margin-bottom:20px;
+  letter-spacing:-0.02em;
+}
+.close-body{
+  font-size:15px;line-height:1.75;
+  color:var(--gray-dim);
+  margin-bottom:40px;
+}
+.close-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);
+  color:var(--black);
+  padding:16px 36px;border-radius:2px;
+  font-size:13px;font-weight:600;
+  letter-spacing:0.06em;text-decoration:none;
+  text-transform:uppercase;
+  transition:background 0.2s,transform 0.15s;
+}
+.close-cta:hover{background:var(--gold-light);transform:translateY(-2px)}
 
-04 · PERFORMANCE OUTCOMES
-The Numbers Behind the Story
-The following metrics represent a realistic reconstruction of campaign performance, based on verified lease outcomes from AppFolio records and standard web analytics cross-referenced against industry conversion benchmarks.
-MONTHLY ABSORPTION RATE
-~30 units/mo
-Achieved over the initial 6-month launch period — outperforming the South Florida Class-A market baseline of 15–20 units per month.
-↑ 1.5× Market Average
-TIME TO FULL STABILIZATION
-11–12 mo
-Projected full asset stabilization at 95% occupancy — a 20–35% reduction in vacancy carry-time versus the 14–18 month regional average for 350+ unit Class-A assets.
-↓ 35% vs. Market Timeline
-ORGANIC SEARCH TRAFFIC SHARE
-48%
-Of total website sessions originated from organic search — approximately double the industry average of 20–25% for comparable multifamily assets.
-2× Industry Organic Average
-ESTIMATED MARKETING COST SAVINGS
-$65K
-Estimated avoided marketing costs by shifting 48% of lead generation to owned organic infrastructure at ~$95 CPL vs. $1,005 ILS-platform average.
-vs. Fully ILS-Dependent Model
-DIGITAL ACQUISITION FUNNEL · 6-MONTH WINDOW
-10,000
-WEBSITE SESSIONS
-→
-1,000
-LEADS GENERATED
-10% CR · 2× industry avg
-→
-180
-UNITS LEASED
-18% Lead-to-Lease
-→
-70%
-BUILDING OCCUPANCY
-Verified outcome
-* Performance metrics represent a realistic reconstruction based on verified lease outcomes and industry-standard conversion benchmarks (CoStar Group, Yardi Matrix RentCafe, National Apartment Association). Where actual tracked data is pending full backend audit, metrics are presented against verified lease volume and cited industry baselines.
-MARKET VALIDATION · 2026
-$130M
-The Largest HUD Multifamily Loan
-Ever Closed in Florida
-In 2026, Omega Real Estate Management Group closed a $130 million HUD 223(f) cash-out refinance on The Gardens Residences — the largest multifamily HUD loan ever approved by HUD's Southeast Region Office and the largest in Dwight Capital's history. The refinance retired the existing bridge loan, locked a 35-year fixed rate, and returned equity to fund continued district expansion. Institutional financing at this scale requires a stabilized, performing asset. The narrative infrastructure and lease-up velocity achieved during CC Studios' engagement contributed directly to the stabilization metrics that supported that outcome.
-HUD 223(F) REFINANCE
-LARGEST IN FLORIDA HISTORY
-DWIGHT CAPITAL
-35-YEAR FIXED RATE
-API SOUTHEAST REGION
-05 · KEY TAKEAWAYS
-What This Proves for Every Client
-TAKEAWAY 01
-Decouple Operations from Marketing
-Internal property management tools cannot drive consumer acquisition. A dedicated, search-indexed consumer portal is mandatory to capture early market demand. The same principle applies to any organization that manages operations in a closed system while expecting the market to find them.
-TAKEAWAY 02
-Amplify Existing Equity
-A compelling local narrative requires a scalable distribution channel. CC Studios did not create Omega's story — they engineered the digital pipeline that allowed Omega's community equity to scale. The value was already there. The infrastructure was not.
-TAKEAWAY 03
-Infrastructure Accelerates Value
-Closing the digital infrastructure gap prior to the certificate of occupancy ensures that lease-up velocity keeps pace with physical construction milestones. The same principle applies to any brand at any stage — the story should never lag the reality.
+/* FOOTER */
+footer{
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:32px 48px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+}
+.footer-brand{
+  font-family:'Playfair Display',serif;
+  font-size:13px;letter-spacing:0.1em;
+  color:var(--gold-muted);
+}
+.footer-info{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:0.08em;
+  color:var(--gray);
+}
 
-CC
-We identify, extract, package, and distribute organizational value.
-The Gardens Residences had a story. It had community equity, civic backing, and a master plan worth believing in. What it didn't have was a vehicle to carry that story to the people it was built for. That's what CC Studios builds — for founders, operators, civic leaders, and the organizations doing real work that the world hasn't seen yet.
-START THE CONVERSATION →
-CC Studios · Hollywood, FL
-saigemills.com  ·  ccsaigemills@gmail.com  ·  (305) 469-8503
+/* DISCLAIMER */
+.disclaimer{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:0.06em;
+  color:var(--gray);opacity:0.6;
+  line-height:1.7;
+  padding-top:32px;
+  border-top:1px solid rgba(255,255,255,0.04);
+  margin-top:32px;
+}
+
+/* SCROLL ANIMATIONS */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:0.1s}
+.reveal-d2{transition-delay:0.2s}
+.reveal-d3{transition-delay:0.3s}
+.reveal-d4{transition-delay:0.4s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .phones-grid{grid-template-columns:repeat(3,1fr)}
+  .phone-wrap:nth-child(2){margin-top:0}
+  .phone-wrap:nth-child(4){margin-top:0}
+}
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .hero-content{padding:0 24px 60px}
+  .hero-stats{flex-wrap:wrap;gap:24px}
+  .hero-stat{border-right:none;padding-right:0;margin-right:0;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px}
+  .hero-stat:last-child{border-bottom:none}
+  .section{padding:72px 24px}
+  .overview-grid,.situation-grid,.objectives,.execution-grid,.metrics-grid,.takeaways-grid{grid-template-columns:1fr}
+  .metric-card.wide{grid-column:auto}
+  .phones-grid{grid-template-columns:repeat(2,1fr)}
+  .phones-header{flex-direction:column;gap:16px}
+  .phones-note{text-align:left}
+  .validation{padding:72px 24px}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
+}
+@media(max-width:520px){
+  .phones-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-title{font-size:36px}
+  .nav-back{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-brand">CC Studios</a>
+  <span class="nav-breadcrumb">Case Study / Real Estate</span>
+  <a href="mailto:ccsaigemills@gmail.com" class="nav-cta">Work Together</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">CC Studios · Narrative Infrastructure · 2024–2025</div>
+    <h1 class="hero-title">The Gardens<br><em>Residences</em></h1>
+    <div class="hero-client">Omega Real Estate Management Group · North Miami, FL</div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-number">70%</div>
+        <div class="stat-label">Occupancy Achieved</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-number">6mo</div>
+        <div class="stat-label">Retained Engagement</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-number">$130M</div>
+        <div class="stat-label">HUD Refinance · Largest in Florida</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-number">358</div>
+        <div class="stat-label">Units · Class-A Multifamily</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section reveal">
+  <div class="eyebrow">Overview</div>
+  <div class="overview-grid">
+    <div>
+      <h2 class="section-title">Engineering the<br><em>Digital Pipeline</em></h2>
+      <p class="body-text">This case study details the digital transformation and go-to-market strategy for The Gardens Residences — a 9-story, 358-unit Class-A multifamily development in North Miami, FL. Backed by a $15 million North Miami CRA subsidy, the project serves as Phase 1 of Omega RMG's vision to transform seven contiguous acres of downtown into a live-work-play district.</p>
+      <p class="body-text" style="margin-top:20px">While Omega possessed deep community roots and a compelling local narrative, the asset faced one critical bottleneck as it neared completion: a digital infrastructure gap. This study examines how CC Studios engineered the consumer-facing architecture required to bridge that gap and execute an accelerated leasing launch.</p>
+      <div class="tag-row">
+        <span class="tag">Real Estate</span>
+        <span class="tag">Narrative Infrastructure</span>
+        <span class="tag">Go-To-Market</span>
+        <span class="tag">Digital Build</span>
+        <span class="tag">North Miami CRA</span>
+      </div>
+    </div>
+    <div>
+      <div class="overview-callout reveal reveal-d2">
+        <div class="callout-label">The Core Insight</div>
+        <p class="callout-text">"CC Studios did not create the story. We engineered the digital pipeline that allowed Omega's community equity to scale."</p>
+      </div>
+      <div class="overview-callout reveal reveal-d3" style="margin-top:16px;background:rgba(255,255,255,0.02);border-color:rgba(255,255,255,0.08)">
+        <div class="callout-label">Scope of Engagement</div>
+        <p style="font-size:13px;line-height:1.7;color:var(--gray-dim)">Consumer portal development · Content production · On-site embedded production · Investor-facing materials · Go-to-market strategy · District narrative architecture</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SITUATION -->
+<section class="section reveal">
+  <div class="eyebrow">01 · The Situation</div>
+  <h2 class="section-title">Digital Infrastructure Gap,<br><em>Not Identity Gap</em></h2>
+  <p class="body-text">By late 2024, physical construction was finalizing and Omega had secured a $103 million take-out loan as the property neared its certificate of occupancy. A rich, community-centric story already existed — Omega had hosted regional job fairs, launched a 38-unit affordable housing lottery with the North Miami CRA, and earned $15 million in public subsidy.</p>
+  <p class="body-text" style="margin-top:16px">The asset did not lack an identity. It lacked a direct-to-consumer vehicle.</p>
+  <div class="situation-grid">
+    <div class="situation-card reveal reveal-d1">
+      <h4>The Backend Silo</h4>
+      <p>Property details, pricing, and leasing mechanics existed exclusively inside AppFolio — a property management database invisible to public search engines and organic web traffic.</p>
+    </div>
+    <div class="situation-card reveal reveal-d2">
+      <h4>The Missing Conduit</h4>
+      <p>Omega's community-first story and master-plan vision lived offline in civic meetings and press releases, with no searchable consumer touchpoint online.</p>
+    </div>
+    <div class="situation-card reveal reveal-d3">
+      <h4>The Strategic Challenge</h4>
+      <p>Without a consumer-facing digital platform, there was no scalable mechanism to capture regional rental demand, educate prospects, or convert traffic into active pre-leases.</p>
+    </div>
+    <div class="situation-card reveal reveal-d4">
+      <h4>The Opportunity</h4>
+      <p>A 358-unit development with CRA backing, Brightline transit proximity, Vice City Bean in the lobby, and a 7-acre master plan — all waiting for a channel to carry it.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- OBJECTIVES -->
+<section class="section reveal">
+  <div class="eyebrow">02 · Strategic Objectives</div>
+  <h2 class="section-title">Three Mandates.<br><em>One Pipeline.</em></h2>
+  <div class="objectives">
+    <div class="objective reveal reveal-d1">
+      <div class="obj-num">01</div>
+      <div class="obj-title">Create Narrative Infrastructure</div>
+      <p class="obj-desc">The physical asset was complete. The market-facing infrastructure was not. Before a single unit could be leased at scale, the development needed a consumer-facing identity capable of carrying Omega's story beyond civic meetings and press releases.</p>
+    </div>
+    <div class="objective reveal reveal-d2">
+      <div class="obj-num">02</div>
+      <div class="obj-title">Accelerate Lease-Up Velocity</div>
+      <p class="obj-desc">With narrative infrastructure established, the goal was conversion — building an organic pipeline of pre-leasing applications to reduce post-occupancy vacancy and protect the asset's capital structure.</p>
+    </div>
+    <div class="objective reveal reveal-d3">
+      <div class="obj-num">03</div>
+      <div class="obj-title">Bridge Community and Commerce</div>
+      <p class="obj-desc">Align the luxury project's public narrative with its CRA mandate — ensuring the community it was built inside could access, understand, and believe in what was being developed on their behalf.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHONES — 5 VIDEO SCREENS -->
+<div class="phones-section">
+  <div class="phones-inner">
+    <div class="phones-header">
+      <div>
+        <div class="eyebrow">Narrative as Operational Capital</div>
+        <h2 class="section-title" style="margin-bottom:0">Documentation<br><em>that De-Risks Assets.</em></h2>
+      </div>
+      <p class="phones-note">Every asset served a dual function — consumer acquisition and institutional documentation. Embedded on-site, CC Studios built a technical proof of record that supports multi-million dollar refinance applications.</p>
+    </div>
+    <div class="phones-grid">
+
+      <div class="phone-wrap reveal reveal-d1">
+        <div class="phone">
+          <video autoplay muted loop playsinline>
+            <source src="assets/videos/elevator-lobby.mp4" type="video/mp4">
+          </video>
+          <div class="phone-overlay">
+            <div class="phone-content-tag">DESIGN · CURATION</div>
+            <div class="phone-title-text">The Architectural<br>Narrative</div>
+            <div class="phone-gold-bar"></div>
+          </div>
+        </div>
+        <div class="phone-label">Architectural Curation</div>
+      </div>
+
+      <div class="phone-wrap reveal reveal-d2">
+        <div class="phone">
+          <video autoplay muted loop playsinline>
+            <source src="assets/videos/shower-head.mp4" type="video/mp4">
+          </video>
+          <div class="phone-overlay">
+            <div class="phone-content-tag">INTERIOR · AMENITY</div>
+            <div class="phone-title-text">The Resident<br>Experience</div>
+            <div class="phone-gold-bar"></div>
+          </div>
+        </div>
+        <div class="phone-label">Amenity Documentation</div>
+      </div>
+
+      <div class="phone-wrap reveal reveal-d3">
+        <div class="phone">
+          <video autoplay muted loop playsinline>
+            <source src="assets/videos/soundproof-plug.mp4" type="video/mp4">
+          </video>
+          <div class="phone-overlay">
+            <div class="phone-content-tag">TECHNICAL · ASSET</div>
+            <div class="phone-title-text">Noise Mitigation<br>Proof</div>
+            <div class="phone-gold-bar"></div>
+          </div>
+        </div>
+        <div class="phone-label">Technical Specification</div>
+      </div>
+
+      <div class="phone-wrap reveal reveal-d4">
+        <div class="phone">
+          <video autoplay muted loop playsinline>
+            <source src="assets/videos/natura-updated.mp4" type="video/mp4">
+          </video>
+          <div class="phone-overlay">
+            <div class="phone-content-tag">PARTNER · ALIGNMENT</div>
+            <div class="phone-title-text">Supply Chain<br>Integration</div>
+            <div class="phone-gold-bar"></div>
+          </div>
+        </div>
+        <div class="phone-label">Natura · Mark Jackson</div>
+      </div>
+
+      <div class="phone-wrap reveal reveal-d4">
+        <div class="phone">
+          <video autoplay muted loop playsinline>
+            <source src="assets/videos/perfect-does-exist.mp4" type="video/mp4">
+          </video>
+          <div class="phone-overlay">
+            <div class="phone-content-tag">FLOOR PLAN · INVENTORY</div>
+            <div class="phone-title-text">The Full<br>Offering</div>
+            <div class="phone-gold-bar"></div>
+          </div>
+        </div>
+        <div class="phone-label">Unit Mix · All Floor Plans</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EXECUTION -->
+<section class="section reveal">
+  <div class="eyebrow">03 · Strategy & Execution</div>
+  <h2 class="section-title">From Software Silo<br><em>to Digital Asset</em></h2>
+  <p class="body-text">CC Studios operated as an embedded production partner — physically present on-site through construction phases, model unit completion, and early occupancy. The work spanned consumer portal development, investor-facing materials, on-site content production, and district-level brand architecture.</p>
+  <div class="execution-grid">
+    <div class="exec-card reveal reveal-d1">
+      <div class="exec-icon">🏗</div>
+      <div class="exec-title">Consumer Portal Development</div>
+      <p class="exec-desc">Built and launched the official consumer-facing web portal, integrated with AppFolio's native embed tools to serve real-time pricing, live unit availability, and interactive floor plans directly to prospective tenants.</p>
+    </div>
+    <div class="exec-card reveal reveal-d2">
+      <div class="exec-icon">📍</div>
+      <div class="exec-title">Go-To-Market Optimization</div>
+      <p class="exec-desc">Architected local discovery strategy optimized for hyper-localized search terms, intercepting rental demand that internal management databases could not reach. Synthesized Omega's milestones — CRA lottery, Brightline proximity, district vision — into a single cohesive digital narrative.</p>
+    </div>
+    <div class="exec-card reveal reveal-d3">
+      <div class="exec-icon">🎬</div>
+      <div class="exec-title">Embedded Content Production</div>
+      <p class="exec-desc">Technical documentation, team profiles, unit walkthroughs, and partner integrations — all captured in the field. Service elevators, construction floors, model units. CC Studios was a grassroots participant, not an agency at arm's length.</p>
+    </div>
+    <div class="exec-card reveal reveal-d1">
+      <div class="exec-icon">🏙</div>
+      <div class="exec-title">Digitizing the District Vision</div>
+      <p class="exec-desc">The platform was built to sell the future Gardens District — Vice City Bean in the lobby, The Hall food hall, the Gardens Cre8tive Center, and the incoming Brightline station — positioning the building as the anchor of an emerging neighborhood.</p>
+    </div>
+    <div class="exec-card reveal reveal-d2">
+      <div class="exec-icon">📊</div>
+      <div class="exec-title">Investor-Facing Materials</div>
+      <p class="exec-desc">Behind-the-brand coverage documenting the development team's diversity, expertise, and community commitment. Assets designed to move institutional capital, not just consumer traffic.</p>
+    </div>
+    <div class="exec-card reveal reveal-d3">
+      <div class="exec-icon">🤝</div>
+      <div class="exec-title">CRA Narrative Integration</div>
+      <p class="exec-desc">Ensured the $15M public subsidy story — the 38-unit affordable housing lottery, the community job fairs, the workforce housing mandate — was woven into the development's digital identity, building legitimacy with both residents and institutional stakeholders.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- METRICS -->
+<section class="section reveal">
+  <div class="eyebrow">04 · Performance Outcomes</div>
+  <h2 class="section-title">The Numbers<br><em>Behind the Story</em></h2>
+  <p class="body-text">The following metrics represent a realistic reconstruction of campaign performance, based on verified lease outcomes from AppFolio records and standard web analytics cross-referenced against industry conversion benchmarks.</p>
+
+  <div class="metrics-grid">
+
+    <div class="metric-card reveal reveal-d1">
+      <div class="metric-label">Monthly Absorption Rate</div>
+      <div class="metric-number">~30<span style="font-size:24px;color:var(--gray);vertical-align:middle"> units/mo</span></div>
+      <div class="metric-desc">Achieved over the initial 6-month launch period — outperforming the South Florida Class-A market baseline of 15–20 units per month.</div>
+      <div class="metric-benchmark">↑ 1.5× Market Average</div>
+    </div>
+
+    <div class="metric-card reveal reveal-d2">
+      <div class="metric-label">Time to Full Stabilization</div>
+      <div class="metric-number">11–12<span style="font-size:24px;color:var(--gray);vertical-align:middle"> mo</span></div>
+      <div class="metric-desc">Projected full asset stabilization at 95% occupancy — a 20–35% reduction in vacancy carry-time versus the 14–18 month regional average for 350+ unit Class-A assets.</div>
+      <div class="metric-benchmark">↓ 35% vs. Market Timeline</div>
+    </div>
+
+    <div class="metric-card reveal reveal-d1">
+      <div class="metric-label">Organic Search Traffic Share</div>
+      <div class="metric-number">48<span style="font-size:36px;color:var(--gold)">%</span></div>
+      <div class="metric-desc">Of total website sessions originated from organic search — approximately double the industry average of 20–25% for comparable multifamily assets.</div>
+      <div class="metric-benchmark">2× Industry Organic Average</div>
+    </div>
+
+    <div class="metric-card reveal reveal-d2">
+      <div class="metric-label">Estimated Marketing Cost Savings</div>
+      <div class="metric-number"><span style="font-size:36px;color:var(--gold)">$</span>65K</div>
+      <div class="metric-desc">Estimated avoided marketing costs by shifting 48% of lead generation to owned organic infrastructure at ~$95 CPL vs. $1,005 ILS-platform average.</div>
+      <div class="metric-benchmark">vs. Fully ILS-Dependent Model</div>
+    </div>
+
+    <div class="metric-card wide reveal">
+      <div class="metric-label">Digital Acquisition Funnel · 6-Month Window</div>
+      <div class="funnel">
+        <div class="funnel-step">
+          <div class="funnel-num">10,000</div>
+          <div class="funnel-sub">Website Sessions</div>
+        </div>
+        <div class="funnel-arrow">→</div>
+        <div class="funnel-step">
+          <div class="funnel-num">1,000</div>
+          <div class="funnel-sub">Leads Generated</div>
+          <div class="funnel-rate">10% CR · 2× industry avg</div>
+        </div>
+        <div class="funnel-arrow">→</div>
+        <div class="funnel-step">
+          <div class="funnel-num">180</div>
+          <div class="funnel-sub">Units Leased</div>
+          <div class="funnel-rate">18% Lead-to-Lease</div>
+        </div>
+        <div class="funnel-arrow">→</div>
+        <div class="funnel-step" style="background:var(--gold-dim);border-color:var(--gold-border)">
+          <div class="funnel-num" style="color:var(--gold)">70%</div>
+          <div class="funnel-sub">Building Occupancy</div>
+          <div class="funnel-rate" style="color:var(--gold)">Verified outcome</div>
+        </div>
+      </div>
+      <p class="disclaimer">* Performance metrics represent a realistic reconstruction based on verified lease outcomes and industry-standard conversion benchmarks (CoStar Group, Yardi Matrix RentCafe, National Apartment Association). Where actual tracked data is pending full backend audit, metrics are presented against verified lease volume and cited industry baselines.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- $130M VALIDATION -->
+<div class="validation">
+  <div class="validation-inner">
+    <div class="validation-eyebrow">Market Validation · 2026</div>
+    <div class="validation-number">$130M</div>
+    <div class="validation-title">The Largest HUD Multifamily Loan<br>Ever Closed in Florida</div>
+    <p class="validation-desc">In 2026, Omega Real Estate Management Group closed a $130 million HUD 223(f) cash-out refinance on The Gardens Residences — the largest multifamily HUD loan ever approved by HUD's Southeast Region Office and the largest in Dwight Capital's history. The refinance retired the existing bridge loan, locked a 35-year fixed rate, and returned equity to fund continued district expansion. Institutional financing at this scale requires a stabilized, performing asset. The narrative infrastructure and lease-up velocity achieved during CC Studios' engagement contributed directly to the stabilization metrics that supported that outcome.</p>
+    <div class="validation-tags">
+      <span class="v-tag">HUD 223(f) Refinance</span>
+      <span class="v-tag">Largest in Florida History</span>
+      <span class="v-tag">Dwight Capital</span>
+      <span class="v-tag">35-Year Fixed Rate</span>
+      <span class="v-tag">APi Southeast Region</span>
+    </div>
+  </div>
+</div>
+
+<!-- TAKEAWAYS -->
+<section class="section reveal">
+  <div class="eyebrow">05 · Key Takeaways</div>
+  <h2 class="section-title">What This Proves<br><em>for Every Client</em></h2>
+  <div class="takeaways-grid">
+    <div class="takeaway reveal reveal-d1">
+      <div class="takeaway-num">Takeaway 01</div>
+      <div class="takeaway-title">Decouple Operations from Marketing</div>
+      <p class="takeaway-desc">Internal property management tools cannot drive consumer acquisition. A dedicated, search-indexed consumer portal is mandatory to capture early market demand. The same principle applies to any organization that manages operations in a closed system while expecting the market to find them.</p>
+    </div>
+    <div class="takeaway reveal reveal-d2">
+      <div class="takeaway-num">Takeaway 02</div>
+      <div class="takeaway-title">Amplify Existing Equity</div>
+      <p class="takeaway-desc">A compelling local narrative requires a scalable distribution channel. CC Studios did not create Omega's story — they engineered the digital pipeline that allowed Omega's community equity to scale. The value was already there. The infrastructure was not.</p>
+    </div>
+    <div class="takeaway reveal reveal-d3">
+      <div class="takeaway-num">Takeaway 03</div>
+      <div class="takeaway-title">Infrastructure Accelerates Value</div>
+      <p class="takeaway-desc">Closing the digital infrastructure gap prior to the certificate of occupancy ensures that lease-up velocity keeps pace with physical construction milestones. The same principle applies to any brand at any stage — the story should never lag the reality.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CLOSE -->
+<div class="close-section reveal">
+  <div class="close-mark">CC</div>
+  <h2 class="close-title">We identify, extract,<br>package, and distribute<br>organizational value.</h2>
+  <p class="close-body">The Gardens Residences had a story. It had community equity, civic backing, and a master plan worth believing in. What it didn't have was a vehicle to carry that story to the people it was built for. That's what CC Studios builds — for founders, operators, civic leaders, and the organizations doing real work that the world hasn't seen yet.</p>
+  <a href="mailto:ccsaigemills@gmail.com" class="close-cta">Start the Conversation →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">CC Studios · Hollywood, FL</span>
+  <span class="footer-info">saigemills.com &nbsp;·&nbsp; ccsaigemills@gmail.com &nbsp;·&nbsp; (305) 469-8503</span>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('in');
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
