@@ -3,336 +3,750 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Gardens Residences — CC Studios Case Study</title>
+<title>The Gardens Residences — CC Studios</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --black: #080808;
-  --off-black: #111111;
-  --card: #161616;
-  --gold: #C9A84C;
-  --gold-light: #E8C97A;
-  --gold-muted: #7A6230;
-  --gold-dim: rgba(201,168,76,0.12);
-  --gold-border: rgba(201,168,76,0.22);
-  --white: #F5F2EC;
-  --gray: #888580;
-  --gray-dim: rgba(245,242,236,0.45);
+  --ink: #080808;
+  --linen: #F4F1EA;
+  --charcoal: #1C1C1C;
+  --ash: #3A3A3A;
+  --fog: #8A8A8A;
+  --silk: #C4C0B8;
+  --sand: #CFC0A3;
+  --sand-dim: rgba(207,192,163,0.12);
+  --sand-border: rgba(207,192,163,0.25);
+  --white: #FAFAF8;
+  --card: #141414;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;font-size:16px}
 body{
-  background:var(--black);
-  color:var(--white);
-  font-family:'Instrument Sans',sans-serif;
-  font-size:16px;line-height:1.6;
+  background:var(--ink);
+  color:var(--linen);
+  font-family:'Archivo',sans-serif;
+  line-height:1.6;
   overflow-x:hidden;
 }
 
-/* NAV */
+/* ── TYPOGRAPHY SYSTEM ── */
+.display{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-weight:500;
+  letter-spacing:-0.04em;
+  line-height:0.92;
+}
+.heading{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-weight:500;
+  letter-spacing:-0.03em;
+  line-height:1.0;
+}
+.label{
+  font-family:'Archivo',sans-serif;
+  font-size:9px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--fog);
+}
+.label-sand{color:var(--sand);}
+
+/* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:20px 48px;
+  padding:18px 60px;
   display:flex;align-items:center;justify-content:space-between;
-  background:rgba(8,8,8,0.88);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(201,168,76,0.08);
+  background:rgba(8,8,8,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--ash);
 }
 .nav-brand{
-  font-family:'Playfair Display',serif;
-  font-size:14px;letter-spacing:0.12em;
-  color:var(--gold);text-transform:uppercase;
-  text-decoration:none;
+  font-family:'Archivo',sans-serif;
+  font-size:9px;letter-spacing:0.28em;
+  color:var(--linen);text-transform:uppercase;
+  text-decoration:none;font-weight:500;
 }
-.nav-breadcrumb{
-  font-family:'DM Mono',monospace;
-  font-size:10px;letter-spacing:0.16em;
-  color:var(--gray);text-transform:uppercase;
+.nav-crumb{
+  font-size:9px;letter-spacing:0.2em;
+  color:var(--fog);text-transform:uppercase;
 }
 .nav-cta{
-  font-size:12px;font-weight:600;
-  color:var(--black);background:var(--gold);
-  padding:8px 20px;border-radius:2px;
-  text-decoration:none;letter-spacing:0.04em;
+  font-family:'Archivo',sans-serif;
+  font-size:10px;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink);background:var(--sand);
+  padding:9px 22px;
+  text-decoration:none;
   transition:background 0.2s;
 }
-.nav-cta:hover{background:var(--gold-light)}
+.nav-cta:hover{background:var(--linen);}
 
-/* HERO */
+/* ── HERO ── */
 .hero{
   position:relative;
-  height:100vh;min-height:680px;
+  height:100vh;min-height:700px;
   display:flex;align-items:flex-end;
   overflow:hidden;
 }
-.hero-bg{
+.hero-video{
   position:absolute;inset:0;
-  background-image:url('assets/images/gardens-hero.jpg');
-  background-size:cover;background-position:center 40%;
-  opacity:0.42;
-  transform:scale(1.04);
-  animation:heroZoom 18s ease-out forwards;
+  width:100%;height:100%;
+  object-fit:cover;
+  opacity:0.45;
+  transition:opacity 0.5s;
 }
-@keyframes heroZoom{from{transform:scale(1.04)}to{transform:scale(1)}}
 .hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(8,8,8,0.2) 0%,rgba(8,8,8,0.4) 40%,rgba(8,8,8,0.85) 75%,var(--black) 100%);
+  background:linear-gradient(
+    180deg,
+    rgba(8,8,8,0.15) 0%,
+    rgba(8,8,8,0.35) 45%,
+    rgba(8,8,8,0.88) 78%,
+    var(--ink) 100%
+  );
 }
 .hero-content{
   position:relative;z-index:2;
-  width:100%;max-width:1200px;
-  margin:0 auto;padding:0 48px 80px;
+  width:100%;max-width:1280px;
+  margin:0 auto;
+  padding:0 60px 88px;
 }
 .hero-eyebrow{
-  font-family:'DM Mono',monospace;
-  font-size:10px;letter-spacing:0.22em;
-  color:var(--gold);text-transform:uppercase;
-  margin-bottom:20px;opacity:0.9;
+  font-size:9px;letter-spacing:0.28em;
+  color:var(--sand);text-transform:uppercase;
+  font-weight:500;
+  margin-bottom:24px;
 }
 .hero-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(42px,6vw,88px);
-  font-weight:900;line-height:1.02;
-  letter-spacing:-0.02em;color:var(--white);
-  margin-bottom:8px;
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-weight:500;
+  font-size:clamp(52px,8vw,104px);
+  line-height:0.9;
+  letter-spacing:-0.045em;
+  color:var(--white);
+  margin-bottom:52px;
 }
-.hero-title em{color:var(--gold);font-style:italic}
-.hero-client{
-  font-family:'DM Mono',monospace;
-  font-size:11px;letter-spacing:0.18em;
-  color:var(--gray);text-transform:uppercase;
-  margin-bottom:48px;
+.hero-title em{
+  color:var(--sand);
+  font-style:italic;
 }
 .hero-stats{
-  display:flex;gap:0;
-  border-top:1px solid var(--gold-border);
-  padding-top:32px;flex-wrap:wrap;
+  display:flex;
+  border-top:1px solid var(--ash);
+  padding-top:32px;
+  flex-wrap:wrap;
+  gap:0;
 }
 .hero-stat{
-  padding-right:48px;margin-right:48px;
-  border-right:1px solid rgba(255,255,255,0.08);
+  padding-right:52px;margin-right:52px;
+  border-right:1px solid var(--ash);
 }
 .hero-stat:last-child{border-right:none;padding-right:0;margin-right:0}
 .stat-number{
-  font-family:'Playfair Display',serif;
-  font-size:36px;font-weight:900;
-  color:var(--gold);line-height:1;margin-bottom:4px;
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:38px;font-weight:500;
+  color:var(--sand);line-height:1;
+  letter-spacing:-0.03em;
+  margin-bottom:6px;
 }
 .stat-label{
-  font-family:'DM Mono',monospace;
-  font-size:9px;letter-spacing:0.16em;
-  color:var(--gray);text-transform:uppercase;
+  font-size:9px;letter-spacing:0.2em;
+  color:var(--fog);text-transform:uppercase;
 }
 
-/* SECTIONS */
-.section{max-width:1200px;margin:0 auto;padding:100px 48px;}
-.eyebrow{
-  font-family:'DM Mono',monospace;
-  font-size:9px;letter-spacing:0.22em;
-  color:var(--gold);text-transform:uppercase;
-  margin-bottom:16px;opacity:0.85;
+/* ── LAYOUT ── */
+.section{max-width:1280px;margin:0 auto;padding:112px 60px;}
+.section-sm{max-width:1280px;margin:0 auto;padding:80px 60px;}
+.divider{border:none;border-top:1px solid var(--ash);margin:0;}
+
+/* ── SECTION LABEL ── */
+.sec-label{
+  font-size:9px;letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--fog);
+  padding-bottom:20px;
+  border-bottom:1px solid var(--ash);
+  margin-bottom:64px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'Archivo',sans-serif;
+  font-weight:500;
 }
-.section-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(28px,3.5vw,48px);
-  font-weight:700;line-height:1.1;
-  letter-spacing:-0.02em;color:var(--white);
-  margin-bottom:24px;
+.sec-label span{color:var(--sand);}
+
+/* ── SECTION TITLE ── */
+.sec-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-weight:500;
+  font-size:clamp(32px,4.5vw,60px);
+  line-height:0.96;
+  letter-spacing:-0.035em;
+  color:var(--white);
+  margin-bottom:28px;
 }
-.section-title em{color:var(--gold);font-style:italic}
-.body-text{font-size:16px;line-height:1.75;color:var(--gray-dim);max-width:680px;}
+.sec-title em{color:var(--sand);font-style:italic;}
 
-/* OVERVIEW */
-.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.overview-callout{background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:4px;padding:36px;}
-.callout-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
-.callout-text{font-family:'Playfair Display',serif;font-size:20px;line-height:1.5;color:var(--white);font-style:italic;}
-.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
-.tag{padding:4px 12px;border-radius:2px;font-size:11px;font-weight:500;background:rgba(255,255,255,0.06);color:var(--gray-dim);border:1px solid rgba(255,255,255,0.08);}
-.divider{border:none;border-top:1px solid rgba(201,168,76,0.1);margin:0;}
+.body-text{
+  font-size:15px;line-height:1.78;
+  color:rgba(244,241,234,0.6);
+  max-width:640px;
+  font-weight:300;
+}
 
-/* SITUATION */
-.situation-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;}
-.situation-card{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:32px;}
-.situation-card h4{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;}
-.situation-card p{font-size:14px;line-height:1.7;color:var(--gray-dim);}
+/* ── OVERVIEW ── */
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;}
+.callout{
+  background:var(--sand-dim);
+  border:1px solid var(--sand-border);
+  padding:36px 40px;
+}
+.callout-label{
+  font-size:9px;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:18px;font-weight:500;
+}
+.callout-text{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:18px;line-height:1.5;
+  color:var(--linen);font-style:italic;
+  font-weight:400;
+  letter-spacing:-0.01em;
+}
+.scope-block{
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--ash);
+  padding:28px 32px;
+  margin-top:16px;
+}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;}
+.tag{
+  padding:4px 12px;
+  font-size:10px;letter-spacing:0.1em;
+  background:transparent;
+  color:var(--fog);
+  border:1px solid var(--ash);
+  font-family:'Archivo',sans-serif;
+  text-transform:uppercase;
+}
 
-/* OBJECTIVES */
-.objectives{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gold-border);border:1px solid var(--gold-border);border-radius:4px;overflow:hidden;margin-top:48px;}
-.objective{background:var(--off-black);padding:40px 32px;}
-.obj-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:rgba(201,168,76,0.15);line-height:1;margin-bottom:16px;}
-.obj-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:12px;line-height:1.2;}
-.obj-desc{font-size:13px;line-height:1.65;color:var(--gray-dim);}
+/* ── SITUATION ── */
+.situation-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ash);margin-top:64px;}
+.situation-card{
+  background:var(--charcoal);
+  padding:40px 36px;
+}
+.sit-label{
+  font-size:9px;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:16px;font-weight:500;
+}
+.sit-text{font-size:14px;line-height:1.75;color:rgba(244,241,234,0.55);font-weight:300;}
 
-/* PHONES */
-.phones-section{background:var(--off-black);padding:100px 0;border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);overflow:hidden;}
-.phones-inner{max-width:1300px;margin:0 auto;padding:0 48px;}
-.phones-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:64px;}
-.phones-note{font-size:13px;color:var(--gray);max-width:320px;text-align:right;line-height:1.7;}
-.phones-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:end;}
-.phone-wrap{display:flex;flex-direction:column;align-items:center;transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);}
-.phone-wrap:hover{transform:translateY(-12px) scale(1.02)}
-.phone-wrap:nth-child(2){margin-top:24px}
-.phone-wrap:nth-child(4){margin-top:40px}
+/* ── PORTAL EVIDENCE ── */
+.portal-section{
+  background:var(--charcoal);
+  border-top:1px solid var(--ash);
+  border-bottom:1px solid var(--ash);
+  padding:112px 0;
+}
+.portal-inner{max-width:1280px;margin:0 auto;padding:0 60px;}
+.portal-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+  margin-top:64px;
+}
+.portal-frame{
+  background:var(--ash);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.5);
+}
+.portal-bar{
+  background:var(--ink);
+  padding:10px 16px;
+  display:flex;align-items:center;gap:8px;
+  border-bottom:1px solid var(--ash);
+}
+.portal-dot{width:10px;height:10px;border-radius:50%;}
+.portal-url{
+  background:var(--charcoal);
+  flex:1;margin-left:8px;
+  padding:4px 12px;border-radius:3px;
+  font-size:10px;color:var(--fog);
+  letter-spacing:0.04em;
+}
+.portal-img{
+  width:100%;display:block;
+}
+.portal-annotations{display:flex;flex-direction:column;gap:32px;padding-top:8px;}
+.annotation{
+  border-left:2px solid var(--sand);
+  padding-left:24px;
+}
+.ann-num{
+  font-size:9px;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:8px;font-weight:500;
+}
+.ann-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:16px;font-weight:500;
+  color:var(--white);margin-bottom:8px;
+  letter-spacing:-0.01em;
+}
+.ann-text{font-size:13px;line-height:1.7;color:rgba(244,241,234,0.55);font-weight:300;}
+.technical-note{
+  margin-top:48px;
+  padding:24px 28px;
+  background:rgba(207,192,163,0.06);
+  border:1px solid var(--sand-border);
+  border-left:3px solid var(--sand);
+}
+.tech-label{
+  font-size:9px;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:10px;font-weight:500;
+}
+.tech-text{font-size:13px;line-height:1.7;color:rgba(244,241,234,0.7);font-weight:300;font-style:italic;}
+
+/* ── OBJECTIVES ── */
+.objectives{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--ash);
+  margin-top:64px;
+}
+.objective{background:var(--charcoal);padding:44px 36px;}
+.obj-num{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:64px;font-weight:500;
+  color:rgba(207,192,163,0.1);
+  line-height:1;margin-bottom:20px;
+  letter-spacing:-0.04em;
+}
+.obj-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:20px;font-weight:500;
+  color:var(--white);margin-bottom:14px;
+  line-height:1.15;letter-spacing:-0.015em;
+}
+.obj-desc{font-size:13px;line-height:1.75;color:rgba(244,241,234,0.5);font-weight:300;}
+
+/* ── EXECUTION ── */
+.execution-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--ash);
+  margin-top:64px;
+}
+.exec-card{
+  background:var(--charcoal);
+  padding:40px 36px;
+  border-bottom:2px solid transparent;
+  transition:border-color 0.25s,background 0.25s;
+}
+.exec-card:hover{background:var(--card);border-bottom-color:var(--sand);}
+.exec-num{
+  font-size:9px;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:20px;font-weight:500;
+}
+.exec-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:18px;font-weight:500;
+  color:var(--white);margin-bottom:12px;
+  letter-spacing:-0.01em;line-height:1.2;
+}
+.exec-desc{font-size:13px;line-height:1.75;color:rgba(244,241,234,0.5);font-weight:300;}
+
+/* ── PHONES ── */
+.phones-section{
+  background:var(--charcoal);
+  padding:112px 0;
+  border-top:1px solid var(--ash);
+  border-bottom:1px solid var(--ash);
+  overflow:hidden;
+}
+.phones-inner{max-width:1380px;margin:0 auto;padding:0 60px;}
+.phones-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:72px;
+}
+.phones-note{
+  font-size:13px;color:var(--fog);
+  max-width:320px;text-align:right;
+  line-height:1.75;font-weight:300;
+}
+.phones-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:16px;align-items:end;
+}
+.phone-wrap{
+  display:flex;flex-direction:column;align-items:center;
+  transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.phone-wrap:hover{transform:translateY(-10px) scale(1.02)}
+.phone-wrap:nth-child(2){margin-top:28px}
+.phone-wrap:nth-child(4){margin-top:44px}
 
 .phone{
-  width:100%;max-width:180px;
+  width:100%;max-width:176px;
   aspect-ratio:9/19.5;
-  background:#0a0a0a;
-  border-radius:32px;
-  border:2px solid rgba(255,255,255,0.12);
-  box-shadow:0 0 0 1px rgba(0,0,0,0.8),0 24px 48px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.06);
+  background:var(--ink);
+  border-radius:30px;
+  border:2px solid rgba(255,255,255,0.1);
+  box-shadow:0 0 0 1px rgba(0,0,0,0.8),0 24px 56px rgba(0,0,0,0.55),inset 0 1px 0 rgba(255,255,255,0.05);
   overflow:hidden;
   position:relative;
+  cursor:pointer;
 }
 .phone::before{
-  content:'';
-  position:absolute;top:10px;left:50%;
+  content:'';position:absolute;top:10px;left:50%;
   transform:translateX(-50%);
-  width:60px;height:5px;
-  background:rgba(255,255,255,0.08);
+  width:56px;height:5px;
+  background:rgba(255,255,255,0.07);
   border-radius:3px;z-index:10;
 }
 
-/* VIMEO inside phone — extend iframe beyond bottom to clip controls */
-.phone .vimeo-wrap{
-  position:absolute;
-  top:0;left:0;right:0;
-  bottom:-48px; /* push past phone edge to hide controls */
+.vimeo-wrap{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  background-color:var(--ink);
   overflow:hidden;
 }
-.phone .vimeo-wrap iframe{
-  position:absolute;
-  top:0;left:50%;
-  width:200%;
-  height:100%;
-  transform:translateX(-50%);
-  border:none;
-  pointer-events:none;
+.vimeo-wrap iframe{
+  position:absolute;top:50%;left:50%;
+  width:200%;height:100%;
+  transform:translate(-50%,-50%);
+  border:none;pointer-events:none;
 }
+
+.phone-tint{
+  position:absolute;inset:0;
+  background:rgba(0,0,0,0);
+  transition:background 0.25s;
+  z-index:3;pointer-events:none;
+}
+.phone.hovered .phone-tint{background:rgba(0,0,0,0.2);}
+
+.play-btn{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-58%);
+  width:48px;height:48px;
+  border-radius:50%;
+  background:rgba(207,192,163,0.92);
+  display:flex;align-items:center;justify-content:center;
+  z-index:8;
+  opacity:0;
+  transition:opacity 0.22s,transform 0.22s;
+  cursor:pointer;pointer-events:none;
+}
+.play-btn::after{
+  content:'';width:0;height:0;
+  border-style:solid;
+  border-width:8px 0 8px 14px;
+  border-color:transparent transparent transparent var(--ink);
+  margin-left:3px;
+}
+.phone.hovered:not(.playing) .play-btn{
+  opacity:1;pointer-events:auto;
+  transform:translate(-50%,-50%);
+}
+.play-btn:hover{background:var(--linen);}
+
+.pause-btn{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:44px;height:44px;
+  border-radius:50%;
+  background:rgba(8,8,8,0.5);
+  backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;
+  gap:5px;z-index:8;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.2s;cursor:pointer;
+}
+.pause-btn span{display:block;width:3px;height:14px;background:var(--white);border-radius:2px;}
+.phone.playing.hovered .pause-btn{opacity:1;pointer-events:auto;}
 
 .phone-overlay{
   position:absolute;bottom:0;left:0;right:0;
-  padding:16px 14px 24px;
-  background:linear-gradient(transparent,rgba(0,0,0,0.92));
-  display:flex;flex-direction:column;gap:5px;
-  z-index:5;
+  padding:14px 13px 22px;
+  background:linear-gradient(transparent,rgba(8,8,8,0.9));
+  display:flex;flex-direction:column;gap:4px;
+  z-index:5;pointer-events:none;
 }
 .phone-content-tag{
-  font-family:'DM Mono',monospace;
-  font-size:7px;letter-spacing:0.12em;
-  color:rgba(255,255,255,0.5);text-transform:uppercase;
-  background:rgba(0,0,0,0.4);
-  padding:3px 7px;border-radius:2px;width:fit-content;
+  font-family:'Archivo',sans-serif;
+  font-size:7px;letter-spacing:0.16em;
+  color:rgba(244,241,234,0.45);text-transform:uppercase;
+  background:rgba(0,0,0,0.35);
+  padding:3px 7px;width:fit-content;
 }
-.phone-title-text{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:var(--white);line-height:1.3;}
-.phone-gold-bar{width:28px;height:2px;background:var(--gold);margin-top:4px;}
-.phone-label{margin-top:16px;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.12em;color:var(--gray);text-transform:uppercase;text-align:center;}
+.phone-title-text{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:11px;font-weight:500;
+  color:var(--white);line-height:1.3;
+  letter-spacing:-0.01em;
+}
+.phone-sand-bar{width:24px;height:1.5px;background:var(--sand);margin-top:4px;}
+.phone-label{
+  margin-top:14px;
+  font-size:8px;letter-spacing:0.16em;
+  color:var(--fog);text-transform:uppercase;
+  text-align:center;font-family:'Archivo',sans-serif;
+}
 
-/* EXECUTION */
-.execution-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
-.exec-card{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:32px;transition:border-color 0.25s;}
-.exec-card:hover{border-color:var(--gold-border)}
-.exec-icon{width:40px;height:40px;border-radius:8px;background:var(--gold-dim);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:18px;}
-.exec-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:10px;}
-.exec-desc{font-size:13px;line-height:1.65;color:var(--gray-dim);}
+/* ── UNIT GALLERY ── */
+.gallery-section{
+  border-top:1px solid var(--ash);
+  border-bottom:1px solid var(--ash);
+  padding:112px 0;
+}
+.gallery-inner{max-width:1280px;margin:0 auto;padding:0 60px;}
+.gallery-photos{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2px;margin-top:64px;
+}
+.gallery-photo{position:relative;overflow:hidden;background:var(--charcoal);}
+.gallery-photo img{
+  width:100%;display:block;
+  transition:transform 0.5s ease;
+  aspect-ratio:16/10;object-fit:cover;
+}
+.gallery-photo:hover img{transform:scale(1.03);}
+.photo-label{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:16px 20px;
+  background:linear-gradient(transparent,rgba(8,8,8,0.75));
+}
+.floorplan-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2px;margin-top:2px;
+}
+.floorplan-card{
+  background:var(--charcoal);
+  overflow:hidden;
+  position:relative;
+}
+.floorplan-card img{
+  width:100%;display:block;
+  aspect-ratio:16/9;object-fit:cover;
+  transition:transform 0.4s ease;
+}
+.floorplan-card:hover img{transform:scale(1.02);}
+.fp-label{
+  padding:16px 20px;
+  background:var(--card);
+  border-top:1px solid var(--ash);
+}
 
-/* METRICS */
-.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;}
-.metric-card{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:36px;}
+/* ── METRICS ── */
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--ash);margin-top:64px;}
+.metric-card{background:var(--charcoal);padding:44px 40px;}
 .metric-card.wide{grid-column:span 2}
-.metric-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;}
-.metric-number{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:var(--white);line-height:1;margin-bottom:6px;}
-.metric-desc{font-size:13px;line-height:1.6;color:var(--gray-dim);margin-top:8px;}
-.metric-benchmark{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:var(--gold);background:var(--gold-dim);border:1px solid var(--gold-border);padding:4px 10px;border-radius:2px;}
+.metric-label{
+  font-size:9px;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:14px;font-weight:500;
+}
+.metric-number{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:60px;font-weight:500;
+  color:var(--white);line-height:0.9;
+  letter-spacing:-0.04em;
+  margin-bottom:8px;
+}
+.metric-unit{font-size:22px;color:var(--fog);letter-spacing:-0.02em;}
+.metric-desc{font-size:13px;line-height:1.7;color:rgba(244,241,234,0.5);margin-top:10px;font-weight:300;}
+.metric-bench{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:14px;
+  font-size:9px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--sand);
+  background:var(--sand-dim);
+  border:1px solid var(--sand-border);
+  padding:4px 12px;
+  font-weight:500;
+}
 
 /* FUNNEL */
-.funnel{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-top:24px;}
-.funnel-step{background:var(--off-black);border:1px solid rgba(255,255,255,0.08);border-radius:3px;padding:16px 20px;flex:1;min-width:0;text-align:center;}
-.funnel-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white);}
-.funnel-sub{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:0.12em;color:var(--gray);text-transform:uppercase;margin-top:3px;}
-.funnel-rate{font-family:'DM Mono',monospace;font-size:8px;color:var(--gold);margin-top:4px;}
-.funnel-arrow{font-size:12px;color:var(--gold);flex-shrink:0;opacity:0.6;}
+.funnel{display:flex;align-items:center;flex-wrap:wrap;gap:2px;margin-top:28px;}
+.funnel-step{
+  background:var(--card);border:1px solid var(--ash);
+  padding:18px 20px;flex:1;min-width:0;text-align:center;
+}
+.funnel-num{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:24px;font-weight:500;color:var(--white);
+  letter-spacing:-0.02em;
+}
+.funnel-sub{font-size:8px;letter-spacing:0.16em;color:var(--fog);text-transform:uppercase;margin-top:4px;}
+.funnel-rate{font-size:8px;color:var(--sand);margin-top:3px;}
+.funnel-arrow{font-size:11px;color:var(--ash);flex-shrink:0;}
 
-/* VALIDATION */
-.validation{background:var(--off-black);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border);padding:100px 48px;text-align:center;position:relative;overflow:hidden;}
-.validation::before{content:'$130M';position:absolute;font-family:'Playfair Display',serif;font-size:320px;font-weight:900;color:rgba(201,168,76,0.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;}
-.validation-inner{max-width:760px;margin:0 auto;position:relative}
-.validation-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;opacity:0.85;}
-.validation-number{font-family:'Playfair Display',serif;font-size:clamp(56px,9vw,120px);font-weight:900;line-height:1;color:var(--gold);margin-bottom:8px;}
-.validation-title{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,28px);color:var(--white);font-style:italic;margin-bottom:28px;line-height:1.3;}
-.validation-desc{font-size:15px;line-height:1.75;color:var(--gray-dim);}
-.validation-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:32px;}
-.v-tag{padding:6px 16px;border-radius:2px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;color:var(--gold);text-transform:uppercase;background:var(--gold-dim);border:1px solid var(--gold-border);}
+/* ── VALIDATION ── */
+.validation{
+  background:var(--charcoal);
+  border-top:1px solid var(--sand-border);
+  border-bottom:1px solid var(--sand-border);
+  padding:120px 60px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.validation::before{
+  content:'$130M';
+  position:absolute;
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:340px;font-weight:500;
+  color:rgba(207,192,163,0.03);
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  white-space:nowrap;pointer-events:none;
+  letter-spacing:-0.05em;
+}
+.validation-inner{max-width:800px;margin:0 auto;position:relative;}
+.val-eyebrow{font-size:9px;letter-spacing:0.28em;color:var(--sand);text-transform:uppercase;margin-bottom:28px;font-weight:500;}
+.val-number{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:clamp(64px,10vw,128px);font-weight:500;
+  line-height:0.9;color:var(--sand);
+  letter-spacing:-0.05em;margin-bottom:10px;
+}
+.val-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:clamp(18px,2.5vw,28px);font-weight:400;
+  color:var(--linen);font-style:italic;
+  margin-bottom:32px;line-height:1.3;
+  letter-spacing:-0.02em;
+}
+.val-desc{font-size:14px;line-height:1.8;color:rgba(244,241,234,0.55);font-weight:300;}
+.val-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:36px;}
+.v-tag{
+  padding:5px 14px;
+  font-size:9px;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--sand);
+  background:var(--sand-dim);
+  border:1px solid var(--sand-border);
+  font-weight:500;
+}
 
-/* TAKEAWAYS */
-.takeaways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;margin-top:48px;}
-.takeaway{background:var(--off-black);padding:40px 32px;}
-.takeaway-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
-.takeaway-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px;line-height:1.25;}
-.takeaway-desc{font-size:13px;line-height:1.65;color:var(--gray-dim);}
+/* ── TAKEAWAYS ── */
+.takeaways-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--ash);margin-top:64px;
+}
+.takeaway{background:var(--charcoal);padding:44px 36px;}
+.tw-num{font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--sand);margin-bottom:18px;font-weight:500;}
+.tw-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:19px;font-weight:500;
+  color:var(--white);margin-bottom:14px;line-height:1.2;
+  letter-spacing:-0.01em;
+}
+.tw-desc{font-size:13px;line-height:1.75;color:rgba(244,241,234,0.5);font-weight:300;}
 
-/* CLOSE */
-.close-section{text-align:center;padding:120px 48px;max-width:800px;margin:0 auto;}
-.close-mark{font-family:'Playfair Display',serif;font-size:72px;font-weight:900;color:var(--gold);opacity:0.15;line-height:1;margin-bottom:-20px;}
-.close-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;color:var(--white);margin-bottom:20px;letter-spacing:-0.02em;}
-.close-body{font-size:15px;line-height:1.75;color:var(--gray-dim);margin-bottom:40px;}
-.close-cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);padding:16px 36px;border-radius:2px;font-size:13px;font-weight:600;letter-spacing:0.06em;text-decoration:none;text-transform:uppercase;transition:background 0.2s,transform 0.15s;}
-.close-cta:hover{background:var(--gold-light);transform:translateY(-2px)}
+/* ── CLOSE ── */
+.close-section{text-align:center;padding:128px 60px;max-width:760px;margin:0 auto;}
+.close-mark{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:80px;font-weight:500;
+  color:var(--sand);opacity:0.1;
+  line-height:1;margin-bottom:-24px;
+  letter-spacing:-0.06em;
+}
+.close-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:clamp(28px,4vw,52px);font-weight:500;
+  line-height:1.05;color:var(--white);
+  margin-bottom:22px;letter-spacing:-0.035em;
+}
+.close-body{font-size:15px;line-height:1.78;color:rgba(244,241,234,0.5);margin-bottom:44px;font-weight:300;}
+.close-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--sand);color:var(--ink);
+  padding:15px 36px;
+  font-family:'Archivo',sans-serif;
+  font-size:10px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;
+  transition:background 0.2s,transform 0.15s;
+}
+.close-cta:hover{background:var(--linen);transform:translateY(-2px);}
 
-/* FOOTER */
-footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-.footer-brand{font-family:'Playfair Display',serif;font-size:13px;letter-spacing:0.1em;color:var(--gold-muted);}
-.footer-info{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:var(--gray);}
-.disclaimer{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.06em;color:var(--gray);opacity:0.6;line-height:1.7;padding-top:32px;border-top:1px solid rgba(255,255,255,0.04);margin-top:32px;}
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--ash);
+  padding:28px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-brand{font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--fog);font-weight:500;}
+.footer-info{font-size:10px;letter-spacing:0.1em;color:var(--ash);}
 
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+/* ── DISCLAIMER ── */
+.disclaimer{
+  font-size:10px;letter-spacing:0.04em;
+  color:var(--fog);opacity:0.55;
+  line-height:1.7;
+  padding-top:28px;
+  border-top:1px solid var(--ash);
+  margin-top:28px;font-weight:300;
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .reveal.in{opacity:1;transform:translateY(0)}
-.reveal-d1{transition-delay:0.1s}.reveal-d2{transition-delay:0.2s}.reveal-d3{transition-delay:0.3s}.reveal-d4{transition-delay:0.4s}
+.d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}
 
-/* RESPONSIVE */
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;}
+  .phone-wrap:hover{transform:none;}
+  .gallery-photo:hover img,.floorplan-card:hover img{transform:none;}
+}
+
+/* ── RESPONSIVE ── */
 @media(max-width:1024px){
   .phones-grid{grid-template-columns:repeat(3,1fr)}
   .phone-wrap:nth-child(2),.phone-wrap:nth-child(4){margin-top:0}
 }
 @media(max-width:900px){
-  nav{padding:16px 24px}
-  .hero-content{padding:0 24px 60px}
+  nav{padding:16px 28px}
+  .hero-content{padding:0 28px 72px}
+  .section,.section-sm,.gallery-inner,.phones-inner,.portal-inner{padding-left:28px;padding-right:28px}
+  .section{padding-top:80px;padding-bottom:80px}
   .hero-stats{flex-wrap:wrap;gap:24px}
-  .hero-stat{border-right:none;padding-right:0;margin-right:0;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px}
+  .hero-stat{border-right:none;padding-right:0;margin-right:0;border-bottom:1px solid var(--ash);padding-bottom:16px}
   .hero-stat:last-child{border-bottom:none}
-  .section{padding:72px 24px}
-  .overview-grid,.situation-grid,.objectives,.execution-grid,.metrics-grid,.takeaways-grid{grid-template-columns:1fr}
+  .overview-grid,.portal-grid,.situation-grid,.objectives,.execution-grid,.metrics-grid,.takeaways-grid,.gallery-photos,.floorplan-grid{grid-template-columns:1fr}
   .metric-card.wide{grid-column:auto}
   .phones-grid{grid-template-columns:repeat(2,1fr)}
   .phones-header{flex-direction:column;gap:16px}
   .phones-note{text-align:left}
-  .validation{padding:72px 24px}
-  footer{flex-direction:column;text-align:center;padding:24px}
+  .validation,.close-section{padding-left:28px;padding-right:28px}
+  footer{flex-direction:column;text-align:center;padding:24px 28px}
 }
 @media(max-width:520px){
   .phones-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-title{font-size:36px}
+  .hero-title{font-size:48px}
+  .sec-title{font-size:32px}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="../index.html" class="nav-brand">CC Studios</a>
-  <span class="nav-breadcrumb">Case Study / Real Estate</span>
+  <span class="nav-crumb">Case Study — Real Estate</span>
   <a href="mailto:ccsaigemills@gmail.com" class="nav-cta">Work Together</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="assets/videos/gardens-hero.mp4" type="video/mp4">
+  </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">CC Studios · Narrative Infrastructure · 2024–2025</div>
     <h1 class="hero-title">The Gardens<br><em>Residences</em></h1>
-    <div class="hero-client">Omega Real Estate Management Group · North Miami, FL</div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="stat-number">70%</div><div class="stat-label">Occupancy Achieved</div></div>
       <div class="hero-stat"><div class="stat-number">6mo</div><div class="stat-label">Retained Engagement</div></div>
@@ -342,29 +756,29 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
   </div>
 </section>
 
+<!-- OVERVIEW -->
 <section class="section reveal">
-  <div class="eyebrow">Overview</div>
+  <div class="sec-label">Overview <span>The Gardens Residences · North Miami, FL</span></div>
   <div class="overview-grid">
     <div>
-      <h2 class="section-title">Engineering the<br><em>Digital Pipeline</em></h2>
+      <h2 class="sec-title">Engineering the<br><em>Digital Pipeline</em></h2>
       <p class="body-text">This case study details the digital transformation and go-to-market strategy for The Gardens Residences — a 9-story, 358-unit Class-A multifamily development in North Miami, FL. Backed by a $15 million North Miami CRA subsidy, the project serves as Phase 1 of Omega RMG's vision to transform seven contiguous acres of downtown into a live-work-play district.</p>
       <p class="body-text" style="margin-top:20px">While Omega possessed deep community roots and a compelling local narrative, the asset faced one critical bottleneck as it neared completion: a digital infrastructure gap. This study examines how CC Studios engineered the consumer-facing architecture required to bridge that gap and execute an accelerated leasing launch.</p>
       <div class="tag-row">
         <span class="tag">Real Estate</span>
         <span class="tag">Narrative Infrastructure</span>
         <span class="tag">Go-To-Market</span>
-        <span class="tag">Digital Build</span>
         <span class="tag">North Miami CRA</span>
       </div>
     </div>
     <div>
-      <div class="overview-callout reveal reveal-d2">
+      <div class="callout reveal d2">
         <div class="callout-label">The Core Insight</div>
         <p class="callout-text">"CC Studios did not create the story. We engineered the digital pipeline that allowed Omega's community equity to scale."</p>
       </div>
-      <div class="overview-callout reveal reveal-d3" style="margin-top:16px;background:rgba(255,255,255,0.02);border-color:rgba(255,255,255,0.08)">
-        <div class="callout-label">Scope of Engagement</div>
-        <p style="font-size:13px;line-height:1.7;color:var(--gray-dim)">Consumer portal development · Content production · On-site embedded production · Investor-facing materials · Go-to-market strategy · District narrative architecture</p>
+      <div class="scope-block reveal d3">
+        <div class="callout-label" style="margin-bottom:14px;">Scope of Engagement</div>
+        <p style="font-size:13px;line-height:1.8;color:rgba(244,241,234,0.55);font-weight:300;">Consumer portal development · Content production · On-site embedded production · Investor-facing materials · Go-to-market strategy · District narrative architecture</p>
       </div>
     </div>
   </div>
@@ -372,36 +786,82 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
 
 <hr class="divider">
 
+<!-- SITUATION -->
 <section class="section reveal">
-  <div class="eyebrow">01 · The Situation</div>
-  <h2 class="section-title">Digital Infrastructure Gap,<br><em>Not Identity Gap</em></h2>
-  <p class="body-text">By late 2024, physical construction was finalizing and Omega had secured a $103 million take-out loan as the property neared its certificate of occupancy. A rich, community-centric story already existed — Omega had hosted regional job fairs, launched a 38-unit affordable housing lottery with the North Miami CRA, and earned $15 million in public subsidy.</p>
-  <p class="body-text" style="margin-top:16px">The asset did not lack an identity. It lacked a direct-to-consumer vehicle.</p>
+  <div class="sec-label">01 — The Situation <span>Digital Infrastructure Gap, Not Identity Gap</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+    <div>
+      <h2 class="sec-title">The asset did not<br>lack an identity.<br><em>It lacked a vehicle.</em></h2>
+    </div>
+    <div>
+      <p class="body-text">By late 2024, physical construction was finalizing and Omega had secured a $103 million take-out loan as the property neared its certificate of occupancy. A rich, community-centric story already existed — Omega had hosted regional job fairs, launched a 38-unit affordable housing lottery with the North Miami CRA, and earned $15 million in public subsidy.</p>
+      <p class="body-text" style="margin-top:20px">Without a consumer-facing digital platform, there was no scalable mechanism to capture regional rental demand, educate prospects, or convert traffic into active pre-leases.</p>
+    </div>
+  </div>
   <div class="situation-grid">
-    <div class="situation-card reveal reveal-d1"><h4>The Backend Silo</h4><p>Property details, pricing, and leasing mechanics existed exclusively inside AppFolio — a property management database invisible to public search engines and organic web traffic.</p></div>
-    <div class="situation-card reveal reveal-d2"><h4>The Missing Conduit</h4><p>Omega's community-first story and master-plan vision lived offline in civic meetings and press releases, with no searchable consumer touchpoint online.</p></div>
-    <div class="situation-card reveal reveal-d3"><h4>The Strategic Challenge</h4><p>Without a consumer-facing digital platform, there was no scalable mechanism to capture regional rental demand, educate prospects, or convert traffic into active pre-leases.</p></div>
-    <div class="situation-card reveal reveal-d4"><h4>The Opportunity</h4><p>A 358-unit development with CRA backing, Brightline transit proximity, Vice City Bean in the lobby, and a 7-acre master plan — all waiting for a channel to carry it.</p></div>
+    <div class="situation-card reveal d1"><div class="sit-label">The Backend Silo</div><p class="sit-text">Property details, pricing, and leasing mechanics existed exclusively inside AppFolio — a property management database invisible to public search engines and organic web traffic.</p></div>
+    <div class="situation-card reveal d2"><div class="sit-label">The Missing Conduit</div><p class="sit-text">Omega's community-first story and master-plan vision lived offline in civic meetings and press releases, with no searchable consumer touchpoint online.</p></div>
+    <div class="situation-card reveal d3"><div class="sit-label">The Strategic Challenge</div><p class="sit-text">Without a consumer-facing digital platform, there was no scalable mechanism to capture regional rental demand, educate prospects, or convert traffic into pre-leases.</p></div>
+    <div class="situation-card reveal d4"><div class="sit-label">The Opportunity</div><p class="sit-text">A 358-unit development with CRA backing, Brightline transit proximity, Vice City Bean in the lobby, and a 7-acre master plan — waiting for a channel to carry it.</p></div>
   </div>
 </section>
 
-<hr class="divider">
+<!-- PORTAL EVIDENCE -->
+<div class="portal-section">
+  <div class="portal-inner">
+    <div class="sec-label reveal" style="border-color:var(--ash)">The Infrastructure Built <span>Consumer Portal · AppFolio Integration</span></div>
+    <div class="portal-grid">
+      <div class="reveal d1">
+        <div class="portal-frame">
+          <div class="portal-bar">
+            <div class="portal-dot" style="background:#FF5F57"></div>
+            <div class="portal-dot" style="background:#FEBC2E"></div>
+            <div class="portal-dot" style="background:#28C840"></div>
+            <div class="portal-url">gardensresidences.com / available-units</div>
+          </div>
+          <img class="portal-img" src="assets/images/portal-screenshot.jpg" alt="The Gardens Residences consumer portal showing live unit listings, AppFolio integration, and direct-to-lease conversion pipeline">
+        </div>
+      </div>
+      <div class="portal-annotations reveal d2">
+        <div class="annotation">
+          <div class="ann-num">Signal 01</div>
+          <div class="ann-title">Real-Time Inventory Feed</div>
+          <p class="ann-text">AppFolio's backend data — live pricing, unit availability, and bed/bath configurations — surfaced directly to prospective tenants in real time. No middleware, no stale listings.</p>
+        </div>
+        <div class="annotation">
+          <div class="ann-num">Signal 02</div>
+          <div class="ann-title">Direct-to-Lease Pipeline</div>
+          <p class="ann-text">Prospects moved from high-level district storytelling directly into the leasing application. The "Apply Now" CTA reduced friction between awareness and commitment.</p>
+        </div>
+        <div class="annotation">
+          <div class="ann-num">Signal 03</div>
+          <div class="ann-title">Institutional Credibility Layer</div>
+          <p class="ann-text">The North Miami CRA logo, Omega branding, and Verkada partnership were surfaced in the footer — signaling public-private partnership credibility to both consumer and institutional audiences.</p>
+        </div>
+        <div class="technical-note">
+          <div class="tech-label">Technical Architecture</div>
+          <p class="tech-text">We wrapped AppFolio's data layer inside an SEO-indexed static front end — ensuring individual floor plans ranked in local search while maintaining real-time inventory sync.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- OBJECTIVES -->
 <section class="section reveal">
-  <div class="eyebrow">02 · Strategic Objectives</div>
-  <h2 class="section-title">Three Mandates.<br><em>One Pipeline.</em></h2>
+  <div class="sec-label">02 — Strategic Objectives <span>Three Mandates. One Pipeline.</span></div>
   <div class="objectives">
-    <div class="objective reveal reveal-d1">
+    <div class="objective reveal d1">
       <div class="obj-num">01</div>
       <div class="obj-title">Create Narrative Infrastructure</div>
       <p class="obj-desc">The physical asset was complete. The market-facing infrastructure was not. Before a single unit could be leased at scale, the development needed a consumer-facing identity capable of carrying Omega's story beyond civic meetings and press releases.</p>
     </div>
-    <div class="objective reveal reveal-d2">
+    <div class="objective reveal d2">
       <div class="obj-num">02</div>
       <div class="obj-title">Accelerate Lease-Up Velocity</div>
       <p class="obj-desc">With narrative infrastructure established, the goal was conversion — building an organic pipeline of pre-leasing applications to reduce post-occupancy vacancy and protect the asset's capital structure.</p>
     </div>
-    <div class="objective reveal reveal-d3">
+    <div class="objective reveal d3">
       <div class="obj-num">03</div>
       <div class="obj-title">Bridge Community and Commerce</div>
       <p class="obj-desc">Align the luxury project's public narrative with its CRA mandate — ensuring the community it was built inside could access, understand, and believe in what was being developed on their behalf.</p>
@@ -409,83 +869,88 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
   </div>
 </section>
 
-<!-- PHONES — 5 VIMEO SCREENS -->
+<!-- PHONES -->
 <div class="phones-section">
   <div class="phones-inner">
     <div class="phones-header">
       <div>
-        <div class="eyebrow">Narrative as Operational Capital</div>
-        <h2 class="section-title" style="margin-bottom:0">Documentation<br><em>that De-Risks Assets.</em></h2>
+        <div class="sec-label reveal" style="border-color:var(--ash);margin-bottom:24px;">Narrative as Operational Capital</div>
+        <h2 class="sec-title reveal" style="margin-bottom:0">Documentation<br><em>that De-Risks Assets.</em></h2>
       </div>
-      <p class="phones-note">Every asset served a dual function — consumer acquisition and institutional documentation. Embedded on-site, CC Studios built a technical proof of record that supports multi-million dollar refinance applications.</p>
+      <p class="phones-note reveal">Every asset served a dual function — consumer acquisition and institutional documentation. Embedded on-site, CC Studios built a technical proof of record that supports multi-million dollar refinance applications.</p>
     </div>
     <div class="phones-grid">
 
-      <div class="phone-wrap reveal reveal-d1">
-        <div class="phone">
-          <div class="vimeo-wrap">
-            <iframe src="https://player.vimeo.com/video/1199271415?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-          </div>
+      <div class="phone-wrap reveal d1">
+        <div class="phone" data-vimeo="1199271415">
+          <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
+          <div class="play-btn"></div>
+          <div class="pause-btn"><span></span><span></span></div>
           <div class="phone-overlay">
             <div class="phone-content-tag">DESIGN · CURATION</div>
             <div class="phone-title-text">The Architectural<br>Narrative</div>
-            <div class="phone-gold-bar"></div>
+            <div class="phone-sand-bar"></div>
           </div>
         </div>
         <div class="phone-label">Architectural Curation</div>
       </div>
 
-      <div class="phone-wrap reveal reveal-d2">
-        <div class="phone">
-          <div class="vimeo-wrap">
-            <iframe src="https://player.vimeo.com/video/1199271418?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-          </div>
+      <div class="phone-wrap reveal d2">
+        <div class="phone" data-vimeo="1199271418">
+          <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
+          <div class="play-btn"></div>
+          <div class="pause-btn"><span></span><span></span></div>
           <div class="phone-overlay">
             <div class="phone-content-tag">INTERIOR · AMENITY</div>
             <div class="phone-title-text">The Resident<br>Experience</div>
-            <div class="phone-gold-bar"></div>
+            <div class="phone-sand-bar"></div>
           </div>
         </div>
         <div class="phone-label">Amenity Documentation</div>
       </div>
 
-      <div class="phone-wrap reveal reveal-d3">
-        <div class="phone">
-          <div class="vimeo-wrap">
-            <iframe src="https://player.vimeo.com/video/1199271417?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-          </div>
+      <div class="phone-wrap reveal d3">
+        <div class="phone" data-vimeo="1199271417">
+          <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
+          <div class="play-btn"></div>
+          <div class="pause-btn"><span></span><span></span></div>
           <div class="phone-overlay">
             <div class="phone-content-tag">TECHNICAL · ASSET</div>
             <div class="phone-title-text">Noise Mitigation<br>Proof</div>
-            <div class="phone-gold-bar"></div>
+            <div class="phone-sand-bar"></div>
           </div>
         </div>
         <div class="phone-label">Technical Specification</div>
       </div>
 
-      <div class="phone-wrap reveal reveal-d4">
-        <div class="phone">
-          <div class="vimeo-wrap">
-            <iframe src="https://player.vimeo.com/video/1199271416?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-          </div>
+      <div class="phone-wrap reveal d4">
+        <div class="phone" data-vimeo="1199271416">
+          <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
+          <div class="play-btn"></div>
+          <div class="pause-btn"><span></span><span></span></div>
           <div class="phone-overlay">
             <div class="phone-content-tag">PARTNER · ALIGNMENT</div>
             <div class="phone-title-text">Supply Chain<br>Integration</div>
-            <div class="phone-gold-bar"></div>
+            <div class="phone-sand-bar"></div>
           </div>
         </div>
         <div class="phone-label">Natura · Mark Jackson</div>
       </div>
 
-      <div class="phone-wrap reveal reveal-d4">
-        <div class="phone">
-          <div class="vimeo-wrap">
-            <iframe src="https://player.vimeo.com/video/1199271451?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-          </div>
+      <div class="phone-wrap reveal d4">
+        <div class="phone" data-vimeo="1199271451">
+          <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
+          <div class="play-btn"></div>
+          <div class="pause-btn"><span></span><span></span></div>
           <div class="phone-overlay">
             <div class="phone-content-tag">FLOOR PLAN · INVENTORY</div>
             <div class="phone-title-text">The Full<br>Offering</div>
-            <div class="phone-gold-bar"></div>
+            <div class="phone-sand-bar"></div>
           </div>
         </div>
         <div class="phone-label">Unit Mix · All Floor Plans</div>
@@ -495,78 +960,134 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
   </div>
 </div>
 
+<!-- STRATEGY & EXECUTION -->
 <section class="section reveal">
-  <div class="eyebrow">03 · Strategy & Execution</div>
-  <h2 class="section-title">From Software Silo<br><em>to Digital Asset</em></h2>
-  <p class="body-text">CC Studios operated as an embedded production partner — physically present on-site through construction phases, model unit completion, and early occupancy. The work spanned consumer portal development, investor-facing materials, on-site content production, and district-level brand architecture.</p>
+  <div class="sec-label">03 — Strategy & Execution <span>From Software Silo to Digital Asset</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:64px;">
+    <h2 class="sec-title">How we built<br><em>the pipeline.</em></h2>
+    <p class="body-text">CC Studios operated as an embedded production partner — physically present on-site through construction phases, model unit completion, and early occupancy. The work spanned consumer portal development, investor-facing materials, on-site content production, and district-level brand architecture.</p>
+  </div>
   <div class="execution-grid">
-    <div class="exec-card reveal reveal-d1"><div class="exec-icon">🏗</div><div class="exec-title">Consumer Portal Development</div><p class="exec-desc">Built and launched the official consumer-facing web portal, integrated with AppFolio's native embed tools to serve real-time pricing, live unit availability, and interactive floor plans directly to prospective tenants.</p></div>
-    <div class="exec-card reveal reveal-d2"><div class="exec-icon">📍</div><div class="exec-title">Go-To-Market Optimization</div><p class="exec-desc">Architected local discovery strategy optimized for hyper-localized search terms, intercepting rental demand that internal management databases could not reach. Synthesized Omega's milestones — CRA lottery, Brightline proximity, district vision — into a single cohesive digital narrative.</p></div>
-    <div class="exec-card reveal reveal-d3"><div class="exec-icon">🎬</div><div class="exec-title">Embedded Content Production</div><p class="exec-desc">Technical documentation, team profiles, unit walkthroughs, and partner integrations — all captured in the field. Service elevators, construction floors, model units. CC Studios was a grassroots participant, not an agency at arm's length.</p></div>
-    <div class="exec-card reveal reveal-d1"><div class="exec-icon">🏙</div><div class="exec-title">Digitizing the District Vision</div><p class="exec-desc">The platform was built to sell the future Gardens District — Vice City Bean in the lobby, The Hall food hall, the Gardens Cre8tive Center, and the incoming Brightline station — positioning the building as the anchor of an emerging neighborhood.</p></div>
-    <div class="exec-card reveal reveal-d2"><div class="exec-icon">📊</div><div class="exec-title">Investor-Facing Materials</div><p class="exec-desc">Behind-the-brand coverage documenting the development team's diversity, expertise, and community commitment. Assets designed to move institutional capital, not just consumer traffic.</p></div>
-    <div class="exec-card reveal reveal-d3"><div class="exec-icon">🤝</div><div class="exec-title">CRA Narrative Integration</div><p class="exec-desc">Ensured the $15M public subsidy story — the 38-unit affordable housing lottery, the community job fairs, the workforce housing mandate — was woven into the development's digital identity, building legitimacy with both residents and institutional stakeholders.</p></div>
+    <div class="exec-card reveal d1">
+      <div class="exec-num">01</div>
+      <div class="exec-title">Consumer Portal Development</div>
+      <p class="exec-desc">Built and launched the official consumer-facing web portal, integrated with AppFolio's native embed tools to serve real-time pricing, live unit availability, and interactive floor plans directly to prospective tenants.</p>
+    </div>
+    <div class="exec-card reveal d2">
+      <div class="exec-num">02</div>
+      <div class="exec-title">Go-To-Market Optimization</div>
+      <p class="exec-desc">Architected local discovery strategy optimized for hyper-localized search terms, intercepting rental demand that internal management databases could not reach. Synthesized Omega's milestones — CRA lottery, Brightline proximity, district vision — into a single cohesive digital narrative.</p>
+    </div>
+    <div class="exec-card reveal d3">
+      <div class="exec-num">03</div>
+      <div class="exec-title">Embedded Content Production</div>
+      <p class="exec-desc">Technical documentation, team profiles, unit walkthroughs, and partner integrations — all captured in the field. Service elevators, construction floors, model units. CC Studios was a grassroots participant, not an agency at arm's length.</p>
+    </div>
+    <div class="exec-card reveal d1">
+      <div class="exec-num">04</div>
+      <div class="exec-title">Digitizing the District Vision</div>
+      <p class="exec-desc">The platform was built to sell the future Gardens District — Vice City Bean in the lobby, The Hall food hall, the Gardens Cre8tive Center, and the incoming Brightline station — positioning the building as the anchor of an emerging neighborhood.</p>
+    </div>
+    <div class="exec-card reveal d2">
+      <div class="exec-num">05</div>
+      <div class="exec-title">Investor-Facing Materials</div>
+      <p class="exec-desc">Behind-the-brand coverage documenting the development team's diversity, expertise, and community commitment. Assets designed to move institutional capital, not just consumer traffic.</p>
+    </div>
+    <div class="exec-card reveal d3">
+      <div class="exec-num">06</div>
+      <div class="exec-title">CRA Narrative Integration</div>
+      <p class="exec-desc">The $15M public subsidy story — the 38-unit affordable housing lottery, the community job fairs, the workforce housing mandate — woven into the development's digital identity, building legitimacy with both residents and institutional stakeholders.</p>
+    </div>
   </div>
 </section>
 
-<hr class="divider">
+<!-- UNIT GALLERY -->
+<div class="gallery-section reveal">
+  <div class="gallery-inner">
+    <div class="sec-label">Production Evidence <span>Unit Photography · Floor Plans</span></div>
+    <div class="gallery-photos">
+      <div class="gallery-photo">
+        <img src="assets/images/unit-photo-01.jpg" alt="The Gardens Residences open-plan living and kitchen with floor-to-ceiling windows">
+        <div class="photo-label"><span class="label" style="color:rgba(244,241,234,0.6)">Open Plan Living · Natural Light</span></div>
+      </div>
+      <div class="gallery-photo">
+        <img src="assets/images/unit-photo-02.jpg" alt="The Gardens Residences kitchen with stainless appliances and city views">
+        <div class="photo-label"><span class="label" style="color:rgba(244,241,234,0.6)">Kitchen · Stainless Finish Package</span></div>
+      </div>
+    </div>
+    <div class="floorplan-grid">
+      <div class="floorplan-card">
+        <img src="assets/images/floorplan-b1s.jpg" alt="Apartment B-1S floor plan — 2 bedroom, 1022 sqft, levels 3–8">
+        <div class="fp-label">
+          <span class="label label-sand" style="font-size:9px">Apartment B-1S · Levels 3–8 · 1,022 sqft</span>
+        </div>
+      </div>
+      <div class="floorplan-card">
+        <img src="assets/images/floorplan-b1g.jpg" alt="Apartment B1-G floor plan — 2 bedroom ground level, 960 sqft">
+        <div class="fp-label">
+          <span class="label label-sand" style="font-size:9px">Apartment B1-G · Ground Level · 960 sqft</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- METRICS -->
 <section class="section reveal">
-  <div class="eyebrow">04 · Performance Outcomes</div>
-  <h2 class="section-title">The Numbers<br><em>Behind the Story</em></h2>
-  <p class="body-text">The following metrics represent a realistic reconstruction of campaign performance, based on verified lease outcomes from AppFolio records and standard web analytics cross-referenced against industry conversion benchmarks.</p>
+  <div class="sec-label">04 — Performance Outcomes <span>Realistic Reconstruction · Verified Lease Outcomes</span></div>
   <div class="metrics-grid">
-    <div class="metric-card reveal reveal-d1">
+    <div class="metric-card reveal d1">
       <div class="metric-label">Monthly Absorption Rate</div>
-      <div class="metric-number">~30<span style="font-size:24px;color:var(--gray);vertical-align:middle"> units/mo</span></div>
-      <div class="metric-desc">Achieved over the initial 6-month launch period — outperforming the South Florida Class-A market baseline of 15–20 units per month.</div>
-      <div class="metric-benchmark">↑ 1.5× Market Average</div>
+      <div class="metric-number">~30<span class="metric-unit"> units/mo</span></div>
+      <p class="metric-desc">Outperforming the South Florida Class-A market baseline of 15–20 units per month over the initial 6-month launch period.</p>
+      <div class="metric-bench">1.5× Market Average</div>
     </div>
-    <div class="metric-card reveal reveal-d2">
+    <div class="metric-card reveal d2">
       <div class="metric-label">Time to Full Stabilization</div>
-      <div class="metric-number">11–12<span style="font-size:24px;color:var(--gray);vertical-align:middle"> mo</span></div>
-      <div class="metric-desc">Projected full asset stabilization at 95% occupancy — a 20–35% reduction in vacancy carry-time versus the 14–18 month regional average for 350+ unit Class-A assets.</div>
-      <div class="metric-benchmark">↓ 35% vs. Market Timeline</div>
+      <div class="metric-number">11–12<span class="metric-unit"> mo</span></div>
+      <p class="metric-desc">Projected full stabilization at 95% occupancy — a 20–35% reduction versus the 14–18 month regional average for 350+ unit Class-A assets.</p>
+      <div class="metric-bench">35% Below Market Timeline</div>
     </div>
-    <div class="metric-card reveal reveal-d1">
+    <div class="metric-card reveal d1">
       <div class="metric-label">Organic Search Traffic Share</div>
-      <div class="metric-number">48<span style="font-size:36px;color:var(--gold)">%</span></div>
-      <div class="metric-desc">Of total website sessions originated from organic search — approximately double the industry average of 20–25% for comparable multifamily assets.</div>
-      <div class="metric-benchmark">2× Industry Organic Average</div>
+      <div class="metric-number">48<span class="metric-unit">%</span></div>
+      <p class="metric-desc">Of total website sessions originated from organic search — approximately double the industry average of 20–25% for comparable multifamily assets.</p>
+      <div class="metric-bench">2× Industry Organic Average</div>
     </div>
-    <div class="metric-card reveal reveal-d2">
+    <div class="metric-card reveal d2">
       <div class="metric-label">Estimated Marketing Cost Savings</div>
-      <div class="metric-number"><span style="font-size:36px;color:var(--gold)">$</span>65K</div>
-      <div class="metric-desc">Estimated avoided marketing costs by shifting 48% of lead generation to owned organic infrastructure at ~$95 CPL vs. $1,005 ILS-platform average.</div>
-      <div class="metric-benchmark">vs. Fully ILS-Dependent Model</div>
+      <div class="metric-number">$65<span class="metric-unit">K</span></div>
+      <p class="metric-desc">Estimated avoided marketing costs by shifting 48% of lead generation to owned organic infrastructure at ~$95 CPL vs. $1,005 ILS-platform average.</p>
+      <div class="metric-bench">vs. Fully ILS-Dependent Model</div>
     </div>
     <div class="metric-card wide reveal">
       <div class="metric-label">Digital Acquisition Funnel · 6-Month Window</div>
       <div class="funnel">
         <div class="funnel-step"><div class="funnel-num">10,000</div><div class="funnel-sub">Website Sessions</div></div>
         <div class="funnel-arrow">→</div>
-        <div class="funnel-step"><div class="funnel-num">1,000</div><div class="funnel-sub">Leads Generated</div><div class="funnel-rate">10% CR · 2× industry avg</div></div>
+        <div class="funnel-step"><div class="funnel-num">1,000</div><div class="funnel-sub">Leads Generated</div><div class="funnel-rate">10% CR — 2× industry avg</div></div>
         <div class="funnel-arrow">→</div>
-        <div class="funnel-step"><div class="funnel-num">180</div><div class="funnel-sub">Units Leased</div><div class="funnel-rate">18% Lead-to-Lease</div></div>
+        <div class="funnel-step"><div class="funnel-num">180</div><div class="funnel-sub">Units Leased</div><div class="funnel-rate">18% lead-to-lease</div></div>
         <div class="funnel-arrow">→</div>
-        <div class="funnel-step" style="background:var(--gold-dim);border-color:var(--gold-border)">
-          <div class="funnel-num" style="color:var(--gold)">70%</div>
+        <div class="funnel-step" style="background:var(--sand-dim);border-color:var(--sand-border)">
+          <div class="funnel-num" style="color:var(--sand)">70%</div>
           <div class="funnel-sub">Building Occupancy</div>
-          <div class="funnel-rate" style="color:var(--gold)">Verified outcome</div>
+          <div class="funnel-rate">Verified outcome</div>
         </div>
       </div>
-      <p class="disclaimer">* Performance metrics represent a realistic reconstruction based on verified lease outcomes and industry-standard conversion benchmarks (CoStar Group, Yardi Matrix RentCafe, National Apartment Association). Where actual tracked data is pending full backend audit, metrics are presented against verified lease volume and cited industry baselines.</p>
+      <p class="disclaimer">Performance metrics represent a realistic reconstruction based on verified lease outcomes and industry-standard conversion benchmarks (CoStar Group, Yardi Matrix RentCafe, National Apartment Association). Where actual tracked data is pending full backend audit, metrics are presented against verified lease volume and cited industry baselines.</p>
     </div>
   </div>
 </section>
 
+<!-- $130M VALIDATION -->
 <div class="validation">
   <div class="validation-inner">
-    <div class="validation-eyebrow">Market Validation · 2026</div>
-    <div class="validation-number">$130M</div>
-    <div class="validation-title">The Largest HUD Multifamily Loan<br>Ever Closed in Florida</div>
-    <p class="validation-desc">In 2026, Omega Real Estate Management Group closed a $130 million HUD 223(f) cash-out refinance on The Gardens Residences — the largest multifamily HUD loan ever approved by HUD's Southeast Region Office and the largest in Dwight Capital's history. The refinance retired the existing bridge loan, locked a 35-year fixed rate, and returned equity to fund continued district expansion. Institutional financing at this scale requires a stabilized, performing asset. The narrative infrastructure and lease-up velocity achieved during CC Studios' engagement contributed directly to the stabilization metrics that supported that outcome.</p>
-    <div class="validation-tags">
+    <div class="val-eyebrow">Market Validation · 2026</div>
+    <div class="val-number">$130M</div>
+    <div class="val-title">The Largest HUD Multifamily Loan<br>Ever Closed in Florida</div>
+    <p class="val-desc">In 2026, Omega Real Estate Management Group closed a $130 million HUD 223(f) cash-out refinance on The Gardens Residences — the largest multifamily HUD loan ever approved by HUD's Southeast Region Office and the largest in Dwight Capital's history. The refinance retired the existing bridge loan, locked a 35-year fixed rate, and returned equity to fund continued district expansion.</p>
+    <div class="val-tags">
       <span class="v-tag">HUD 223(f) Refinance</span>
       <span class="v-tag">Largest in Florida History</span>
       <span class="v-tag">Dwight Capital</span>
@@ -576,35 +1097,94 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
   </div>
 </div>
 
+<!-- TAKEAWAYS -->
 <section class="section reveal">
-  <div class="eyebrow">05 · Key Takeaways</div>
-  <h2 class="section-title">What This Proves<br><em>for Every Client</em></h2>
+  <div class="sec-label">05 — Key Takeaways <span>What This Proves for Every Client</span></div>
   <div class="takeaways-grid">
-    <div class="takeaway reveal reveal-d1"><div class="takeaway-num">Takeaway 01</div><div class="takeaway-title">Decouple Operations from Marketing</div><p class="takeaway-desc">Internal property management tools cannot drive consumer acquisition. A dedicated, search-indexed consumer portal is mandatory to capture early market demand. The same principle applies to any organization that manages operations in a closed system while expecting the market to find them.</p></div>
-    <div class="takeaway reveal reveal-d2"><div class="takeaway-num">Takeaway 02</div><div class="takeaway-title">Amplify Existing Equity</div><p class="takeaway-desc">A compelling local narrative requires a scalable distribution channel. CC Studios did not create Omega's story — they engineered the digital pipeline that allowed Omega's community equity to scale. The value was already there. The infrastructure was not.</p></div>
-    <div class="takeaway reveal reveal-d3"><div class="takeaway-num">Takeaway 03</div><div class="takeaway-title">Infrastructure Accelerates Value</div><p class="takeaway-desc">Closing the digital infrastructure gap prior to the certificate of occupancy ensures that lease-up velocity keeps pace with physical construction milestones. The same principle applies to any brand at any stage — the story should never lag the reality.</p></div>
+    <div class="takeaway reveal d1">
+      <div class="tw-num">Takeaway 01</div>
+      <div class="tw-title">Decouple Operations from Marketing</div>
+      <p class="tw-desc">Internal property management tools cannot drive consumer acquisition. A dedicated, search-indexed consumer portal is mandatory to capture early market demand. Any organization managing operations in a closed system while expecting the market to find them faces the same gap.</p>
+    </div>
+    <div class="takeaway reveal d2">
+      <div class="tw-num">Takeaway 02</div>
+      <div class="tw-title">Amplify Existing Equity</div>
+      <p class="tw-desc">A compelling local narrative requires a scalable distribution channel. CC Studios did not create Omega's story — we engineered the digital pipeline that allowed Omega's community equity to scale. The value was already there. The infrastructure was not.</p>
+    </div>
+    <div class="takeaway reveal d3">
+      <div class="tw-num">Takeaway 03</div>
+      <div class="tw-title">Infrastructure Accelerates Value</div>
+      <p class="tw-desc">Closing the digital infrastructure gap prior to the certificate of occupancy ensures that lease-up velocity keeps pace with physical construction milestones. The same principle applies to any brand at any stage — the story should never lag the reality.</p>
+    </div>
   </div>
 </section>
 
 <hr class="divider">
 
+<!-- CLOSE -->
 <div class="close-section reveal">
   <div class="close-mark">CC</div>
   <h2 class="close-title">We identify, extract,<br>package, and distribute<br>organizational value.</h2>
-  <p class="close-body">The Gardens Residences had a story. It had community equity, civic backing, and a master plan worth believing in. What it didn't have was a vehicle to carry that story to the people it was built for. That's what CC Studios builds — for founders, operators, civic leaders, and the organizations doing real work that the world hasn't seen yet.</p>
-  <a href="mailto:ccsaigemills@gmail.com" class="close-cta">Start the Conversation →</a>
+  <p class="close-body">The Gardens Residences had a story. It had community equity, civic backing, and a master plan worth believing in. What it didn't have was a vehicle to carry that story to the people it was built for. That's what CC Studios builds.</p>
+  <a href="mailto:ccsaigemills@gmail.com" class="close-cta">Start the Conversation</a>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <span class="footer-brand">CC Studios · Hollywood, FL</span>
+  <span class="footer-brand">CC Studios · Hollywood, FL · 2025</span>
   <span class="footer-info">saigemills.com &nbsp;·&nbsp; ccsaigemills@gmail.com &nbsp;·&nbsp; (305) 469-8503</span>
 </footer>
 
 <script>
-const observer = new IntersectionObserver((entries) => {
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
-},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+},{threshold:0.08,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Phone interactions
+document.querySelectorAll('.phone').forEach(phone => {
+  const id = phone.dataset.vimeo;
+  const wrap = phone.querySelector('.vimeo-wrap');
+  const playBtn = phone.querySelector('.play-btn');
+  const pauseBtn = phone.querySelector('.pause-btn');
+  let thumbUrl = null;
+
+  fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${id}`)
+    .then(r => r.json())
+    .then(data => {
+      if(data.thumbnail_url){
+        thumbUrl = data.thumbnail_url.replace(/_\d+x\d+/,'_640');
+        wrap.style.backgroundImage = `url('${thumbUrl}')`;
+        wrap.style.backgroundSize = 'cover';
+        wrap.style.backgroundPosition = 'center';
+      }
+    }).catch(()=>{});
+
+  phone.addEventListener('mouseenter',()=>{ phone.classList.add('hovered'); });
+  phone.addEventListener('mouseleave',()=>{ phone.classList.remove('hovered'); });
+
+  playBtn.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    if(phone.classList.contains('playing')) return;
+    wrap.style.backgroundImage = 'none';
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&loop=1&title=0&byline=0&portrait=0`;
+    iframe.allow = 'autoplay; fullscreen';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;top:50%;left:50%;width:200%;height:100%;transform:translate(-50%,-50%);border:none;pointer-events:none;';
+    wrap.appendChild(iframe);
+    phone.classList.add('playing');
+  });
+
+  pauseBtn.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    const iframe = wrap.querySelector('iframe');
+    if(iframe){ iframe.remove(); }
+    if(thumbUrl){ wrap.style.backgroundImage = `url('${thumbUrl}')`; }
+    phone.classList.remove('playing');
+  });
+});
 </script>
 </body>
 </html>
