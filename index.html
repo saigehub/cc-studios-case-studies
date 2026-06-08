@@ -91,7 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:fl
 }
 .phone::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:60px;height:5px;background:rgba(255,255,255,0.08);border-radius:3px;z-index:10;}
 
-/* thumbnail layer */
+/* thumbnail */
 .vimeo-wrap{
   position:absolute;inset:0;
   background-size:cover;
@@ -106,29 +106,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:fl
   border:none;pointer-events:none;
 }
 
-/* hover tint — darkens thumbnail slightly on hover */
-.phone::after{
-  content:'';
+/* hover tint */
+.phone-tint{
   position:absolute;inset:0;
   background:rgba(0,0,0,0);
   transition:background 0.25s;
   z-index:3;
   pointer-events:none;
 }
-.phone:hover::after{background:rgba(0,0,0,0.2);}
+.phone.hovered .phone-tint{background:rgba(0,0,0,0.22);}
 
-/* PLAY BUTTON — hidden by default, appears on hover */
+/* play button — controlled entirely by JS */
 .play-btn{
   position:absolute;
   top:50%;left:50%;
-  transform:translate(-50%,-50%);
+  transform:translate(-50%,-58%);
   width:52px;height:52px;
   border-radius:50%;
   background:rgba(201,168,76,0.92);
   display:flex;align-items:center;justify-content:center;
   z-index:8;
   opacity:0;
-  transition:opacity 0.25s,transform 0.25s,background 0.2s;
+  transition:opacity 0.22s,transform 0.22s;
   cursor:pointer;
   pointer-events:none;
 }
@@ -139,18 +138,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:fl
   border-color:transparent transparent transparent #080808;
   margin-left:4px;
 }
-/* show play button on hover when NOT playing */
-.phone:not(.playing):hover .play-btn{
+.phone.hovered:not(.playing) .play-btn{
   opacity:1;
   pointer-events:auto;
-  transform:translate(-50%,-50%) scale(1.08);
+  transform:translate(-50%,-50%);
 }
-.phone:not(.playing):hover .play-btn:hover{
-  background:var(--gold-light);
-  transform:translate(-50%,-50%) scale(1.14);
-}
+.play-btn:hover{background:var(--gold-light);}
 
-/* PAUSE BUTTON — shows on hover when playing */
+/* pause button */
 .pause-btn{
   position:absolute;top:50%;left:50%;
   transform:translate(-50%,-50%);
@@ -165,7 +160,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:fl
   cursor:pointer;
 }
 .pause-btn span{display:block;width:4px;height:16px;background:var(--white);border-radius:2px;}
-.phone.playing:hover .pause-btn{opacity:1;pointer-events:auto;}
+.phone.playing.hovered .pause-btn{opacity:1;pointer-events:auto;}
 
 /* labels */
 .phone-overlay{
@@ -321,6 +316,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
       <div class="phone-wrap reveal reveal-d1">
         <div class="phone" data-vimeo="1199271415">
           <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
           <div class="play-btn"></div>
           <div class="pause-btn"><span></span><span></span></div>
           <div class="phone-overlay">
@@ -335,6 +331,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
       <div class="phone-wrap reveal reveal-d2">
         <div class="phone" data-vimeo="1199271418">
           <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
           <div class="play-btn"></div>
           <div class="pause-btn"><span></span><span></span></div>
           <div class="phone-overlay">
@@ -349,6 +346,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
       <div class="phone-wrap reveal reveal-d3">
         <div class="phone" data-vimeo="1199271417">
           <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
           <div class="play-btn"></div>
           <div class="pause-btn"><span></span><span></span></div>
           <div class="phone-overlay">
@@ -363,6 +361,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
       <div class="phone-wrap reveal reveal-d4">
         <div class="phone" data-vimeo="1199271416">
           <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
           <div class="play-btn"></div>
           <div class="pause-btn"><span></span><span></span></div>
           <div class="phone-overlay">
@@ -377,6 +376,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
       <div class="phone-wrap reveal reveal-d4">
         <div class="phone" data-vimeo="1199271451">
           <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
           <div class="play-btn"></div>
           <div class="pause-btn"><span></span><span></span></div>
           <div class="phone-overlay">
@@ -398,11 +398,11 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
   <p class="body-text">CC Studios operated as an embedded production partner — physically present on-site through construction phases, model unit completion, and early occupancy.</p>
   <div class="execution-grid">
     <div class="exec-card reveal reveal-d1"><div class="exec-icon">🏗</div><div class="exec-title">Consumer Portal Development</div><p class="exec-desc">Built and launched the official consumer-facing web portal, integrated with AppFolio's native embed tools to serve real-time pricing, live unit availability, and interactive floor plans directly to prospective tenants.</p></div>
-    <div class="exec-card reveal reveal-d2"><div class="exec-icon">📍</div><div class="exec-title">Go-To-Market Optimization</div><p class="exec-desc">Architected local discovery strategy optimized for hyper-localized search terms, intercepting rental demand that internal management databases could not reach. Synthesized Omega's milestones into a single cohesive digital narrative.</p></div>
+    <div class="exec-card reveal reveal-d2"><div class="exec-icon">📍</div><div class="exec-title">Go-To-Market Optimization</div><p class="exec-desc">Architected local discovery strategy optimized for hyper-localized search terms, intercepting rental demand that internal management databases could not reach.</p></div>
     <div class="exec-card reveal reveal-d3"><div class="exec-icon">🎬</div><div class="exec-title">Embedded Content Production</div><p class="exec-desc">Technical documentation, team profiles, unit walkthroughs, and partner integrations — all captured in the field. Service elevators, construction floors, model units.</p></div>
-    <div class="exec-card reveal reveal-d1"><div class="exec-icon">🏙</div><div class="exec-title">Digitizing the District Vision</div><p class="exec-desc">The platform was built to sell the future Gardens District — Vice City Bean in the lobby, The Hall food hall, the Gardens Cre8tive Center, and the incoming Brightline station.</p></div>
-    <div class="exec-card reveal reveal-d2"><div class="exec-icon">📊</div><div class="exec-title">Investor-Facing Materials</div><p class="exec-desc">Behind-the-brand coverage documenting the development team's diversity, expertise, and community commitment. Assets designed to move institutional capital, not just consumer traffic.</p></div>
-    <div class="exec-card reveal reveal-d3"><div class="exec-icon">🤝</div><div class="exec-title">CRA Narrative Integration</div><p class="exec-desc">The $15M public subsidy story — the 38-unit affordable housing lottery, the community job fairs, the workforce housing mandate — woven into the development's digital identity.</p></div>
+    <div class="exec-card reveal reveal-d1"><div class="exec-icon">🏙</div><div class="exec-title">Digitizing the District Vision</div><p class="exec-desc">The platform was built to sell the future Gardens District — Vice City Bean, The Hall food hall, the Gardens Cre8tive Center, and the incoming Brightline station.</p></div>
+    <div class="exec-card reveal reveal-d2"><div class="exec-icon">📊</div><div class="exec-title">Investor-Facing Materials</div><p class="exec-desc">Behind-the-brand coverage documenting the development team's diversity, expertise, and community commitment. Assets designed to move institutional capital.</p></div>
+    <div class="exec-card reveal reveal-d3"><div class="exec-icon">🤝</div><div class="exec-title">CRA Narrative Integration</div><p class="exec-desc">The $15M public subsidy story woven into the development's digital identity, building legitimacy with both residents and institutional stakeholders.</p></div>
   </div>
 </section>
 
@@ -414,7 +414,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:fle
   <p class="body-text">The following metrics represent a realistic reconstruction of campaign performance, based on verified lease outcomes from AppFolio records and standard web analytics cross-referenced against industry conversion benchmarks.</p>
   <div class="metrics-grid">
     <div class="metric-card reveal reveal-d1"><div class="metric-label">Monthly Absorption Rate</div><div class="metric-number">~30<span style="font-size:24px;color:var(--gray);vertical-align:middle"> units/mo</span></div><div class="metric-desc">Achieved over the initial 6-month launch period — outperforming the South Florida Class-A market baseline of 15–20 units per month.</div><div class="metric-benchmark">↑ 1.5× Market Average</div></div>
-    <div class="metric-card reveal reveal-d2"><div class="metric-label">Time to Full Stabilization</div><div class="metric-number">11–12<span style="font-size:24px;color:var(--gray);vertical-align:middle"> mo</span></div><div class="metric-desc">Projected full asset stabilization at 95% occupancy — a 20–35% reduction in vacancy carry-time versus the 14–18 month regional average for 350+ unit Class-A assets.</div><div class="metric-benchmark">↓ 35% vs. Market Timeline</div></div>
+    <div class="metric-card reveal reveal-d2"><div class="metric-label">Time to Full Stabilization</div><div class="metric-number">11–12<span style="font-size:24px;color:var(--gray);vertical-align:middle"> mo</span></div><div class="metric-desc">Projected full asset stabilization at 95% occupancy — a 20–35% reduction versus the 14–18 month regional average for 350+ unit Class-A assets.</div><div class="metric-benchmark">↓ 35% vs. Market Timeline</div></div>
     <div class="metric-card reveal reveal-d1"><div class="metric-label">Organic Search Traffic Share</div><div class="metric-number">48<span style="font-size:36px;color:var(--gold)">%</span></div><div class="metric-desc">Of total website sessions originated from organic search — approximately double the industry average of 20–25% for comparable multifamily assets.</div><div class="metric-benchmark">2× Industry Organic Average</div></div>
     <div class="metric-card reveal reveal-d2"><div class="metric-label">Estimated Marketing Cost Savings</div><div class="metric-number"><span style="font-size:36px;color:var(--gold)">$</span>65K</div><div class="metric-desc">Estimated avoided marketing costs by shifting 48% of lead generation to owned organic infrastructure at ~$95 CPL vs. $1,005 ILS-platform average.</div><div class="metric-benchmark">vs. Fully ILS-Dependent Model</div></div>
     <div class="metric-card wide reveal">
@@ -476,43 +476,53 @@ const observer = new IntersectionObserver((entries) => {
 },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Phone interactions
+// Phone interactions — JS-driven hover, no CSS :hover dependency
 document.querySelectorAll('.phone').forEach(phone => {
   const id = phone.dataset.vimeo;
   const wrap = phone.querySelector('.vimeo-wrap');
   const playBtn = phone.querySelector('.play-btn');
   const pauseBtn = phone.querySelector('.pause-btn');
+  let thumbUrl = null;
 
-  // Load Vimeo thumbnail via oEmbed
+  // Load thumbnail from Vimeo oEmbed
   fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${id}`)
     .then(r => r.json())
     .then(data => {
       if (data.thumbnail_url) {
-        // Use larger thumbnail
-        const thumb = data.thumbnail_url.replace(/_\d+x\d+/, '_640');
-        wrap.style.backgroundImage = `url('${thumb}')`;
+        thumbUrl = data.thumbnail_url.replace(/_\d+x\d+/, '_640');
+        wrap.style.backgroundImage = `url('${thumbUrl}')`;
         wrap.style.backgroundSize = 'cover';
         wrap.style.backgroundPosition = 'center';
       }
     })
-    .catch(() => {
-      // fallback: dark background stays
-    });
+    .catch(() => {});
+
+  // Hover enter — show play or pause btn
+  phone.addEventListener('mouseenter', () => {
+    phone.classList.add('hovered');
+  });
+
+  // Hover leave — hide btns
+  phone.addEventListener('mouseleave', () => {
+    phone.classList.remove('hovered');
+  });
 
   // Play
   playBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    // Clear thumbnail
+    if (phone.classList.contains('playing')) return;
+
+    // Remove thumbnail
     wrap.style.backgroundImage = 'none';
-    // Inject iframe
-    if (!wrap.querySelector('iframe')) {
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&loop=1&title=0&byline=0&portrait=0`;
-      iframe.allow = 'autoplay; fullscreen';
-      iframe.allowFullscreen = true;
-      iframe.style.cssText = 'position:absolute;top:50%;left:50%;width:200%;height:100%;transform:translate(-50%,-50%);border:none;pointer-events:none;';
-      wrap.appendChild(iframe);
-    }
+
+    // Inject iframe with autoplay + audio
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&loop=1&title=0&byline=0&portrait=0`;
+    iframe.allow = 'autoplay; fullscreen';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;top:50%;left:50%;width:200%;height:100%;transform:translate(-50%,-50%);border:none;pointer-events:none;';
+    wrap.appendChild(iframe);
+
     phone.classList.add('playing');
   });
 
@@ -520,11 +530,14 @@ document.querySelectorAll('.phone').forEach(phone => {
   pauseBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     const iframe = wrap.querySelector('iframe');
-    if (iframe) {
-      iframe.contentWindow.postMessage('{"method":"pause"}', '*');
-      // Show thumbnail again
-      phone.classList.remove('playing');
+    if (iframe) { iframe.remove(); }
+
+    // Restore thumbnail
+    if (thumbUrl) {
+      wrap.style.backgroundImage = `url('${thumbUrl}')`;
     }
+
+    phone.classList.remove('playing');
   });
 });
 </script>
