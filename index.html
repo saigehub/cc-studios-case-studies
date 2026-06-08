@@ -1,49 +1,499 @@
-PORTFOLIO
-WORK TOGETHER
-CC STUDIOS · WORK ARCHIVE
-The work. Documented.
-We identify, extract, package, and distribute organizational value that hasn't been translated into strategic assets yet. These are the outcomes.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CC Studios — Work Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=UnifrakturMaguntia&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #080808;
+  --linen: #F4F1EA;
+  --charcoal: #1C1C1C;
+  --ash: #3A3A3A;
+  --fog: #8A8A8A;
+  --silk: #C4C0B8;
+  --sand: #CFC0A3;
+  --sand-dim: rgba(207,192,163,0.10);
+  --sand-border: rgba(207,192,163,0.22);
+  --white: #FAFAF8;
+  --card: #141414;
+}
 
-ALL
-REAL ESTATE
-CIVIC
-TRADES
-FOUNDERS
-TECHNOLOGY
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  background:var(--ink);
+  color:var(--linen);
+  font-family:'Archivo',sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
 
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:2px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--ash)}
 
-FEATURED CASE STUDY
-REAL ESTATE · GO-TO-MARKET · NARRATIVE INFRASTRUCTURE
-The Gardens Residences
-How CC Studios engineered the consumer-facing digital pipeline for a 358-unit Class-A multifamily development in North Miami — backed by a $15M CRA subsidy and anchored to a 7-acre live-work-play master plan. From zero digital presence to 70% occupancy in six months.
-70%
-OCCUPANCY · 6 MONTHS
-$130M
-HUD REFINANCE · LARGEST IN FL
-358
-UNITS · CLASS-A
-READ THE CASE STUDY
-COMING SOON
-CIVIC · ECONOMIC DEVELOPMENT
-North Miami Community Redevelopment Authority
-City of North Miami · North Miami CRA
-Business spotlights · Restaurant expansions · Community events — Caribe Arts Festival, Ricky Thai Bistro, Griffin Park
-COMING SOON
-TRADES · CORPORATE · L&D
-International Fire Protection Inc.
-IFP · APi Group Portfolio Company
-Internal communications · Leadership development · Talent acquisition — IFP University, iDP Series, Field Operations
-TECHNOLOGY · GOVTECH
-Prokur.io
-AI-powered government procurement · South Florida launch
-FOUNDER · FINTECH
-Xendoo
-Founder brand content · Lil Roberts, CEO
-CIVIC · EDUCATION
-Miami-Dade County Public Schools
-M-DCPS Your Best Choice campaign · Multi-platform production
-Building something worth
-knowing about?
-START THE CONVERSATION
-CC STUDIOS · SOUTH FLORIDA
-saigemills.com  ·  ccsaigemills@gmail.com  ·  (305) 469-8503
+/* ── NAV ── */
+nav{
+  padding:20px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--ash);
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,8,8,0.94);
+  backdrop-filter:blur(16px);
+}
+
+/* LOGO MARK */
+.logo-wrap{
+  display:flex;align-items:flex-end;gap:0;
+  text-decoration:none;
+  line-height:1;
+}
+.logo-cc{
+  font-family:'UnifrakturMaguntia',serif;
+  font-size:30px;
+  color:var(--white);
+  line-height:0.85;
+  letter-spacing:-0.02em;
+}
+.logo-studios{
+  font-family:'Dancing Script',cursive;
+  font-size:13px;
+  font-weight:600;
+  color:var(--white);
+  margin-left:6px;
+  align-self:flex-end;
+  margin-bottom:1px;
+  letter-spacing:0.02em;
+}
+
+.nav-label{
+  font-size:9px;letter-spacing:0.28em;
+  color:var(--fog);text-transform:uppercase;
+  font-weight:500;
+  user-select:none;
+}
+.nav-cta{
+  font-family:'Archivo',sans-serif;
+  font-size:9px;font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--ink);background:var(--sand);
+  padding:9px 22px;
+  text-decoration:none;
+  transition:background 0.2s;
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--linen);}
+
+/* ── HERO ── */
+.hero{
+  max-width:1280px;margin:0 auto;
+  padding:96px 60px 72px;
+}
+.hero-eyebrow{
+  font-size:9px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--fog);margin-bottom:24px;font-weight:500;
+}
+.hero-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-weight:500;
+  font-size:clamp(52px,8vw,100px);
+  line-height:0.9;letter-spacing:-0.045em;
+  color:var(--white);
+  margin-bottom:24px;
+}
+.hero-title em{color:var(--sand);font-style:italic;}
+.hero-desc{
+  font-size:15px;line-height:1.78;
+  color:rgba(244,241,234,0.5);
+  max-width:520px;
+  margin-bottom:52px;
+  font-weight:300;
+}
+.hero-rule{
+  width:100%;height:1px;
+  background:linear-gradient(90deg,var(--sand-border),transparent);
+}
+
+/* ── FILTER BAR ── */
+.filter-bar{
+  max-width:1280px;margin:0 auto;
+  padding:28px 60px;
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+}
+.filter-btn{
+  font-family:'Archivo',sans-serif;
+  font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
+  padding:6px 16px;
+  border:1px solid var(--ash);
+  background:transparent;color:var(--fog);
+  cursor:pointer;font-weight:500;
+  transition:all 0.18s;
+}
+.filter-btn:hover{border-color:var(--sand-border);color:var(--sand);}
+.filter-btn.active{
+  background:var(--sand-dim);
+  border-color:var(--sand-border);
+  color:var(--sand);
+}
+
+/* ── GRID ── */
+.grid{
+  max-width:1280px;margin:0 auto;
+  padding:0 60px 112px;
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:2px;
+}
+
+/* FEATURED CARD */
+.card-featured{
+  grid-column:span 12;
+  background:var(--charcoal);
+  border:1px solid var(--ash);
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:400px;
+  text-decoration:none;
+  transition:border-color 0.25s;
+  position:relative;overflow:hidden;
+}
+.card-featured:hover{border-color:var(--sand-border);}
+
+.card-img{
+  position:relative;overflow:hidden;
+  background:var(--card);
+}
+.card-img-bg{
+  position:absolute;inset:0;
+  background-image:url('gardens-residences/assets/images/unit-photo-01.jpg');
+  background-size:cover;background-position:center;
+  opacity:0.4;
+  transition:opacity 0.4s,transform 0.5s;
+}
+.card-featured:hover .card-img-bg{opacity:0.55;transform:scale(1.03);}
+.card-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(8,8,8,0.3),rgba(8,8,8,0.65));
+}
+.card-img-tag{
+  position:absolute;bottom:24px;left:24px;
+  font-size:9px;letter-spacing:0.2em;
+  color:var(--sand);text-transform:uppercase;
+  background:rgba(8,8,8,0.7);
+  padding:4px 10px;
+  border:1px solid var(--sand-border);
+  font-weight:500;
+}
+
+.card-body{
+  padding:52px 48px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.card-eyebrow{
+  font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:18px;font-weight:500;
+}
+.card-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:clamp(28px,3vw,44px);font-weight:500;
+  line-height:1.0;letter-spacing:-0.03em;
+  color:var(--white);margin-bottom:18px;
+}
+.card-title em{color:var(--sand);font-style:italic;}
+.card-desc{
+  font-size:13px;line-height:1.78;
+  color:rgba(244,241,234,0.5);
+  margin-bottom:36px;font-weight:300;
+  flex:1;
+}
+.card-stats{
+  display:flex;gap:36px;
+  padding-top:24px;
+  border-top:1px solid var(--ash);
+}
+.cs-num{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:26px;font-weight:500;
+  color:var(--sand);letter-spacing:-0.03em;
+}
+.cs-lbl{
+  font-size:9px;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--fog);margin-top:3px;font-weight:500;
+}
+.card-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--sand);margin-top:24px;font-weight:500;
+}
+.card-link::after{content:'→';transition:transform 0.2s;}
+.card-featured:hover .card-link::after{transform:translateX(4px);}
+
+/* HALF CARDS */
+.card-half{
+  grid-column:span 6;
+  background:var(--charcoal);
+  border:1px solid var(--ash);
+  padding:44px;
+  text-decoration:none;
+  display:flex;flex-direction:column;
+  min-height:280px;
+  position:relative;overflow:hidden;
+  transition:border-color 0.25s;
+}
+.card-half:hover{border-color:var(--sand-border);}
+.card-half.coming{opacity:0.38;cursor:default;pointer-events:none;}
+.coming-tag{
+  position:absolute;top:20px;right:20px;
+  font-size:8px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--fog);
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--ash);
+  padding:3px 9px;font-weight:500;
+}
+.card-sector{
+  font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:14px;font-weight:500;
+}
+.card-half-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:24px;font-weight:500;
+  color:var(--white);line-height:1.1;
+  letter-spacing:-0.02em;margin-bottom:10px;
+}
+.card-half-client{
+  font-size:12px;color:var(--fog);
+  margin-bottom:auto;font-weight:300;
+}
+.card-half-outcome{
+  margin-top:28px;padding-top:18px;
+  border-top:1px solid var(--ash);
+  font-size:11px;letter-spacing:0.04em;
+  color:rgba(244,241,234,0.45);font-weight:300;
+}
+.card-half-outcome span{color:var(--sand);}
+
+/* THIRD CARDS */
+.card-third{
+  grid-column:span 4;
+  background:var(--charcoal);
+  border:1px solid var(--ash);
+  padding:32px 36px;
+  min-height:180px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  opacity:0.3;
+}
+.card-third-label{
+  font-size:9px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--fog);margin-bottom:10px;font-weight:500;
+}
+.card-third-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:18px;font-weight:500;
+  color:var(--white);line-height:1.2;letter-spacing:-0.015em;
+}
+.card-third-note{
+  font-size:11px;color:var(--ash);
+  margin-top:auto;padding-top:14px;
+  font-weight:300;
+}
+
+/* ── BOTTOM STRIP ── */
+.bottom-strip{
+  border-top:1px solid var(--ash);
+  max-width:1280px;margin:0 auto;
+  padding:52px 60px 88px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;gap:28px;
+}
+.strip-text{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:clamp(22px,3vw,36px);font-weight:500;
+  color:var(--white);line-height:1.15;
+  letter-spacing:-0.025em;
+}
+.strip-text em{color:var(--sand);font-style:italic;}
+.strip-cta{
+  font-family:'Archivo',sans-serif;
+  font-size:9px;font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--ink);background:var(--sand);
+  padding:14px 32px;
+  text-decoration:none;
+  transition:background 0.2s;
+  white-space:nowrap;
+}
+.strip-cta:hover{background:var(--linen);}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--ash);
+  padding:24px 60px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-brand{
+  font-size:9px;letter-spacing:0.28em;
+  text-transform:uppercase;color:var(--fog);
+  font-family:'Archivo',sans-serif;font-weight:500;
+}
+.footer-info{
+  font-size:9px;letter-spacing:0.14em;
+  color:var(--ash);font-family:'Archivo',sans-serif;
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.06s}.d2{transition-delay:0.12s}.d3{transition-delay:0.18s}.d4{transition-delay:0.24s}
+
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .card-half{grid-column:span 12}
+  .card-third{grid-column:span 12}
+}
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .hero,.filter-bar,.grid,.bottom-strip{padding-left:24px;padding-right:24px}
+  .hero{padding-top:64px;padding-bottom:48px}
+  .card-featured{grid-template-columns:1fr}
+  .card-featured .card-img{min-height:240px}
+  .card-body{padding:36px 32px}
+  .card-stats{flex-wrap:wrap;gap:20px}
+  footer{flex-direction:column;text-align:center;padding:24px}
+}
+@media(max-width:520px){
+  .hero-title{font-size:48px}
+  nav{padding:14px 20px}
+  .logo-cc{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo-wrap" aria-label="CC Studios home">
+    <span class="logo-cc">CC</span>
+    <span class="logo-studios">studios</span>
+  </a>
+  <span class="nav-label">Portfolio</span>
+  <a href="mailto:ccsaigemills@gmail.com" class="nav-cta">Work Together</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero reveal">
+  <div class="hero-eyebrow">CC Studios · Work Archive</div>
+  <h1 class="hero-title">The work.<br><em>Documented.</em></h1>
+  <p class="hero-desc">We identify, extract, package, and distribute organizational value that hasn't been translated into strategic assets yet. These are the outcomes.</p>
+  <div class="hero-rule"></div>
+</header>
+
+<!-- FILTER -->
+<div class="filter-bar reveal">
+  <button class="filter-btn active">All</button>
+  <button class="filter-btn">Real Estate</button>
+  <button class="filter-btn">Civic</button>
+  <button class="filter-btn">Trades</button>
+  <button class="filter-btn">Founders</button>
+  <button class="filter-btn">Technology</button>
+</div>
+
+<!-- GRID -->
+<main class="grid">
+
+  <!-- FEATURED: Gardens Residences -->
+  <a href="gardens-residences/index.html" class="card-featured reveal">
+    <div class="card-img">
+      <div class="card-img-bg"></div>
+      <div class="card-img-overlay"></div>
+      <div class="card-img-tag">Featured Case Study</div>
+    </div>
+    <div class="card-body">
+      <div>
+        <div class="card-eyebrow">Real Estate · Go-To-Market · Narrative Infrastructure</div>
+        <h2 class="card-title">The Gardens<br><em>Residences</em></h2>
+        <p class="card-desc">How CC Studios engineered the consumer-facing digital pipeline for a 358-unit Class-A multifamily development in North Miami — backed by a $15M CRA subsidy and anchored to a 7-acre live-work-play master plan. From zero digital presence to 70% occupancy in six months.</p>
+      </div>
+      <div>
+        <div class="card-stats">
+          <div><div class="cs-num">70%</div><div class="cs-lbl">Occupancy · 6 Months</div></div>
+          <div><div class="cs-num">$130M</div><div class="cs-lbl">HUD Refinance · Largest in FL</div></div>
+          <div><div class="cs-num">358</div><div class="cs-lbl">Units · Class-A</div></div>
+        </div>
+        <div class="card-link">Read the case study</div>
+      </div>
+    </div>
+  </a>
+
+  <!-- North Miami CRA -->
+  <div class="card-half coming reveal d2">
+    <span class="coming-tag">Coming Soon</span>
+    <div class="card-sector">Civic · Economic Development</div>
+    <div class="card-half-title">North Miami Community Redevelopment Authority</div>
+    <div class="card-half-client">City of North Miami · North Miami CRA</div>
+    <div class="card-half-outcome">Business spotlights · Restaurant expansions · Community events — <span>Caribe Arts Festival, Ricky Thai Bistro, Griffin Park</span></div>
+  </div>
+
+  <!-- IFP -->
+  <div class="card-half coming reveal d3">
+    <span class="coming-tag">Coming Soon</span>
+    <div class="card-sector">Trades · Corporate · L&D</div>
+    <div class="card-half-title">International Fire Protection Inc.</div>
+    <div class="card-half-client">IFP · APi Group Portfolio Company</div>
+    <div class="card-half-outcome">Internal communications · Leadership development · Talent acquisition — <span>IFP University, iDP Series, Field Operations</span></div>
+  </div>
+
+  <!-- Prokur.io -->
+  <div class="card-third reveal d1">
+    <div><div class="card-third-label">Technology · GovTech</div><div class="card-third-title">Prokur.io</div></div>
+    <div class="card-third-note">AI-powered government procurement · South Florida launch</div>
+  </div>
+
+  <!-- Xendoo -->
+  <div class="card-third reveal d2">
+    <div><div class="card-third-label">Founder · Fintech</div><div class="card-third-title">Xendoo</div></div>
+    <div class="card-third-note">Founder brand content · Lil Roberts, CEO</div>
+  </div>
+
+  <!-- MDCPS -->
+  <div class="card-third reveal d3">
+    <div><div class="card-third-label">Civic · Education</div><div class="card-third-title">Miami-Dade County Public Schools</div></div>
+    <div class="card-third-note">M-DCPS Your Best Choice campaign · Multi-platform production</div>
+  </div>
+
+</main>
+
+<!-- BOTTOM STRIP -->
+<div class="bottom-strip reveal">
+  <div class="strip-text">Building something worth<br><em>knowing about?</em></div>
+  <a href="mailto:ccsaigemills@gmail.com" class="strip-cta">Start the Conversation</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">CC Studios · South Florida</span>
+  <span class="footer-info">saigemills.com &nbsp;·&nbsp; ccsaigemills@gmail.com &nbsp;·&nbsp; (305) 469-8503</span>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:0.06,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
