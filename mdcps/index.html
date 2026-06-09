@@ -1,110 +1,612 @@
-CC STUDIOS
-WORK TOGETHER
-￼
-￼
-￼
-￼
-￼
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M-DCPS — Your Best Choice · CC Studios</title>
+<meta property="og:title" content="M-DCPS — Your Best Choice · CC Studios">
+<meta property="og:description" content="How CC Studios executed multi-site field production and post-production for the M-DCPS Your Best Choice campaign.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:          #080808;
+  --linen:        #F4F1EA;
+  --charcoal:     #1C1C1C;
+  --ash:          #3A3A3A;
+  --fog:          #8A8A8A;
+  --sand:         #CFC0A3;
+  --sand-dim:     rgba(207,192,163,0.10);
+  --sand-border:  rgba(207,192,163,0.22);
+  --white:        #FAFAF8;
+  --card:         #141414;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--linen);
+  font-family:'Archivo',sans-serif;
+  font-size:16px;line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
 
-CC STUDIOS · FIELD PRODUCTION & POST-PRODUCTION · 2024
-Your Best Choice
-4
-PRODUCTION LOCATIONS
-4
-INTERVIEW SUBJECTS
-End‑to‑End
-PRE · PRODUCTION · POST
-Vertical
-SOCIAL-FIRST DELIVERY
-PROJECT CONTEXT
-M-DCPS · YOUR BEST CHOICE CAMPAIGN
-A district on defense. A message worth delivering.
-Miami-Dade County Public Schools entered 2024 managing a 13,000-student enrollment decline — a 4% contraction representing one of the sharpest single-year drops in the district's modern history. The projected loss was 5,000 students. The actual loss was 13,059. The budget consequence was immediate: a $100 million reduction, mid-year.
-Your Best Choice was the district's coordinated public response — a campaign to reframe M-DCPS as the competitive, bespoke educational choice in South Florida. CC Studios produced the video content anchoring that campaign.
-THE ENROLLMENT REALITY
-	•	326,279 students enrolled prior to decline
-	•	313,220 students post-contraction — a loss of 13,059
-	•	District projected 5,000 losses. Actual overshoot: 8,000
-	•	$100M immediate budget reduction following the drop
-	•	Campaign positioned against private, charter, and voucher alternatives
-THE WORK
-MIAMI-DADE COUNTY PUBLIC SCHOOLS
-Four voices. Four locations.
-Civic leaders, restaurateurs, visual artists, and digital creators — each captured on-location across Miami-Dade.
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(8,8,8,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;
+  transition:border-color 0.3s;
+}
+nav.scrolled{border-bottom-color:var(--ash);}
+.nav-brand{
+  font-size:9px;letter-spacing:0.28em;font-weight:500;
+  color:var(--linen);text-transform:uppercase;text-decoration:none;
+}
+.nav-crumb{font-size:9px;letter-spacing:0.2em;color:var(--fog);text-transform:uppercase;}
+.nav-cta{
+  font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink);background:var(--sand);
+  padding:9px 22px;text-decoration:none;transition:background 0.2s;
+}
+.nav-cta:hover{background:var(--linen);}
 
+/* ── HERO ── */
+.hero{
+  position:relative;
+  height:100vh;min-height:700px;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:0.45;
+}
+.hero-bg-fallback{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 55% at 65% 32%,rgba(207,192,163,0.05) 0%,transparent 65%),var(--ink);
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,8,8,0.1) 0%,rgba(8,8,8,0.35) 48%,rgba(8,8,8,0.88) 78%,var(--ink) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  width:100%;max-width:1280px;margin:0 auto;
+  padding:0 60px 88px;
+}
+.hero-eyebrow{
+  font-size:9px;letter-spacing:0.28em;font-weight:500;
+  color:var(--sand);text-transform:uppercase;margin-bottom:24px;
+}
+.hero-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-weight:500;
+  font-size:clamp(52px,8vw,104px);
+  line-height:0.9;letter-spacing:-0.045em;
+  color:var(--white);margin-bottom:52px;
+}
+.hero-title em{color:var(--sand);font-style:italic;}
+.hero-stats{
+  display:flex;border-top:1px solid var(--ash);padding-top:32px;
+  flex-wrap:wrap;gap:0;
+}
+.hero-stat{padding-right:52px;margin-right:52px;border-right:1px solid var(--ash);}
+.hero-stat:last-child{border-right:none;padding-right:0;margin-right:0;}
+.stat-number{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:38px;font-weight:500;
+  color:var(--sand);line-height:1;letter-spacing:-0.03em;margin-bottom:6px;
+}
+.stat-label{font-size:9px;letter-spacing:0.2em;color:var(--fog);text-transform:uppercase;}
 
+/* ── PHONES — right after hero ── */
+.phones-section{
+  background:var(--charcoal);
+  padding:80px 0 72px;
+  border-bottom:1px solid var(--ash);
+  overflow:hidden;
+}
+.phones-inner{max-width:1380px;margin:0 auto;padding:0 60px;}
+.phones-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:64px;}
+.phones-note{font-size:13px;color:var(--fog);max-width:280px;text-align:right;line-height:1.75;font-weight:300;}
 
+.phones-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:end;}
+.phone-wrap{
+  display:flex;flex-direction:column;align-items:center;
+  transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.phone-wrap:hover{transform:translateY(-10px) scale(1.02);}
+.phone-wrap:nth-child(2){margin-top:28px;}
+.phone-wrap:nth-child(4){margin-top:44px;}
+.phone{
+  width:100%;max-width:176px;
+  aspect-ratio:9/19.5;
+  background:var(--ink);
+  border-radius:30px;
+  border:2px solid rgba(255,255,255,0.1);
+  box-shadow:0 0 0 1px rgba(0,0,0,0.8),0 24px 56px rgba(0,0,0,0.55),inset 0 1px 0 rgba(255,255,255,0.05);
+  overflow:hidden;position:relative;
+}
+.phone::before{
+  content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);
+  width:56px;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;z-index:10;
+}
+.phone{ cursor:pointer; }
+.vimeo-wrap{ position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--ink);overflow:hidden; }
+.vimeo-wrap iframe{ position:absolute;top:50%;left:50%;width:200%;height:100%;transform:translate(-50%,-50%);border:none;pointer-events:none; }
+.phone-tint{ position:absolute;inset:0;background:rgba(0,0,0,0);transition:background 0.25s;z-index:3;pointer-events:none; }
+.phone.hovered .phone-tint{ background:rgba(0,0,0,0.2); }
+.play-btn{ position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);width:48px;height:48px;border-radius:50%;background:rgba(207,192,163,0.92);display:flex;align-items:center;justify-content:center;z-index:8;opacity:0;transition:opacity 0.22s,transform 0.22s;cursor:pointer;pointer-events:none; }
+.play-btn::after{ content:'';width:0;height:0;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent var(--ink);margin-left:3px; }
+.phone.hovered:not(.playing) .play-btn{ opacity:1;pointer-events:auto;transform:translate(-50%,-50%); }
+.play-btn:hover{ background:var(--linen); }
+.pause-btn{ position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(8,8,8,0.5);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;gap:5px;z-index:8;opacity:0;pointer-events:none;transition:opacity 0.2s;cursor:pointer; }
+.pause-btn span{ display:block;width:3px;height:14px;background:var(--white);border-radius:2px; }
+.phone.playing.hovered .pause-btn{ opacity:1;pointer-events:auto; }
+.phone-bassant .vimeo-wrap{background:linear-gradient(160deg,#182030 0%,#0e1620 55%,#080c14 100%);}
+.phone-neri    .vimeo-wrap{background:linear-gradient(160deg,#281a0a 0%,#180e06 55%,#0c0806 100%);}
+.phone-hall    .vimeo-wrap{background:linear-gradient(160deg,#1a1030 0%,#100a1e 55%,#080810 100%);}
+.phone-arias   .vimeo-wrap{background:linear-gradient(160deg,#200a0a 0%,#160606 55%,#0c0808 100%);}
+.phone-dot-grid{
+  position:absolute;inset:0;z-index:1;opacity:0.05;
+  background-image:radial-gradient(circle,rgba(207,192,163,0.9) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+.phone-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:14px 13px 22px;
+  background:linear-gradient(transparent,rgba(8,8,8,0.9));
+  display:flex;flex-direction:column;gap:4px;
+  z-index:5;pointer-events:none;
+}
+.phone-content-tag{
+  font-size:7px;letter-spacing:0.16em;
+  color:rgba(244,241,234,0.45);text-transform:uppercase;
+  background:rgba(0,0,0,0.35);padding:3px 7px;width:fit-content;
+}
+.phone-title-text{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:11px;font-weight:500;color:var(--white);
+  line-height:1.3;letter-spacing:-0.01em;
+}
+.phone-alias-text{font-size:10px;font-style:italic;font-weight:300;color:var(--sand);}
+.phone-sand-bar{width:24px;height:1.5px;background:var(--sand);margin-top:4px;}
+.phone-label{
+  margin-top:14px;font-size:8px;letter-spacing:0.16em;
+  color:var(--fog);text-transform:uppercase;text-align:center;
+}
 
+/* ── OVERVIEW + SCOPE ── */
+.overview-section{max-width:1280px;margin:0 auto;padding:88px 60px;}
+.sec-label{
+  font-size:9px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--fog);font-weight:500;
+  padding-bottom:20px;border-bottom:1px solid var(--ash);
+  margin-bottom:64px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.sec-label span{color:var(--sand);}
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;}
+.sec-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-weight:500;font-size:clamp(32px,4.5vw,60px);
+  line-height:0.96;letter-spacing:-0.035em;
+  color:var(--white);margin-bottom:24px;
+}
+.sec-title em{color:var(--sand);font-style:italic;}
+.body-text{font-size:15px;line-height:1.78;color:rgba(244,241,234,0.6);font-weight:300;}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;}
+.tag{
+  padding:4px 12px;font-size:10px;letter-spacing:0.1em;
+  background:transparent;color:var(--fog);
+  border:1px solid var(--ash);text-transform:uppercase;
+}
+/* Gardens scope-block — keeping this as intended */
+.scope-block{
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--ash);
+  padding:28px 32px;
+}
+.callout-label{
+  font-size:9px;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:18px;font-weight:500;
+}
+.scope-list{list-style:none;padding:0;margin:0;}
+.scope-list li{
+  font-size:14px;line-height:1.75;
+  color:rgba(244,241,234,0.6);font-weight:300;
+  padding:9px 0 9px 18px;
+  border-bottom:1px solid rgba(58,58,58,0.5);
+  position:relative;
+}
+.scope-list li::before{
+  content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:4px;height:4px;background:var(--sand);border-radius:50%;
+}
+.scope-list li:last-child{border-bottom:none;}
 
-MIAMI BEACH
-Brittnie
-Bassant
+/* ── DELIVERABLES ── */
+.deliverables-section{max-width:1280px;margin:0 auto;padding:64px 60px 88px;}
+.deliverables-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ash);margin-top:64px;}
+.deliverable-card{
+  background:var(--charcoal);padding:40px 36px;
+  border-bottom:2px solid transparent;
+  transition:background 0.25s,border-color 0.25s;
+}
+.deliverable-card:hover{background:var(--card);border-bottom-color:var(--sand);}
+.del-num{font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--sand);margin-bottom:16px;font-weight:500;}
+.del-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:18px;font-weight:500;color:var(--white);margin-bottom:10px;letter-spacing:-0.01em;
+}
+.del-desc{font-size:13px;line-height:1.75;color:rgba(244,241,234,0.5);font-weight:300;}
 
-CIVIC LEADERSHIP
+/* ── POSITIONING — full-width horizontal ── */
+.positioning-strip{
+  border-top:1px solid var(--ash);border-bottom:1px solid var(--ash);
+  background:var(--charcoal);padding:72px 60px;
+}
+.positioning-strip-inner{max-width:1280px;margin:0 auto;}
+.pos-label{font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--sand);margin-bottom:20px;font-weight:500;}
+.pos-text{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:clamp(17px,1.9vw,24px);font-weight:400;font-style:italic;
+  color:var(--linen);line-height:1.5;letter-spacing:-0.015em;
+  max-width:860px;
+}
 
+/* ── CLOSE ── */
+.close-section{text-align:center;padding:112px 60px;max-width:760px;margin:0 auto;}
+.close-title{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:clamp(28px,4vw,52px);font-weight:500;
+  line-height:1.05;color:var(--white);margin-bottom:22px;letter-spacing:-0.035em;
+}
+.close-body{font-size:15px;line-height:1.78;color:rgba(244,241,234,0.5);margin-bottom:44px;font-weight:300;}
+.close-cta{
+  display:inline-flex;align-items:center;
+  background:var(--sand);color:var(--ink);
+  padding:15px 36px;
+  font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s,transform 0.15s;
+}
+.close-cta:hover{background:var(--linen);transform:translateY(-2px);}
 
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--ash);padding:28px 60px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.footer-brand{font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--fog);font-weight:500;}
+.footer-info{font-size:10px;letter-spacing:0.1em;color:var(--ash);}
 
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;}.phone-wrap:hover{transform:none;}}
 
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:16px 28px;}
+  .nav-crumb{display:none;}
+  .hero-content,.phones-inner,.overview-section,.deliverables-section{padding-left:28px;padding-right:28px;}
+  .hero-content{padding-bottom:72px;}
+  .overview-section{padding-top:64px;padding-bottom:64px;}
+  .hero-stats{flex-wrap:wrap;gap:20px;}
+  .hero-stat{border-right:none;padding-right:0;margin-right:0;border-bottom:1px solid var(--ash);padding-bottom:14px;}
+  .hero-stat:last-child{border-bottom:none;}
+  .overview-grid,.deliverables-grid{grid-template-columns:1fr;}
+  .phones-grid{grid-template-columns:repeat(2,1fr);}
+  .phones-header{flex-direction:column;gap:16px;}
+  .phones-note{text-align:left;}
+  .phone-wrap:nth-child(2),.phone-wrap:nth-child(4){margin-top:0;}
+  .phone{max-width:100%;}
+  .positioning-strip{padding:52px 28px;}
+  .close-section{padding:80px 28px;}
+  footer{flex-direction:column;text-align:center;padding:24px 28px;}
+}
+</style>
+</head>
+<body>
 
-DOWNTOWN MIAMI
-Frank
-Neri
+<!-- NAV -->
+<nav id="nav">
+  <a href="https://saigehub.github.io/cc-studios-case-studies/index.html" class="nav-brand">CC Studios</a>
+  <span class="nav-crumb">Case Study — Civic · Education</span>
+  <a href="mailto:ccsaigemills@gmail.com" class="nav-cta">Work Together</a>
+</nav>
 
-HOSPITALITY OPERATOR
+<!-- HERO -->
+<section class="hero">
+  <!--
+    Drop your hero video here when ready:
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/videos/mdcps-hero.mp4" type="video/mp4">
+    </video>
+  -->
+  <!-- HERO BACKGROUND — 5 image strip -->
+  <div class="hero-bg-fallback" style="inset:0;position:absolute;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;overflow:hidden;">
+    <div style="overflow:hidden;"><img src="assets/images/1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+    <div style="overflow:hidden;"><img src="assets/images/2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+    <div style="overflow:hidden;"><img src="assets/images/3.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+    <div style="overflow:hidden;"><img src="assets/images/4.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+    <div style="overflow:hidden;"><img src="assets/images/5.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">CC Studios · Field Production &amp; Post-Production · 2024</div>
+    <h1 class="hero-title">Your <em>Best</em><br>Choice</h1>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Production Locations</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Interview Subjects</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-number">End&#8209;to&#8209;End</div>
+        <div class="stat-label">Pre · Production · Post</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-number">Vertical</div>
+        <div class="stat-label">Social-First Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- PROJECT CONTEXT -->
+<div style="border-bottom:1px solid var(--ash);">
+  <div class="overview-section reveal">
+    <div class="sec-label">Project Context <span>M-DCPS · Your Best Choice Campaign</span></div>
+    <div class="overview-grid">
+      <div>
+        <h2 class="sec-title">A district on<br>defense.<br><em>A message worth delivering.</em></h2>
+        <p class="body-text">Miami-Dade County Public Schools entered 2024 managing a 13,000-student enrollment decline — a 4% contraction representing one of the sharpest single-year drops in the district's modern history. The projected loss was 5,000 students. The actual loss was 13,059. The budget consequence was immediate: a $100 million reduction, mid-year.</p>
+        <p class="body-text" style="margin-top:16px;">Your Best Choice was the district's coordinated public response — a campaign to reframe M-DCPS as the competitive, bespoke educational choice in South Florida. CC Studios produced the video content anchoring that campaign.</p>
+      </div>
+      <div>
+        <div class="scope-block reveal d2">
+          <div class="callout-label">The Enrollment Reality</div>
+          <ul class="scope-list">
+            <li>326,279 students enrolled prior to decline</li>
+            <li>313,220 students post-contraction — a loss of 13,059</li>
+            <li>District projected 5,000 losses. Actual overshoot: 8,000</li>
+            <li>$100M immediate budget reduction following the drop</li>
+            <li>Campaign positioned against private, charter, and voucher alternatives</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- PHONES — visual leads -->
+<div class="phones-section">
+  <div class="phones-inner">
+    <div class="phones-header reveal">
+      <div>
+        <div class="sec-label" style="margin-bottom:20px;">The Work <span>Miami-Dade County Public Schools</span></div>
+        <h2 class="sec-title" style="margin-bottom:0;">Four voices.<br><em>Four locations.</em></h2>
+      </div>
+      <p class="phones-note">Civic leaders, restaurateurs, visual artists, and digital creators — each captured on-location across Miami-Dade.</p>
+    </div>
+    <div class="phones-grid">
+      <div class="phone-wrap phone-bassant reveal d1">
+        <div class="phone" data-vimeo="YOUR_BASSANT_ID">
+          <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
+          <div class="play-btn"></div>
+          <div class="pause-btn"><span></span><span></span></div>
+          <div class="phone-dot-grid"></div>
+          <div class="phone-overlay">
+            <div class="phone-content-tag">Miami Beach</div>
+            <div class="phone-title-text">Brittnie<br>Bassant</div>
+            <div class="phone-sand-bar"></div>
+          </div>
+        </div>
+        <div class="phone-label">Civic Leadership</div>
+      </div>
+      <div class="phone-wrap phone-neri reveal d2">
+        <div class="phone" data-vimeo="YOUR_NERI_ID">
+          <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
+          <div class="play-btn"></div>
+          <div class="pause-btn"><span></span><span></span></div>
+          <div class="phone-dot-grid"></div>
+          <div class="phone-overlay">
+            <div class="phone-content-tag">Downtown Miami</div>
+            <div class="phone-title-text">Frank<br>Neri</div>
+            <div class="phone-sand-bar"></div>
+          </div>
+        </div>
+        <div class="phone-label">Hospitality Operator</div>
+      </div>
+      <div class="phone-wrap phone-hall reveal d3">
+        <div class="phone" data-vimeo="YOUR_HALL_ID">
+          <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
+          <div class="play-btn"></div>
+          <div class="pause-btn"><span></span><span></span></div>
+          <div class="phone-dot-grid"></div>
+          <div class="phone-overlay">
+            <div class="phone-content-tag">Miami · Studio HAZ</div>
+            <div class="phone-title-text">Joshua Hall</div>
+            <div class="phone-alias-text">Baghead</div>
+            <div class="phone-sand-bar"></div>
+          </div>
+        </div>
+        <div class="phone-label">Visual Artist</div>
+      </div>
+      <div class="phone-wrap phone-arias reveal d4">
+        <div class="phone" data-vimeo="YOUR_ARIAS_ID">
+          <div class="vimeo-wrap"></div>
+          <div class="phone-tint"></div>
+          <div class="play-btn"></div>
+          <div class="pause-btn"><span></span><span></span></div>
+          <div class="phone-dot-grid"></div>
+          <div class="phone-overlay">
+            <div class="phone-content-tag">Miami · CP Media</div>
+            <div class="phone-title-text">Alexander Arias</div>
+            <div class="phone-alias-text">Mr. Red</div>
+            <div class="phone-sand-bar"></div>
+          </div>
+        </div>
+        <div class="phone-label">Digital Creator</div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- OVERVIEW + SCOPE -->
+<div style="border-bottom:1px solid var(--ash);">
+  <div class="overview-section reveal">
+    <div class="sec-label">Engagement Overview <span>M-DCPS · Your Best Choice Campaign</span></div>
+    <div class="overview-grid">
+      <div>
+        <h2 class="sec-title">Multi-site field<br>production.<br><em>End-to-end.</em></h2>
+        <p class="body-text">CC Studios executed physical production and post across four Miami-Dade locations — maintaining studio-grade consistency from planning through final asset delivery.</p>
+        <div class="tag-row">
+          <span class="tag">Civic</span>
+          <span class="tag">Education</span>
+          <span class="tag">Field Production</span>
+          <span class="tag">Post-Production</span>
+          <span class="tag">Multi-Site</span>
+        </div>
+      </div>
+      <div>
+        <div class="scope-block reveal d2">
+          <div class="callout-label">Scope of Engagement</div>
+          <ul class="scope-list">
+            <li>Location planning and technical readiness per site</li>
+            <li>Mobile studio deployment — camera, lighting, and audio</li>
+            <li>Structured interview capture across four subjects</li>
+            <li>End-to-end post-production and editing</li>
+            <li>Vertical format optimization for social distribution</li>
+            <li>Platform-ready asset delivery</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- DELIVERABLES -->
+<div style="border-bottom:1px solid var(--ash);">
+  <div class="deliverables-section reveal">
+    <div class="sec-label" style="margin-bottom:0;">Deliverables <span>What Was Shipped</span></div>
+    <div class="deliverables-grid">
+      <div class="deliverable-card reveal d1">
+        <div class="del-num">01</div>
+        <div class="del-title">Multi-Location Interview Footage</div>
+        <p class="del-desc">Raw capture across four Miami-Dade locations — structured, consistent, and technically sound for post-production intake.</p>
+      </div>
+      <div class="deliverable-card reveal d2">
+        <div class="del-num">02</div>
+        <div class="del-title">Fully Edited Vertical Video Content</div>
+        <p class="del-desc">Post-produced with color, audio cleanup, and pacing calibrated for short-form vertical distribution.</p>
+      </div>
+      <div class="deliverable-card reveal d3">
+        <div class="del-num">03</div>
+        <div class="del-title">Social-Ready Cutdowns</div>
+        <p class="del-desc">Platform-optimized versions formatted for digital distribution across M-DCPS campaign channels.</p>
+      </div>
+      <div class="deliverable-card reveal d4">
+        <div class="del-num">04</div>
+        <div class="del-title">Structured Media Delivery Packages</div>
+        <p class="del-desc">Organized, labeled asset packages ready for immediate campaign deployment.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-MIAMI · STUDIO HAZ
-Joshua Hall
-Baghead
+<!-- POSITIONING — full-width horizontal -->
+<div class="positioning-strip reveal">
+  <div class="positioning-strip-inner">
+    <div class="pos-label">CC Studios · Engagement Summary</div>
+    <p class="pos-text">Field production and post-production execution across five Miami-Dade locations — full ownership of the pipeline from planning through set direction to final delivery.</p>
+  </div>
+</div>
 
-VISUAL ARTIST
+<!-- CLOSE -->
+<div class="close-section reveal">
+  <h2 class="close-title">We identify, extract,<br>package, and distribute<br>organizational value.</h2>
+  <p class="close-body">M-DCPS had a message worth delivering. It needed a production partner capable of capturing it with consistency — at scale, across four locations. That's what CC Studios executes.</p>
+  <a href="mailto:ccsaigemills@gmail.com" class="close-cta">Start the Conversation</a>
+</div>
 
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">CC Studios · South Florida</span>
+  <span class="footer-info">saigemills.com &nbsp;·&nbsp; ccsaigemills@gmail.com &nbsp;·&nbsp; (305) 469-8503</span>
+</footer>
 
+<script>
+// Scroll reveal
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+const obs = new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('in');});},{threshold:0.08,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
+// VERTICAL PHONE PLAYERS
+document.querySelectorAll('.phone').forEach(phone => {
+  const id = phone.dataset.vimeo;
+  if(!id || id.startsWith('YOUR_')) return;
+  const wrap = phone.querySelector('.vimeo-wrap');
+  const playBtn = phone.querySelector('.play-btn');
+  const pauseBtn = phone.querySelector('.pause-btn');
+  let thumbUrl = null;
 
+  fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${id}`)
+    .then(r => r.json())
+    .then(data => {
+      if(data.thumbnail_url){
+        thumbUrl = data.thumbnail_url.replace(/_\d+x\d+/,'_640');
+        wrap.style.backgroundImage = `url('${thumbUrl}')`;
+        wrap.style.backgroundSize = 'cover';
+        wrap.style.backgroundPosition = 'center';
+      }
+    }).catch(()=>{});
 
-MIAMI · CP MEDIA
-Alexander Arias
-Mr. Red
+  // Desktop hover
+  phone.addEventListener('mouseenter',()=>{ phone.classList.add('hovered'); });
+  phone.addEventListener('mouseleave',()=>{ phone.classList.remove('hovered'); });
 
-DIGITAL CREATOR
-ENGAGEMENT OVERVIEW
-M-DCPS · YOUR BEST CHOICE CAMPAIGN
-Multi-site field production. End-to-end.
-CC Studios executed physical production and post across four Miami-Dade locations — maintaining studio-grade consistency from planning through final asset delivery.
-CIVIC
-EDUCATION
-FIELD PRODUCTION
-POST-PRODUCTION
-MULTI-SITE
-SCOPE OF ENGAGEMENT
-	•	Location planning and technical readiness per site
-	•	Mobile studio deployment — camera, lighting, and audio
-	•	Structured interview capture across four subjects
-	•	End-to-end post-production and editing
-	•	Vertical format optimization for social distribution
-	•	Platform-ready asset delivery
-DELIVERABLES
-WHAT WAS SHIPPED
-01
-Multi-Location Interview Footage
-Raw capture across four Miami-Dade locations — structured, consistent, and technically sound for post-production intake.
-02
-Fully Edited Vertical Video Content
-Post-produced with color, audio cleanup, and pacing calibrated for short-form vertical distribution.
-03
-Social-Ready Cutdowns
-Platform-optimized versions formatted for digital distribution across M-DCPS campaign channels.
-04
-Structured Media Delivery Packages
-Organized, labeled asset packages ready for immediate campaign deployment.
-CC STUDIOS · ENGAGEMENT SUMMARY
-Field production and post-production execution across five Miami-Dade locations — full ownership of the pipeline from planning through set direction to final delivery.
-We identify, extract, package, and distribute organizational value.
-M-DCPS had a message worth delivering. It needed a production partner capable of capturing it with consistency — at scale, across four locations. That's what CC Studios executes.
-START THE CONVERSATION
-CC STUDIOS · SOUTH FLORIDA
-saigemills.com  ·  ccsaigemills@gmail.com  ·  (305) 469-8503
+  // Mobile: always show play button
+  if('ontouchstart' in window){
+    phone.classList.add('hovered');
+  }
+
+  playBtn.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    if(phone.classList.contains('playing')) return;
+    wrap.style.backgroundImage = 'none';
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&loop=1&muted=0&title=0&byline=0&portrait=0`;
+    iframe.allow = 'autoplay; fullscreen';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;top:50%;left:50%;width:200%;height:100%;transform:translate(-50%,-50%);border:none;pointer-events:none;';
+    wrap.appendChild(iframe);
+    phone.classList.add('playing');
+  });
+
+  pauseBtn.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    const iframe = wrap.querySelector('iframe');
+    if(iframe){ iframe.remove(); }
+    if(thumbUrl){ wrap.style.backgroundImage = `url('${thumbUrl}')`; }
+    phone.classList.remove('playing');
+    if('ontouchstart' in window){ phone.classList.add('hovered'); }
+  });
+});
+</script>
+</body>
+</html>
