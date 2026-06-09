@@ -38,7 +38,7 @@ body{
 
 /* ── NAV ── */
 nav{
-  padding:20px 60px;
+  padding:20px 0;
   display:flex;align-items:center;justify-content:space-between;
   border-bottom:1px solid var(--ash);
   position:sticky;top:0;z-index:100;
@@ -425,13 +425,13 @@ document.querySelectorAll('.gal-horiz-player').forEach(player => {
 <body>
 
 <!-- NAV -->
-<nav>
+<nav><div style="max-width:1280px;margin:0 auto;padding:0 60px;width:100%;display:flex;align-items:center;justify-content:space-between;">
   <a href="#" class="logo-wrap" aria-label="CC Studios home">
     <img src="gardens-residences/assets/images/cc-studios-logo-white.png" alt="CC Studios" style="height:92px;width:auto;">
   </a>
   <span class="nav-label">Portfolio</span>
   <a href="mailto:ccsaigemills@gmail.com" class="nav-cta">Work Together</a>
-</nav>
+</div></nav>
 
 <!-- HERO -->
 <header class="hero reveal">
