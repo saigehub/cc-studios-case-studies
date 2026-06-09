@@ -396,12 +396,14 @@ footer{
 
 <!-- FILTER -->
 <div class="filter-bar reveal">
-  <button class="filter-btn active">All</button>
-  <button class="filter-btn">Real Estate</button>
-  <button class="filter-btn">Civic</button>
-  <button class="filter-btn">Trades</button>
-  <button class="filter-btn">Founders</button>
-  <button class="filter-btn">Technology</button>
+  <span class="filter-btn active">Real Estate</span>
+  <span class="filter-btn">Civic</span>
+  <span class="filter-btn">Trades</span>
+  <span class="filter-btn">Founders</span>
+  <span class="filter-btn">Finance</span>
+  <span class="filter-btn">Gov-Tech</span>
+  <span class="filter-btn">Community</span>
+  <span class="filter-btn">Quantum</span>
 </div>
 
 <!-- GRID -->
@@ -455,17 +457,23 @@ footer{
     <div class="card-third-note">AI-powered government procurement · South Florida launch</div>
   </div>
 
-  <!-- Xendoo -->
+ <!-- Xendoo -->
   <div class="card-third reveal d2">
     <div><div class="card-third-label">Founder · Fintech</div><div class="card-third-title">Xendoo</div></div>
     <div class="card-third-note">Founder brand content · Lil Roberts, CEO</div>
   </div>
 
-  <!-- MDCPS -->
-  <div class="card-third reveal d3">
-    <div><div class="card-third-label">Civic · Education</div><div class="card-third-title">Miami-Dade County Public Schools</div></div>
-    <div class="card-third-note">M-DCPS Your Best Choice campaign · Multi-platform production</div>
+  <!-- Papa Thanks -->
+  <div class="card-third reveal d4">
+    <div><div class="card-third-label">Community · Hospitality</div><div class="card-third-title">Papa Thanks</div></div>
+    <div class="card-third-note">Dania Beach · Passion project · Details coming</div>
   </div>
+
+  <!-- MDCPS -->
+ <a href="mdcps/index.html" class="card-third reveal d3" style="text-decoration:none;opacity:1;">
+    <div><div class="card-third-label">Civic · Education</div><div class="card-third-title">Miami-Dade County Public Schools</div></div>
+    <div class="card-third-note">Your Best Choice campaign · Four profiles · Multi-site field production</div>
+  </a>
 
 </main>
 
@@ -487,12 +495,6 @@ const obs = new IntersectionObserver((entries) => {
 },{threshold:0.06,rootMargin:'0px 0px -24px 0px'});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
 </script>
 </body>
 </html>
