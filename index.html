@@ -38,8 +38,7 @@ body{
 
 /* ── NAV ── */
 nav{
-  padding:20px 0;
-  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px 0 48px;width:100%;display:flex;align-items:center;justify-content:space-between;
   border-bottom:1px solid var(--ash);
   position:sticky;top:0;z-index:100;
   background:rgba(8,8,8,0.94);
@@ -71,7 +70,7 @@ nav{
 }
 
 .nav-label{
-  font-size:9px;letter-spacing:0.28em;
+  font-size:10px;letter-spacing:0.28em;
   color:var(--fog);text-transform:uppercase;
   font-weight:500;
   user-select:none;
@@ -213,6 +212,8 @@ nav{
   display:flex;gap:36px;
   padding-top:24px;
   border-top:1px solid var(--ash);
+  flex-wrap:nowrap;
+  align-items:flex-start;
 }
 .cs-num{
   font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
@@ -222,6 +223,7 @@ nav{
 .cs-lbl{
   font-size:9px;letter-spacing:0.16em;text-transform:uppercase;
   color:var(--fog);margin-top:3px;font-weight:500;
+  white-space:nowrap;
 }
 .card-link{
   display:inline-flex;align-items:center;gap:8px;
