@@ -401,7 +401,7 @@ footer{
     </div>
     <div class="phones-grid">
       <div class="phone-wrap phone-bassant reveal d1">
-        <div class="phone" data-vimeo="YOUR_BASSANT_ID">
+        <div class="phone" data-vimeo="1199840733">
           <div class="vimeo-wrap"></div>
           <div class="phone-tint"></div>
           <div class="play-btn"></div>
@@ -416,7 +416,7 @@ footer{
         <div class="phone-label">Civic Leadership</div>
       </div>
       <div class="phone-wrap phone-neri reveal d2">
-        <div class="phone" data-vimeo="YOUR_NERI_ID">
+        <div class="phone" data-vimeo="1199840731">
           <div class="vimeo-wrap"></div>
           <div class="phone-tint"></div>
           <div class="play-btn"></div>
@@ -431,7 +431,7 @@ footer{
         <div class="phone-label">Hospitality Operator</div>
       </div>
       <div class="phone-wrap phone-hall reveal d3">
-        <div class="phone" data-vimeo="YOUR_HALL_ID">
+        <div class="phone" data-vimeo="1199840732">
           <div class="vimeo-wrap"></div>
           <div class="phone-tint"></div>
           <div class="play-btn"></div>
@@ -447,7 +447,7 @@ footer{
         <div class="phone-label">Visual Artist</div>
       </div>
       <div class="phone-wrap phone-arias reveal d4">
-        <div class="phone" data-vimeo="YOUR_ARIAS_ID">
+        <div class="phone" data-vimeo="1199840735">
           <div class="vimeo-wrap"></div>
           <div class="phone-tint"></div>
           <div class="play-btn"></div>
@@ -584,6 +584,59 @@ document.querySelectorAll('.phone').forEach(phone => {
   if('ontouchstart' in window){
     phone.classList.add('hovered');
   }
+
+  playBtn.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    if(phone.classList.contains('playing')) return;
+    wrap.style.backgroundImage = 'none';
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&loop=1&muted=0&title=0&byline=0&portrait=0`;
+    iframe.allow = 'autoplay; fullscreen';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;top:50%;left:50%;width:200%;height:100%;transform:translate(-50%,-50%);border:none;pointer-events:none;';
+    wrap.appendChild(iframe);
+    phone.classList.add('playing');
+  });
+
+  pauseBtn.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    const iframe = wrap.querySelector('iframe');
+    if(iframe){ iframe.remove(); }
+    if(thumbUrl){ wrap.style.backgroundImage = `url('${thumbUrl}')`; }
+    phone.classList.remove('playing');
+    if('ontouchstart' in window){ phone.classList.add('hovered'); }
+  });
+});
+</script>
+  <script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+const obs = new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('in');});},{threshold:0.08,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+document.querySelectorAll('.phone').forEach(phone => {
+  const id = phone.dataset.vimeo;
+  if(!id) return;
+  const wrap = phone.querySelector('.vimeo-wrap');
+  const playBtn = phone.querySelector('.play-btn');
+  const pauseBtn = phone.querySelector('.pause-btn');
+  let thumbUrl = null;
+
+  fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${id}`)
+    .then(r => r.json())
+    .then(data => {
+      if(data.thumbnail_url){
+        thumbUrl = data.thumbnail_url.replace(/_\d+x\d+/,'_640');
+        wrap.style.backgroundImage = `url('${thumbUrl}')`;
+        wrap.style.backgroundSize = 'cover';
+        wrap.style.backgroundPosition = 'center';
+      }
+    }).catch(()=>{});
+
+  phone.addEventListener('mouseenter',()=>{ phone.classList.add('hovered'); });
+  phone.addEventListener('mouseleave',()=>{ phone.classList.remove('hovered'); });
+
+  if('ontouchstart' in window){ phone.classList.add('hovered'); }
 
   playBtn.addEventListener('click',(e)=>{
     e.stopPropagation();
