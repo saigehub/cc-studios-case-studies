@@ -819,8 +819,6 @@ document.querySelectorAll('.gal-horiz-player').forEach(player => {
   <span class="footer-brand">CC Studios · South Florida</span>
   <span class="footer-info">saigemills.com &nbsp;·&nbsp; ccsaigemills@gmail.com &nbsp;·&nbsp; (305) 469-8503</span>
 </footer>
-
-<script>
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
 },{threshold:0.06,rootMargin:'0px 0px -24px 0px'});
