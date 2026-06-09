@@ -376,7 +376,138 @@ footer{
   nav{padding:14px 20px}
   .logo-cc{font-size:26px}
 }
-  // GALLERY HORIZONTAL VIDEO PLAYERS
+  /* ── GALLERY ── */
+.gallery-section{
+  border-top:1px solid var(--ash);
+  padding:88px 0 112px;
+}
+.gallery-inner{
+  max-width:1280px;margin:0 auto;
+  padding:0 60px;
+}
+.gallery-label{
+  font-size:9px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--fog);font-weight:500;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--ash);
+  margin-bottom:48px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.gallery-label-right{color:var(--sand);}
+.gal-horiz{ margin-bottom:2px; }
+.gal-horiz-player{
+  position:relative;
+  width:100%;aspect-ratio:16/9;
+  background:var(--charcoal);
+  overflow:hidden;cursor:pointer;
+  border:1px solid var(--ash);
+}
+.gal-horiz-thumb{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  background-color:var(--charcoal);
+  transition:transform 0.5s ease;
+}
+.gal-horiz-player:hover .gal-horiz-thumb{ transform:scale(1.02); }
+.gal-horiz-tint{
+  position:absolute;inset:0;
+  background:rgba(0,0,0,0);
+  transition:background 0.25s;z-index:2;
+}
+.gal-horiz-player.hovered .gal-horiz-tint{ background:rgba(0,0,0,0.25); }
+.gal-horiz-iframe{
+  position:absolute;inset:0;z-index:1;
+}
+.gal-horiz-iframe iframe{
+  width:100%;height:100%;border:none;display:block;
+}
+.gal-play-btn{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-58%);
+  width:72px;height:72px;border-radius:50%;
+  background:rgba(207,192,163,0.92);
+  display:flex;align-items:center;justify-content:center;
+  z-index:8;opacity:0;
+  transition:opacity 0.22s,transform 0.22s;
+  cursor:pointer;pointer-events:none;
+}
+.gal-play-btn::after{
+  content:'';width:0;height:0;border-style:solid;
+  border-width:12px 0 12px 22px;
+  border-color:transparent transparent transparent var(--ink);
+  margin-left:5px;
+}
+.gal-horiz-player.hovered:not(.playing) .gal-play-btn{
+  opacity:1;pointer-events:auto;
+  transform:translate(-50%,-50%);
+}
+.gal-play-btn:hover{ background:var(--linen); }
+.gal-pause-btn{
+  position:absolute;bottom:20px;right:20px;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(8,8,8,0.55);backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;
+  gap:4px;z-index:9;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.2s;cursor:pointer;
+  border:1px solid rgba(255,255,255,0.08);
+}
+.gal-pause-btn span{ display:block;width:3px;height:13px;background:var(--white);border-radius:2px; }
+.gal-horiz-player.playing.hovered .gal-pause-btn{ opacity:1;pointer-events:auto; }
+.gal-horiz-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:48px 32px 24px;
+  background:linear-gradient(transparent,rgba(8,8,8,0.88));
+  z-index:5;pointer-events:none;
+}
+.gal-caption-project{
+  font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
+  font-size:18px;font-weight:500;
+  color:var(--white);letter-spacing:-0.015em;
+  line-height:1.2;margin-bottom:5px;
+}
+.gal-caption-sub{
+  font-size:11px;letter-spacing:0.08em;
+  color:var(--sand);font-weight:300;
+  text-transform:uppercase;
+}
+.gal-photos-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2px;
+  margin-bottom:2px;
+}
+.gal-photo{
+  position:relative;overflow:hidden;
+  background:var(--charcoal);
+  aspect-ratio:3/4;
+}
+.gal-photo img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;
+  transition:transform 0.5s ease;
+  pointer-events:none;
+}
+.gal-photo:hover img{ transform:scale(1.03); }
+.gal-photo-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:32px 16px 16px;
+  background:linear-gradient(transparent,rgba(8,8,8,0.85));
+  pointer-events:none;
+}
+@media(max-width:900px){
+  .gallery-inner{ padding:0 24px; }
+  .gallery-section{ padding:64px 0 80px; }
+  .gal-photos-row{ grid-template-columns:repeat(2,1fr); }
+  .gal-caption-project{ font-size:15px; }
+}
+@media(max-width:520px){
+  .gal-photos-row{ grid-template-columns:repeat(2,1fr); }
+}
+</style>
+</head>
+ <script>
 document.querySelectorAll('.gal-horiz-player').forEach(player => {
   const ytId = player.dataset.yt;
   if(!ytId) return;
@@ -385,46 +516,37 @@ document.querySelectorAll('.gal-horiz-player').forEach(player => {
   const iframeWrap = player.querySelector('.gal-horiz-iframe');
   const playBtn = player.querySelector('.gal-play-btn');
   const pauseBtn = player.querySelector('.gal-pause-btn');
-
-  // Load YouTube thumbnail
   thumb.style.backgroundImage = `url('https://img.youtube.com/vi/${ytId}/maxresdefault.jpg')`;
-
-  // Desktop hover
   player.addEventListener('mouseenter',()=>{ player.classList.add('hovered'); });
   player.addEventListener('mouseleave',()=>{ player.classList.remove('hovered'); });
-
-  // Mobile: always show play button
   if('ontouchstart' in window){ player.classList.add('hovered'); }
-
   playBtn.addEventListener('click',(e)=>{
     e.stopPropagation();
     if(player.classList.contains('playing')) return;
-    thumb.style.opacity = '0';
-    thumb.style.transition = 'opacity 0.4s ease';
+    thumb.style.opacity='0';
+    thumb.style.transition='opacity 0.4s ease';
     const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&controls=0&mute=0`;
-    iframe.allow = 'autoplay; fullscreen';
-    iframe.allowFullscreen = true;
-    iframe.style.cssText = 'width:100%;height:100%;border:none;display:block;';
+    iframe.src=`https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&controls=0&mute=0`;
+    iframe.allow='autoplay; fullscreen';
+    iframe.allowFullscreen=true;
+    iframe.style.cssText='width:100%;height:100%;border:none;display:block;';
     iframeWrap.appendChild(iframe);
     player.classList.add('playing');
-    const caption = player.querySelector('.gal-horiz-caption');
-    if(caption){ caption.style.opacity='0'; caption.style.transition='opacity 0.3s'; }
+    const caption=player.querySelector('.gal-horiz-caption');
+    if(caption){ caption.style.opacity='0';caption.style.transition='opacity 0.3s'; }
   });
-
   pauseBtn.addEventListener('click',(e)=>{
     e.stopPropagation();
-    const iframe = iframeWrap.querySelector('iframe');
+    const iframe=iframeWrap.querySelector('iframe');
     if(iframe){ iframe.remove(); }
-    thumb.style.opacity = '1';
+    thumb.style.opacity='1';
     player.classList.remove('playing');
     if('ontouchstart' in window){ player.classList.add('hovered'); }
-    const caption = player.querySelector('.gal-horiz-caption');
+    const caption=player.querySelector('.gal-horiz-caption');
     if(caption){ caption.style.opacity='1'; }
   });
 });
-</style>
-</head>
+</script> 
 <body>
 
 <!-- NAV -->
