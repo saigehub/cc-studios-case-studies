@@ -133,6 +133,7 @@ nav{
   transition:all 0.18s;
 }
 .filter-btn:hover{border-color:var(--sand-border);color:var(--sand);}
+.filter-btn:not(.active){pointer-events:none;cursor:default;opacity:0.45;}
 .filter-btn.active{
   background:var(--sand-dim);
   border-color:var(--sand-border);
@@ -178,7 +179,7 @@ nav{
   background:linear-gradient(135deg,rgba(8,8,8,0.3),rgba(8,8,8,0.65));
 }
 .card-img-tag{
-  position:absolute;bottom:24px;left:24px;
+  position:absolute;top:24px;left:24px;
   font-size:9px;letter-spacing:0.2em;
   color:var(--sand);text-transform:uppercase;
   background:rgba(8,8,8,0.7);
@@ -445,7 +446,7 @@ document.querySelectorAll('.gal-horiz-player').forEach(player => {
 
 <!-- FILTER -->
 <div class="filter-bar reveal">
-  <span class="filter-btn active">Real Estate</span>
+  <a href="gardens-residences/index.html" class="filter-btn active" style="text-decoration:none;">Real Estate</a>
   <span class="filter-btn">Civic</span>
   <span class="filter-btn">Trades</span>
   <span class="filter-btn">Founders</span>
