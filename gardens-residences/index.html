@@ -722,7 +722,7 @@ nav{
 }
 .floorplan-grid{
   display:grid;grid-template-columns:1fr 1fr;
-  gap:2px;margin-top:2px;
+  gap:2px;margin-top:16px;
 }
 .floorplan-card{
   background:var(--charcoal);
@@ -731,7 +731,8 @@ nav{
 }
 .floorplan-card img{
   width:100%;display:block;
-  aspect-ratio:16/9;object-fit:cover;
+  aspect-ratio:16/9;object-fit:contain;
+  background:var(--charcoal);
   transition:transform 0.4s ease;
 }
 .floorplan-card:hover img{transform:scale(1.02);}
