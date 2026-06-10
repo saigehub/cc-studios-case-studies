@@ -801,7 +801,7 @@ footer{
 
 <!-- NAV -->
 <nav>
-  <a href="../../index.html" class="nav-brand">CC Studios</a>
+  <a href="../index.html" class="nav-brand">CC Studios</a>
   <span class="nav-crumb">Case Study — Institutional Partnership</span>
   <a href="mailto:ccsaigemills@gmail.com" class="nav-cta">Work Together</a>
 </nav>
