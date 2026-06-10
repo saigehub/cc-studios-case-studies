@@ -123,6 +123,10 @@ nav.scrolled{border-bottom-color:var(--ash);}
 .phone-wrap:hover{transform:translateY(-10px) scale(1.02);}
 .phone-wrap:nth-child(2){margin-top:28px;}
 .phone-wrap:nth-child(4){margin-top:44px;}
+  @media(max-width:900px){
+  .phone-wrap:nth-child(3) .vimeo-wrap{ background-position:center 20%; }
+  .phone-wrap:nth-child(4) .vimeo-wrap{ background-position:center top; }
+}
 .phone{
   width:100%;max-width:176px;
   aspect-ratio:9/19.5;
@@ -305,14 +309,16 @@ footer{
   .nav-crumb{display:none;}
   .hero-content,.phones-inner,.overview-section,.deliverables-section{padding-left:28px;padding-right:28px;}
   .hero-content{padding-bottom:72px;}
-  .overview-section{padding-top:64px;padding-bottom:64px;}
-  .hero-stats{flex-wrap:wrap;gap:20px;}
+  .overview-section{padding-top:48px;padding-bottom:48px;}
+.sec-label{margin-bottom:32px;}
+  .hero-stats{flex-wrap:wrap;gap:20px;justify-content:flex-start;}
   .hero-stat{border-right:none;padding-right:0;margin-right:0;border-bottom:1px solid var(--ash);padding-bottom:14px;}
   .hero-stat:last-child{border-bottom:none;}
   .overview-grid,.deliverables-grid{grid-template-columns:1fr;}
   .phones-grid{grid-template-columns:repeat(2,1fr);}
-  .phones-header{flex-direction:column;gap:16px;}
-  .phones-note{text-align:left;}
+  .phones-header{flex-direction:column;gap:16px;align-items:flex-start;}
+  .phones-note{text-align:left;max-width:100%;}
+  .sec-label{justify-content:flex-start;gap:8px;}
   .phone-wrap:nth-child(2),.phone-wrap:nth-child(4){margin-top:0;}
   .phone{max-width:100%;}
   .positioning-strip{padding:52px 28px;}
@@ -360,7 +366,7 @@ footer{
       </div>
       <div class="hero-stat">
         <div class="stat-number">End&#8209;to&#8209;End</div>
-        <div class="stat-label">Pre · Production · Post</div>
+<div class="stat-label">Multi-Site <em style="color:var(--sand);font-style:normal;">Field Production</em></div>
       </div>
       <div class="hero-stat">
         <div class="stat-number">Vertical</div>
