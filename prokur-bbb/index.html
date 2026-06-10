@@ -115,7 +115,7 @@ nav{
   position:relative;z-index:2;
   width:100%;max-width:1280px;
   margin:0 auto;
-  padding:0 60px 88px;
+  padding:0 60px 64px;
 }
 .hero-eyebrow{
   font-size:9px;letter-spacing:0.28em;
@@ -136,18 +136,10 @@ nav{
   color:var(--sand);
   font-style:italic;
 }
-.hero-stats{
-  display:flex;
-  border-top:1px solid var(--ash);
-  padding-top:32px;
-  flex-wrap:wrap;
-  gap:0;
-}
-.hero-stat{
-  padding-right:52px;margin-right:52px;
-  border-right:1px solid var(--ash);
-}
-.hero-stat:last-child{border-right:none;padding-right:0;margin-right:0}
+.hero-stats{display:flex;border-top:1px solid var(--ash);padding-top:28px;flex-wrap:nowrap;gap:0;width:100%;}
+.hero-stat{flex:1;padding-left:24px;border-right:1px solid var(--ash);}
+.hero-stat:first-child{padding-left:0;}
+.hero-stat:last-child{border-right:none;}
 .stat-number{
   font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;
   font-size:38px;font-weight:500;
@@ -699,10 +691,10 @@ footer{
     <div class="hero-eyebrow">CC Studios · Launch Strategy &amp; Media Production · 2025</div>
     <h1 class="hero-title">Prokur ×<br><em>BBB</em></h1>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="stat-number">100</div><div class="stat-label">First Businesses Targeted for Onboarding</div></div>
-      <div class="hero-stat"><div class="stat-number">2</div><div class="stat-label">Launch Films Produced</div></div>
-      <div class="hero-stat"><div class="stat-number">70%</div><div class="stat-label">Procurement Cycle Reduction Engineered by Platform</div></div>
-      <div class="hero-stat"><div class="stat-number">March 2025</div><div class="stat-label">Formal Partnership Launch</div></div>
+      <div class="hero-stat"><div class="stat-number">100</div><div class="stat-label">First Businesses<br>Targeted for Onboarding</div></div>
+      <div class="hero-stat"><div class="stat-number">2</div><div class="stat-label">Launch Films<br>Produced</div></div>
+      <div class="hero-stat"><div class="stat-number">70%</div><div class="stat-label">Procurement Cycle<br>Reduction · Platform</div></div>
+      <div class="hero-stat"><div class="stat-number">March 2025</div><div class="stat-label">Formal Partnership<br>Launch</div></div>
     </div>
   </div>
 </section>
