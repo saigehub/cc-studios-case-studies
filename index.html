@@ -100,8 +100,8 @@ footer{border-top:1px solid var(--ash);padding:24px 60px;display:flex;align-item
   footer{flex-direction:column;text-align:center;padding:24px}
 }
 @media(max-width:520px){.hero-title{font-size:48px}nav{padding:14px 20px}.logo-cc{font-size:26px}}
-/* ── GALLERY ── */
-.gallery-section{border-top:1px solid var(--ash);padding:88px 0 112px;}
+.gallery-section{border-top:1px solid var(--ash);padding:88px 0 0;}
+.gallery-section.gallery-bottom{padding-top:88px;padding-bottom:112px;}
 .gallery-inner{max-width:1280px;margin:0 auto;padding:0 60px;}
 .gallery-label{font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--fog);font-weight:500;padding-bottom:20px;border-bottom:1px solid var(--ash);margin-bottom:48px;display:flex;justify-content:space-between;align-items:center;}
 .gallery-label-right{color:var(--sand);}
@@ -128,7 +128,7 @@ footer{border-top:1px solid var(--ash);padding:24px 60px;display:flex;align-item
 .gal-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 0.5s ease;pointer-events:none;}
 .gal-photo:hover img{transform:scale(1.008);}
 .gal-photo-caption{position:absolute;bottom:0;left:0;right:0;padding:32px 16px 16px;background:linear-gradient(transparent,rgba(8,8,8,0.85));pointer-events:none;}
-@media(max-width:900px){.gallery-inner{padding:0 24px;}.gallery-section{padding:64px 0 80px;}.gal-photos-row{grid-template-columns:repeat(2,1fr);}.gal-caption-project{font-size:15px;}}
+@media(max-width:900px){.gallery-inner{padding:0 24px;}.gallery-section{padding:64px 0 0;}.gallery-section.gallery-bottom{padding-bottom:80px;}.gal-photos-row{grid-template-columns:repeat(2,1fr);}.gal-caption-project{font-size:15px;}}
 @media(max-width:520px){.gal-photos-row{grid-template-columns:repeat(2,1fr);}}
 </style>
 </head>
@@ -165,15 +165,62 @@ footer{border-top:1px solid var(--ash);padding:24px 60px;display:flex;align-item
   <span class="filter-btn">Quantum</span>
 </div>
 
-<!-- GALLERY TOP -->
+<!-- GALLERY TOP: Final Cook Out + Row 1 Photos -->
 <div class="gallery-section">
   <div class="gallery-inner">
     <div class="gallery-label reveal">
       <span>Selected Work</span>
       <span class="gallery-label-right">Field Production · CC Studios</span>
     </div>
+    <div class="gal-horiz reveal">
+      <div class="gal-horiz-player" data-yt="rifWoL2gmjc">
+        <div class="gal-horiz-thumb"></div>
+        <div class="gal-horiz-tint"></div>
+        <div class="gal-horiz-iframe"></div>
+        <div class="gal-play-btn"></div>
+        <div class="gal-pause-btn"><span></span><span></span></div>
+        <div class="gal-horiz-caption">
+          <div class="gal-caption-project">The Final Cook Out</div>
+          <div class="gal-caption-sub">Washington Park Heritage Day · Legacy, Rhythm &amp; Rebirth</div>
+        </div>
+      </div>
+    </div>
+    <div class="gal-photos-row reveal">
+      <div class="gal-photo">
+        <img src="assets/images/IMG_1038.JPG" alt="BBB × Miami Heat B2B Mixer">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">BBB × Miami Heat</div>
+          <div class="gal-caption-sub">B2B Mixer · Corporate Sports Activation</div>
+        </div>
+      </div>
+      <div class="gal-photo">
+        <img src="assets/images/IMG_1478.JPG" alt="North Miami Library Groundbreaking">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">North Miami Library</div>
+          <div class="gal-caption-sub">Groundbreaking · Public Infrastructure</div>
+        </div>
+      </div>
+      <div class="gal-photo">
+        <img src="assets/images/IMG_1621.jpg" alt="Community Dividends Mayor Desulme">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">Mayor Desulme</div>
+          <div class="gal-caption-sub">Community Stake · Civic Advocacy &amp; Equity</div>
+        </div>
+      </div>
+      <div class="gal-photo">
+        <img src="assets/images/IMG_2375.JPG" alt="The Gardens Residences Sebastian">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">The Gardens x Vice</div>
+          <div class="gal-caption-sub">Vice City Bean Integration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <!-- FEATURED: Gardens Residences -->
+<!-- CASE STUDIES -->
+<main class="grid">
+
   <a href="gardens-residences/index.html" class="card-featured reveal">
     <div class="card-img">
       <div class="card-img-bg"></div>
@@ -197,7 +244,6 @@ footer{border-top:1px solid var(--ash);padding:24px 60px;display:flex;align-item
     </div>
   </a>
 
-  <!-- MDCPS -->
   <a href="mdcps/index.html" class="card-half reveal d2" style="text-decoration:none;">
     <div class="card-sector">Civic · Education</div>
     <div class="card-half-title">Miami-Dade County Public Schools</div>
@@ -205,7 +251,6 @@ footer{border-top:1px solid var(--ash);padding:24px 60px;display:flex;align-item
     <div class="card-half-outcome">Four community profiles · Multi-site field production · Social-first delivery — <span>Civic leaders, artists, operators, creators</span></div>
   </a>
 
-  <!-- IFP -->
   <div class="card-half coming reveal d3">
     <span class="coming-tag">Coming Soon</span>
     <div class="card-sector">Trades · Corporate · L&D</div>
@@ -214,189 +259,134 @@ footer{border-top:1px solid var(--ash);padding:24px 60px;display:flex;align-item
     <div class="card-half-outcome">Internal communications · Leadership development · Talent acquisition — <span>IFP University, iDP Series, Field Operations</span></div>
   </div>
 
-  <!-- Prokur.io -->
   <div class="card-third reveal d1">
     <div><div class="card-third-label">Technology · GovTech</div><div class="card-third-title">Prokur.io</div></div>
     <div class="card-third-note">AI-powered government procurement · South Florida launch</div>
   </div>
 
-  <!-- Xendoo -->
   <div class="card-third reveal d2">
     <div><div class="card-third-label">Founder · Fintech</div><div class="card-third-title">Xendoo</div></div>
     <div class="card-third-note">Founder brand content · Lil Roberts, CEO</div>
   </div>
 
-  <!-- Papa Thanks -->
   <div class="card-third reveal d4">
     <div><div class="card-third-label">Community · Hospitality</div><div class="card-third-title">Papa Thanks</div></div>
     <div class="card-third-note">Dania Beach · Passion project · Details coming</div>
   </div>
 
 </main>
-<hr style="border:none;border-top:1px solid var(--ash);margin:0;">
-<!-- GALLERY BOTTOM -->
-<div class="gallery-section">
+
+<!-- GALLERY BOTTOM: Remaining videos and photos -->
+<div class="gallery-section gallery-bottom">
   <div class="gallery-inner">
     <div class="gallery-label reveal">
       <span>Selected Work</span>
       <span class="gallery-label-right">Field Production · CC Studios</span>
     </div>
 
-      </div> </div> <hr style="border:none;border-top:1px solid var(--ash);margin:0;"> <main class="grid">
-<div class="gal-horiz reveal">
-  <div class="gal-horiz-player" data-yt="rifWoL2gmjc">
-    <div class="gal-horiz-thumb"></div>
-    <div class="gal-horiz-tint"></div>
-    <div class="gal-horiz-iframe"></div>
-    <div class="gal-play-btn"></div>
-    <div class="gal-pause-btn"><span></span><span></span></div>
-    <div class="gal-horiz-caption">
-      <div class="gal-caption-project">The Final Cook Out</div>
-      <div class="gal-caption-sub">Washington Park Heritage Day · Legacy, Rhythm &amp; Rebirth</div>
+    <div class="gal-horiz reveal">
+      <div class="gal-horiz-player" data-yt="0JuR4odg-QE">
+        <div class="gal-horiz-thumb"></div>
+        <div class="gal-horiz-tint"></div>
+        <div class="gal-horiz-iframe"></div>
+        <div class="gal-play-btn"></div>
+        <div class="gal-pause-btn"><span></span><span></span></div>
+        <div class="gal-horiz-caption">
+          <div class="gal-caption-project">Join Team NMB</div>
+          <div class="gal-caption-sub">City of North Miami Beach · Employee Ramp-up Campaign</div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<!-- ROW 1: Photos -->
-<div class="gal-photos-row reveal">
-  <div class="gal-photo">
-    <img src="assets/images/IMG_1038.JPG" alt="BBB × Miami Heat B2B Mixer">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">BBB × Miami Heat</div>
-      <div class="gal-caption-sub">B2B Mixer · Corporate Sports Activation</div>
+    <div class="gal-photos-row reveal">
+      <div class="gal-photo">
+        <img src="assets/images/IMG_8115.JPG" alt="Bike Ride 305">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">Bike Ride 305</div>
+          <div class="gal-caption-sub">City of North Miami Beach · Civic Wellness Activation</div>
+        </div>
+      </div>
+      <div class="gal-photo">
+        <img src="assets/images/IMG_8954-Enhanced-NR.JPG" alt="BBB x PRMSDC">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">BBB x PRMSDC</div>
+          <div class="gal-caption-sub">Minority Supplier Development Council Business Opportunity Exchange</div>
+        </div>
+      </div>
+      <div class="gal-photo">
+        <img src="assets/images/IMG_9231.jpg" alt="Miami Business Council AI and Fashion in Tech">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">Miami Business Council</div>
+          <div class="gal-caption-sub">AI &amp; Fashion in Tech · Cross-Industry Panel</div>
+        </div>
+      </div>
+      <div class="gal-photo">
+        <img src="assets/images/north-miami-trolley.jpg" alt="North Miami Free Transit Launch">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">North Miami Free Transit</div>
+          <div class="gal-caption-sub">Public Mobility Infrastructure</div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="gal-photo">
-    <img src="assets/images/IMG_1478.JPG" alt="North Miami Library Groundbreaking">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">North Miami Library</div>
-      <div class="gal-caption-sub">Groundbreaking · Public Infrastructure</div>
-    </div>
-  </div>
-  <div class="gal-photo">
-    <img src="assets/images/IMG_1621.jpg" alt="Community Dividends Mayor Desulme">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">Mayor Desulme</div>
-      <div class="gal-caption-sub"> Community Stake · Civic Advocacy &amp; Equity </div>
-    </div>
-  </div>
-  <div class="gal-photo">
-    <img src="assets/images/IMG_2375.JPG" alt="The Gardens Residences Sebastian">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">The Gardens x Vice</div>
-      <div class="gal-caption-sub">Vice City Bean Integration</div>
-    </div>
-  </div>
-</div>
 
-<!-- ROW 2: Horizontal Video -->
-<div class="gal-horiz reveal">
-  <div class="gal-horiz-player" data-yt="0JuR4odg-QE">
-    <div class="gal-horiz-thumb"></div>
-    <div class="gal-horiz-tint"></div>
-    <div class="gal-horiz-iframe"></div>
-    <div class="gal-play-btn"></div>
-    <div class="gal-pause-btn"><span></span><span></span></div>
-    <div class="gal-horiz-caption">
-      <div class="gal-caption-project">Join Team NMB</div>
-      <div class="gal-caption-sub">City of North Miami Beach · Employee Ramp-up Campaign</div>
+    <div class="gal-horiz reveal">
+      <div class="gal-horiz-player" data-yt="S2BpcGU5h08">
+        <div class="gal-horiz-thumb"></div>
+        <div class="gal-horiz-tint"></div>
+        <div class="gal-horiz-iframe"></div>
+        <div class="gal-play-btn"></div>
+        <div class="gal-pause-btn"><span></span><span></span></div>
+        <div class="gal-horiz-caption">
+          <div class="gal-caption-project">Veteran-Owned &amp; Accredited</div>
+          <div class="gal-caption-sub">Society Mortgage × Fort Lauderdale United FC · Corporate Alignment</div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<!-- ROW 2: Photos -->
-<div class="gal-photos-row reveal">
-  <div class="gal-photo">
-    <img src="assets/images/IMG_8115.JPG" alt="Bike Ride 305">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">Bike Ride 305</div>
-      <div class="gal-caption-sub">City of North Miami Beach · Civic Wellness Activation</div>
+    <div class="gal-photos-row reveal">
+      <div class="gal-photo">
+        <img src="assets/images/PHOTO5.jpg" alt="Project Five">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">Project Title</div>
+          <div class="gal-caption-sub">Strategic Vector · Context</div>
+        </div>
+      </div>
+      <div class="gal-photo">
+        <img src="assets/images/PHOTO6.jpg" alt="Project Six">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">Project Title</div>
+          <div class="gal-caption-sub">Strategic Vector · Context</div>
+        </div>
+      </div>
+      <div class="gal-photo">
+        <img src="assets/images/PHOTO7.jpg" alt="Project Seven">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">Project Title</div>
+          <div class="gal-caption-sub">Strategic Vector · Context</div>
+        </div>
+      </div>
+      <div class="gal-photo">
+        <img src="assets/images/PHOTO8.jpg" alt="Project Eight">
+        <div class="gal-photo-caption">
+          <div class="gal-caption-project">Project Title</div>
+          <div class="gal-caption-sub">Strategic Vector · Context</div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="gal-photo">
-    <img src="assets/images/IMG_8954-Enhanced-NR.JPG" alt="Building Trust in the Caribbean">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">BBB x PRMSDC</div>
-      <div class="gal-caption-sub"> Minority Supplier Developement Council Business Opportunity Exchange</div>
-    </div>
-  </div>
-  <div class="gal-photo">
-    <img src="assets/images/IMG_9231.jpg" alt="Miami Business Council AI and Fashion in Tech">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">Miami Business Council</div>
-      <div class="gal-caption-sub">AI &amp; Fashion in Tech · Cross-Industry Panel</div>
-    </div>
-  </div>
-  <div class="gal-photo">
-    <img src="assets/images/north-miami-trolley.jpg" alt="North Miami Free Transit Launch">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">North Miami Free Transit</div>
-      <div class="gal-caption-sub">Public Mobility Infrastructure</div>
-    </div>
-  </div>
-</div>
 
-<!-- ROW 3: Horizontal Video -->
-<div class="gal-horiz reveal">
-  <div class="gal-horiz-player" data-yt="S2BpcGU5h08">
-    <div class="gal-horiz-thumb"></div>
-    <div class="gal-horiz-tint"></div>
-    <div class="gal-horiz-iframe"></div>
-    <div class="gal-play-btn"></div>
-    <div class="gal-pause-btn"><span></span><span></span></div>
-    <div class="gal-horiz-caption">
-      <div class="gal-caption-project">Veteran-Owned &amp; Accredited</div>
-      <div class="gal-caption-sub">Society Mortgage × Fort Lauderdale United FC · Corporate Alignment</div>
+    <div class="gal-horiz reveal">
+      <div class="gal-horiz-player" data-yt="aOO8nMsgelo">
+        <div class="gal-horiz-thumb"></div>
+        <div class="gal-horiz-tint"></div>
+        <div class="gal-horiz-iframe"></div>
+        <div class="gal-play-btn"></div>
+        <div class="gal-pause-btn"><span></span><span></span></div>
+        <div class="gal-horiz-caption">
+          <div class="gal-caption-project">Creating at Home in North Miami</div>
+          <div class="gal-caption-sub">Omega Real Estate · Home: An Essential Element to Artistry</div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<!-- ROW 3: Photos — drop filenames here when ready -->
-<div class="gal-photos-row reveal">
-  <div class="gal-photo">
-    <img src="assets/images/PHOTO5.jpg" alt="Project Five">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">Project Title</div>
-      <div class="gal-caption-sub">Strategic Vector · Context</div>
-    </div>
-  </div>
-  <div class="gal-photo">
-    <img src="assets/images/PHOTO6.jpg" alt="Project Six">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">Project Title</div>
-      <div class="gal-caption-sub">Strategic Vector · Context</div>
-    </div>
-  </div>
-  <div class="gal-photo">
-    <img src="assets/images/PHOTO7.jpg" alt="Project Seven">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">Project Title</div>
-      <div class="gal-caption-sub">Strategic Vector · Context</div>
-    </div>
-  </div>
-  <div class="gal-photo">
-    <img src="assets/images/PHOTO8.jpg" alt="Project Eight">
-    <div class="gal-photo-caption">
-      <div class="gal-caption-project">Project Title</div>
-      <div class="gal-caption-sub">Strategic Vector · Context</div>
-    </div>
-  </div>
-</div>
-
-<!-- ROW 4: Horizontal Video -->
-<div class="gal-horiz reveal">
-  <div class="gal-horiz-player" data-yt="aOO8nMsgelo">
-    <div class="gal-horiz-thumb"></div>
-    <div class="gal-horiz-tint"></div>
-    <div class="gal-horiz-iframe"></div>
-    <div class="gal-play-btn"></div>
-    <div class="gal-pause-btn"><span></span><span></span></div>
-    <div class="gal-horiz-caption">
-      <div class="gal-caption-project">Creating at Home in North Miami</div>
-      <div class="gal-caption-sub">Omega Real Estate · Home: An Essential Element to Artistry</div>
-    </div>
-  </div>
-</div>
 
   </div>
 </div>
