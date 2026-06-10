@@ -1467,7 +1467,8 @@ document.querySelectorAll('.phone').forEach(phone => {
     iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&loop=1&muted=0&title=0&byline=0&portrait=0&controls=0`;
     iframe.allow = 'autoplay; fullscreen';
     iframe.allowFullscreen = true;
-    iframe.style.cssText = 'position:absolute;top:50%;left:50%;width:200%;height:100%;transform:translate(-50%,-50%);border:none;pointer-events:none;';
+    const isMobile = 'ontouchstart' in window;
+iframe.style.cssText = `position:absolute;top:50%;left:50%;width:200%;height:100%;transform:translate(-50%,-50%);border:none;pointer-events:${isMobile ? 'auto' : 'none'};`;
     wrap.appendChild(iframe);
     phone.classList.add('playing');
   });
