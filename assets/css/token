@@ -1,0 +1,45 @@
+/* ============================================================
+   tokens.css — CC Studios / saigemills.com
+   Single source of truth for color + type across the whole site.
+   Link this in the <head> of every page (homepage, gardens-residences,
+   mdcps, prokur-bbb, gallery, project pages, admin.html).
+   ============================================================ */
+
+:root {
+  /* ---- Color ---- */
+  --ink: #080808;                          /* primary background */
+  --linen: #F4F1EA;                        /* body text on dark bg */
+  --charcoal: #1C1C1C;                     /* card / section backgrounds */
+  --ash: #3A3A3A;                          /* borders, dividers */
+  --fog: #8A8A8A;                          /* muted labels, secondary text */
+  --silk: #C4C0B8;                         /* reserved — defined sitewide, used on some subpages */
+  --sand: #CFC0A3;                         /* accent — CTAs, emphasis, eyebrows */
+  --sand-dim: rgba(207, 192, 163, 0.10);
+  --sand-border: rgba(207, 192, 163, 0.22);
+  --white: #FAFAF8;                        /* headings */
+  --card: #141414;                         /* image placeholder background */
+
+  /* ---- Type ---- */
+  --font-body: 'Archivo', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-logo-mark: 'UnifrakturMaguntia', serif;
+  --font-logo-script: 'Dancing Script', cursive;
+}
+
+/* Add Plus Jakarta Sans to the Google Fonts <link> in every page's <head>,
+   alongside the existing Archivo / UnifrakturMaguntia / Dancing Script request:
+   family=Plus+Jakarta+Sans:wght@500;600;700;800 */
+
+/* Base resets — identical on every page, defined once */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--ink);
+  color: var(--linen);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--ash); }
