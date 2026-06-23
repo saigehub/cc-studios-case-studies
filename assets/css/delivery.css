@@ -141,7 +141,17 @@ h3 em {
   margin-top: 24px;
   max-width: 560px;
 }
+.rotating-word {
+  color: var(--sand);
+  display: inline-block;
+  min-width: 9ch;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
 
+.rotating-word.is-changing {
+  opacity: 0;
+  transform: translateY(8px);
+}
 .button-row {
   display: flex;
   flex-wrap: wrap;
