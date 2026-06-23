@@ -6,18 +6,21 @@
    ============================================================ */
 
 :root {
-  /* ---- Color ---- */
-  --ink: #080808;                          /* primary background */
-  --linen: #F4F1EA;                        /* body text on dark bg */
-  --charcoal: #1C1C1C;                     /* card / section backgrounds */
-  --ash: #3A3A3A;                          /* borders, dividers */
-  --fog: #8A8A8A;                          /* muted labels, secondary text */
-  --silk: #C4C0B8;                         /* reserved — defined sitewide, used on some subpages */
-  --sand: #CFC0A3;                         /* accent — CTAs, emphasis, eyebrows */
-  --sand-dim: rgba(207, 192, 163, 0.10);
-  --sand-border: rgba(207, 192, 163, 0.22);
-  --white: #FAFAF8;                        /* headings */
-  --card: #141414;                         /* image placeholder background */
+  /* ---- Color — warm brown/amber direction, confirmed 2026-06-23 ---- */
+  --ink: #2B1A12;                          /* primary background */
+  --ink-rgb: 43,26,18;
+  --linen: #F4F0E6;                        /* body text on dark bg */
+  --linen-rgb: 244,240,230;
+  --charcoal: #3F2A1C;                     /* card / section backgrounds */
+  --ash: #4A3A2C;                          /* borders, dividers */
+  --fog: #8C7A68;                          /* muted labels, secondary text */
+  --silk: #C7B9A0;                         /* reserved — defined sitewide, used on some subpages */
+  --sand: #E8A33D;                         /* accent — CTAs, emphasis, eyebrows */
+  --sand-rgb: 232,163,61;
+  --sand-dim: rgba(var(--sand-rgb), 0.10);
+  --sand-border: rgba(var(--sand-rgb), 0.22);
+  --white: #FAF7F0;                        /* headings */
+  --card: #1A100A;                         /* image placeholder background */
 
   /* ---- Type ---- */
   --font-body: 'Archivo', sans-serif;
