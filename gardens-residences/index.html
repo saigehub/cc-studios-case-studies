@@ -12,17 +12,17 @@
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <style>
 :root {
-  --ink: #080808;
-  --linen: #F4F1EA;
-  --charcoal: #1C1C1C;
-  --ash: #3A3A3A;
-  --fog: #8A8A8A;
-  --silk: #C4C0B8;
-  --sand: #CFC0A3;
-  --sand-dim: rgba(207,192,163,0.12);
-  --sand-border: rgba(207,192,163,0.25);
-  --white: #FAFAF8;
-  --card: #141414;
+  --ink: #2B1A12;
+  --linen: #F4F0E6;
+  --charcoal: #3F2A1C;
+  --ash: #4A3A2C;
+  --fog: #8C7A68;
+  --silk: #C7B9A0;
+  --sand: #E8A33D;
+  --sand-dim: rgba(232,163,61,0.12);
+  --sand-border: rgba(232,163,61,0.25);
+  --white: #FAF7F0;
+  --card: #1A100A;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -61,7 +61,7 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   padding:18px 60px;
   display:flex;align-items:center;justify-content:space-between;
-  background:rgba(8,8,8,0.92);
+  background:rgba(43,26,18,0.92);
   backdrop-filter:blur(16px);
   border-bottom:1px solid var(--ash);
 }
@@ -104,9 +104,9 @@ nav{
   position:absolute;inset:0;
   background:linear-gradient(
     180deg,
-    rgba(8,8,8,0.15) 0%,
-    rgba(8,8,8,0.35) 45%,
-    rgba(8,8,8,0.88) 78%,
+    rgba(43,26,18,0.15) 0%,
+    rgba(43,26,18,0.35) 45%,
+    rgba(43,26,18,0.88) 78%,
     var(--ink) 100%
   );
 }
@@ -192,7 +192,7 @@ nav{
 
 .body-text{
   font-size:15px;line-height:1.78;
-  color:rgba(244,241,234,0.6);
+  color:rgba(244,240,230,0.6);
   max-width:640px;
   font-weight:300;
 }
@@ -220,7 +220,7 @@ nav{
 .detail-list li{
   font-size:14px;
   line-height:1.75;
-  color:rgba(244,241,234,0.6);
+  color:rgba(244,240,230,0.6);
   font-weight:300;
   padding:10px 0;
   border-bottom:1px solid rgba(58,58,58,0.5);
@@ -296,7 +296,7 @@ nav{
 }
 .hud-early-text{
   font-size:13px;line-height:1.75;
-  color:rgba(244,241,234,0.6);
+  color:rgba(244,240,230,0.6);
   font-weight:300;
 }
 .hud-early-text strong{
@@ -319,7 +319,7 @@ nav{
   font-size:9px;letter-spacing:0.24em;text-transform:uppercase;
   color:var(--sand);margin-bottom:16px;font-weight:500;
 }
-.sit-text{font-size:14px;line-height:1.75;color:rgba(244,241,234,0.55);font-weight:300;}
+.sit-text{font-size:14px;line-height:1.75;color:rgba(244,240,230,0.55);font-weight:300;}
 
 /* PORTAL EVIDENCE */
 .portal-section{
@@ -375,11 +375,11 @@ nav{
   color:var(--white);margin-bottom:8px;
   letter-spacing:-0.01em;
 }
-.ann-text{font-size:13px;line-height:1.7;color:rgba(244,241,234,0.55);font-weight:300;}
+.ann-text{font-size:13px;line-height:1.7;color:rgba(244,240,230,0.55);font-weight:300;}
 .technical-note{
   margin-top:48px;
   padding:24px 28px;
-  background:rgba(207,192,163,0.06);
+  background:rgba(232,163,61,0.06);
   border:1px solid var(--sand-border);
   border-left:3px solid var(--sand);
 }
@@ -387,7 +387,7 @@ nav{
   font-size:9px;letter-spacing:0.24em;text-transform:uppercase;
   color:var(--sand);margin-bottom:10px;font-weight:500;
 }
-.tech-text{font-size:13px;line-height:1.7;color:rgba(244,241,234,0.7);font-weight:300;font-style:italic;}
+.tech-text{font-size:13px;line-height:1.7;color:rgba(244,240,230,0.7);font-weight:300;font-style:italic;}
 
 /* OBJECTIVES */
 .objectives{
@@ -399,7 +399,7 @@ nav{
 .obj-num{
   font-family:var(--font-display);
   font-size:64px;font-weight:500;
-  color:rgba(207,192,163,0.1);
+  color:rgba(232,163,61,0.1);
   line-height:1;margin-bottom:20px;
   letter-spacing:-0.04em;
 }
@@ -409,7 +409,7 @@ nav{
   color:var(--white);margin-bottom:14px;
   line-height:1.15;letter-spacing:-0.015em;
 }
-.obj-desc{font-size:13px;line-height:1.75;color:rgba(244,241,234,0.5);font-weight:300;}
+.obj-desc{font-size:13px;line-height:1.75;color:rgba(244,240,230,0.5);font-weight:300;}
 
 /* EXECUTION */
 .execution-grid{
@@ -434,7 +434,7 @@ nav{
   color:var(--white);margin-bottom:12px;
   letter-spacing:-0.01em;line-height:1.2;
 }
-.exec-desc{font-size:13px;line-height:1.75;color:rgba(244,241,234,0.5);font-weight:300;}
+.exec-desc{font-size:13px;line-height:1.75;color:rgba(244,240,230,0.5);font-weight:300;}
 
 /* PHONES */
 .phones-section{
@@ -514,7 +514,7 @@ nav{
   transform:translate(-50%,-58%);
   width:48px;height:48px;
   border-radius:50%;
-  background:rgba(207,192,163,0.92);
+  background:rgba(232,163,61,0.92);
   display:flex;align-items:center;justify-content:center;
   z-index:8;
   opacity:0;
@@ -543,7 +543,7 @@ nav{
   transform:translate(-50%,-50%);
   width:44px;height:44px;
   border-radius:50%;
-  background:rgba(8,8,8,0.5);
+  background:rgba(43,26,18,0.5);
   backdrop-filter:blur(4px);
   display:flex;align-items:center;justify-content:center;
   gap:5px;z-index:8;
@@ -556,14 +556,14 @@ nav{
 .phone-overlay{
   position:absolute;bottom:0;left:0;right:0;
   padding:14px 13px 22px;
-  background:linear-gradient(transparent,rgba(8,8,8,0.9));
+  background:linear-gradient(transparent,rgba(43,26,18,0.9));
   display:flex;flex-direction:column;gap:4px;
   z-index:5;pointer-events:none;
 }
 .phone-content-tag{
   font-family:'Archivo',sans-serif;
   font-size:7px;letter-spacing:0.16em;
-  color:rgba(244,241,234,0.45);text-transform:uppercase;
+  color:rgba(244,240,230,0.45);text-transform:uppercase;
   background:rgba(0,0,0,0.35);
   padding:3px 7px;width:fit-content;
 }
@@ -594,7 +594,7 @@ nav{
 .horiz-video-label{
   display:flex;align-items:center;justify-content:space-between;
   padding:14px 20px;
-  background:rgba(8,8,8,0.85);
+  background:rgba(43,26,18,0.85);
   border-bottom:1px solid var(--ash);
 }
 .horiz-video-label-left{
@@ -643,7 +643,7 @@ nav{
   transform:translate(-50%,-58%);
   width:72px;height:72px;
   border-radius:50%;
-  background:rgba(207,192,163,0.92);
+  background:rgba(232,163,61,0.92);
   display:flex;align-items:center;justify-content:center;
   z-index:8;
   opacity:0;
@@ -667,7 +667,7 @@ nav{
   position:absolute;bottom:24px;right:24px;
   width:44px;height:44px;
   border-radius:50%;
-  background:rgba(8,8,8,0.55);
+  background:rgba(43,26,18,0.55);
   backdrop-filter:blur(6px);
   display:flex;align-items:center;justify-content:center;
   gap:5px;z-index:9;
@@ -680,7 +680,7 @@ nav{
 .horiz-overlay{
   position:absolute;bottom:0;left:0;right:0;
   padding:48px 32px 28px;
-  background:linear-gradient(transparent,rgba(8,8,8,0.85));
+  background:linear-gradient(transparent,rgba(43,26,18,0.85));
   z-index:5;pointer-events:none;
   display:flex;align-items:flex-end;justify-content:space-between;
 }
@@ -719,7 +719,7 @@ nav{
 .photo-label{
   position:absolute;bottom:0;left:0;right:0;
   padding:16px 20px;
-  background:linear-gradient(transparent,rgba(8,8,8,0.75));
+  background:linear-gradient(transparent,rgba(43,26,18,0.75));
 }
 .floorplan-grid{
   display:grid;grid-template-columns:1fr 1fr;
@@ -761,7 +761,7 @@ nav{
 .metric-unit{font-size:22px;color:var(--fog);letter-spacing:-0.02em;}
 .metric-desc{
   font-size:13px;line-height:1.75;
-  color:rgba(244,241,234,0.5);
+  color:rgba(244,240,230,0.5);
   margin-top:14px;
   font-weight:300;
 }
@@ -813,7 +813,7 @@ nav{
   position:absolute;
   font-family:var(--font-display);
   font-size:340px;font-weight:500;
-  color:rgba(207,192,163,0.03);
+  color:rgba(232,163,61,0.03);
   top:50%;left:50%;
   transform:translate(-50%,-50%);
   white-space:nowrap;pointer-events:none;
@@ -834,7 +834,7 @@ nav{
   margin-bottom:32px;line-height:1.3;
   letter-spacing:-0.02em;
 }
-.val-desc{font-size:14px;line-height:1.85;color:rgba(244,241,234,0.55);font-weight:300;}
+.val-desc{font-size:14px;line-height:1.85;color:rgba(244,240,230,0.55);font-weight:300;}
 .val-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:36px;}
 .v-tag{
   padding:5px 14px;
@@ -858,7 +858,7 @@ nav{
   color:var(--white);margin-bottom:14px;line-height:1.2;
   letter-spacing:-0.01em;
 }
-.tw-desc{font-size:13px;line-height:1.75;color:rgba(244,241,234,0.5);font-weight:300;}
+.tw-desc{font-size:13px;line-height:1.75;color:rgba(244,240,230,0.5);font-weight:300;}
 
 /* CLOSE */
 .close-section{text-align:center;padding:128px 60px;max-width:760px;margin:0 auto;}
@@ -879,7 +879,7 @@ nav{
   line-height:1.05;color:var(--white);
   margin-bottom:22px;letter-spacing:-0.035em;
 }
-.close-body{font-size:15px;line-height:1.78;color:rgba(244,241,234,0.5);margin-bottom:44px;font-weight:300;}
+.close-body{font-size:15px;line-height:1.78;color:rgba(244,240,230,0.5);margin-bottom:44px;font-weight:300;}
 .close-cta{
   display:inline-flex;align-items:center;gap:10px;
   background:var(--sand);color:var(--ink);
@@ -1299,11 +1299,11 @@ footer{
     <div class="gallery-photos" style="margin-top:2px;">
       <div class="gallery-photo">
         <img src="assets/images/unit-photo-01.jpg" alt="The Gardens Residences floor-to-ceiling windows with panoramic views of North Miami">
-        <div class="photo-label"><span class="label" style="color:rgba(244,241,234,0.6)">Floor-to-Ceiling Windows · Panoramic Oasis</span></div>
+        <div class="photo-label"><span class="label" style="color:rgba(244,240,230,0.6)">Floor-to-Ceiling Windows · Panoramic Oasis</span></div>
       </div>
       <div class="gallery-photo">
         <img src="assets/images/unit-photo-02.jpg" alt="Quartz Finishes and Stainless Steel · Designed for Daily Life">
-        <div class="photo-label"><span class="label" style="color:rgba(244,241,234,0.6)">White Quartz Finishes · Modern Appliances</span></div>
+        <div class="photo-label"><span class="label" style="color:rgba(244,240,230,0.6)">White Quartz Finishes · Modern Appliances</span></div>
       </div>
     </div>
   </div>
