@@ -39,7 +39,28 @@
     <script src="../assets/js/config.js"></script>
     <script src="../assets/js/render.js"></script>
     <script>
-      window.ClientDelivery.renderGallery();
-    </script>
+  window.ClientDelivery.renderGallery();
+
+  const rotatingWord = document.querySelector(".rotating-word");
+
+  if (rotatingWord) {
+    const words = rotatingWord.dataset.words.split(",");
+    let index = 0;
+
+    const interval = window.setInterval(() => {
+      index += 1;
+      rotatingWord.classList.add("is-changing");
+
+      window.setTimeout(() => {
+        rotatingWord.textContent = words[index];
+        rotatingWord.classList.remove("is-changing");
+
+        if (index === words.length - 1) {
+          window.clearInterval(interval);
+        }
+      }, 220);
+    }, 900);
+  }
+</script>
   </body>
 </html>
