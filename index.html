@@ -6,6 +6,7 @@
 <title>CC Studios — Work Archive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=UnifrakturMaguntia&family=Dancing+Script:wght@600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/tokens.css">
 <style>
 :root {
   --ink: #2B1A12;
@@ -29,7 +30,7 @@ body{background:var(--ink);color:var(--linen);font-family:'Archivo',sans-serif;l
 ::-webkit-scrollbar{width:2px}
 ::-webkit-scrollbar-track{background:var(--ink)}
 ::-webkit-scrollbar-thumb{background:var(--ash)}
-nav{padding:0 60px;height:88px;width:100%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--ash);position:sticky;top:0;z-index:100;background:rgba(8,8,8,0.94);backdrop-filter:blur(16px);}
+nav{padding:0 60px;height:88px;width:100%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--ash);position:sticky;top:0;z-index:100;background:rgba(43,26,18,0.94);backdrop-filter:blur(16px);}
 .logo-wrap{display:flex;align-items:flex-end;gap:0;text-decoration:none;line-height:1;}
 .logo-cc{font-family:'UnifrakturMaguntia',serif;font-size:30px;color:var(--white);line-height:0.85;letter-spacing:-0.02em;}
 .logo-studios{font-family:'Dancing Script',cursive;font-size:13px;font-weight:600;color:var(--white);margin-left:6px;align-self:flex-end;margin-bottom:1px;letter-spacing:0.02em;}
@@ -38,9 +39,9 @@ nav{padding:0 60px;height:88px;width:100%;display:flex;align-items:center;justif
 .nav-cta:hover{background:var(--linen);}
 .hero{max-width:1280px;margin:0 auto;padding:96px 60px 72px;}
 .hero-eyebrow{font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--fog);margin-bottom:24px;font-weight:500;}
-.hero-title{font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;font-weight:500;font-size:clamp(52px,8vw,100px);line-height:0.9;letter-spacing:-0.045em;color:var(--white);margin-bottom:24px;}
+.hero-title{font-family:var(--font-display);font-weight:500;font-size:clamp(52px,8vw,100px);line-height:0.9;letter-spacing:-0.045em;color:var(--white);margin-bottom:24px;}
 .hero-title em{color:var(--sand);font-style:italic;}
-.hero-desc{font-size:15px;line-height:1.78;color:rgba(244,241,234,0.5);max-width:520px;margin-bottom:52px;font-weight:300;}
+.hero-desc{font-size:15px;line-height:1.78;color:rgba(244,240,230,0.5);max-width:520px;margin-bottom:52px;font-weight:300;}
 .hero-rule{width:100%;height:1px;background:linear-gradient(90deg,var(--sand-border),transparent);}
 .filter-bar{max-width:1280px;margin:0 auto;padding:28px 60px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
 .filter-btn{font-family:'Archivo',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;padding:6px 16px;border:1px solid var(--sand-border);background:var(--sand-dim);color:var(--sand);cursor:default;font-weight:500;transition:all 0.18s;pointer-events:none;}
@@ -53,15 +54,15 @@ nav{padding:0 60px;height:88px;width:100%;display:flex;align-items:center;justif
 .card-img{position:relative;overflow:hidden;background:var(--card);}
 .card-img-bg{position:absolute;inset:0;background-image:url('gardens-residences/assets/images/unit-photo-01.jpg');background-size:cover;background-position:center;opacity:0.65;transition:opacity 0.4s,transform 0.5s;}
 .card-featured:hover .card-img-bg{opacity:0.75;transform:scale(1.03);}
-.card-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,8,8,0.1),rgba(8,8,8,0.35));}
-.card-img-tag{position:absolute;top:24px;left:24px;font-size:9px;letter-spacing:0.2em;color:var(--sand);text-transform:uppercase;background:rgba(8,8,8,0.7);padding:4px 10px;border:1px solid var(--sand-border);font-weight:500;opacity:0.6;}
+.card-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(43,26,18,0.1),rgba(43,26,18,0.35));}
+.card-img-tag{position:absolute;top:24px;left:24px;font-size:9px;letter-spacing:0.2em;color:var(--sand);text-transform:uppercase;background:rgba(43,26,18,0.7);padding:4px 10px;border:1px solid var(--sand-border);font-weight:500;opacity:0.6;}
 .card-body{padding:52px 48px;display:flex;flex-direction:column;justify-content:space-between;}
 .card-eyebrow{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sand);margin-bottom:18px;font-weight:500;}
-.card-title{font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;font-size:clamp(28px,3vw,44px);font-weight:500;line-height:1.0;letter-spacing:-0.03em;color:var(--white);margin-bottom:18px;}
+.card-title{font-family:var(--font-display);font-size:clamp(28px,3vw,44px);font-weight:500;line-height:1.0;letter-spacing:-0.03em;color:var(--white);margin-bottom:18px;}
 .card-title em{color:var(--sand);font-style:italic;}
-.card-desc{font-size:13px;line-height:1.78;color:rgba(244,241,234,0.5);margin-bottom:36px;font-weight:300;flex:1;}
+.card-desc{font-size:13px;line-height:1.78;color:rgba(244,240,230,0.5);margin-bottom:36px;font-weight:300;flex:1;}
 .card-stats{display:flex;gap:36px;padding-top:24px;border-top:1px solid var(--ash);flex-wrap:nowrap;align-items:flex-start;}
-.cs-num{font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;font-size:26px;font-weight:500;color:var(--sand);letter-spacing:-0.03em;}
+.cs-num{font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--sand);letter-spacing:-0.03em;}
 .cs-lbl{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fog);margin-top:3px;font-weight:500;white-space:nowrap;}
 .card-link{display:inline-flex;align-items:center;gap:8px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sand);margin-top:24px;font-weight:500;}
 .card-link::after{content:'→';transition:transform 0.2s;}
@@ -71,16 +72,16 @@ nav{padding:0 60px;height:88px;width:100%;display:flex;align-items:center;justif
 .card-half.coming{opacity:0.38;cursor:default;pointer-events:none;}
 .coming-tag{position:absolute;top:20px;right:20px;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--fog);background:rgba(255,255,255,0.03);border:1px solid var(--ash);padding:3px 9px;font-weight:500;}
 .card-sector{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sand);margin-bottom:14px;font-weight:500;}
-.card-half-title{font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;font-size:24px;font-weight:500;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:10px;}
+.card-half-title{font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:10px;}
 .card-half-client{font-size:12px;color:var(--fog);margin-bottom:auto;font-weight:300;}
-.card-half-outcome{margin-top:28px;padding-top:18px;border-top:1px solid var(--ash);font-size:11px;letter-spacing:0.04em;color:rgba(244,241,234,0.45);font-weight:300;}
+.card-half-outcome{margin-top:28px;padding-top:18px;border-top:1px solid var(--ash);font-size:11px;letter-spacing:0.04em;color:rgba(244,240,230,0.45);font-weight:300;}
 .card-half-outcome span{color:var(--sand);}
 .card-third{grid-column:span 4;background:var(--charcoal);border:1px solid var(--ash);padding:32px 36px;min-height:180px;display:flex;flex-direction:column;justify-content:space-between;opacity:0.3;}
 .card-third-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--fog);margin-bottom:10px;font-weight:500;}
-.card-third-title{font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;font-size:18px;font-weight:500;color:var(--white);line-height:1.2;letter-spacing:-0.015em;}
+.card-third-title{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--white);line-height:1.2;letter-spacing:-0.015em;}
 .card-third-note{font-size:11px;color:var(--fog);margin-top:auto;padding-top:14px;font-weight:300;}
 .bottom-strip{border-top:1px solid var(--ash);max-width:1280px;margin:0 auto;padding:52px 60px 88px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:28px;}
-.strip-text{font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;font-size:clamp(22px,3vw,36px);font-weight:500;color:var(--white);line-height:1.15;letter-spacing:-0.025em;}
+.strip-text{font-family:var(--font-display);font-size:clamp(22px,3vw,36px);font-weight:500;color:var(--white);line-height:1.15;letter-spacing:-0.025em;}
 .strip-text em{color:var(--sand);font-style:italic;}
 .strip-cta{font-family:'Archivo',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);background:var(--sand);padding:14px 32px;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
 .strip-cta:hover{background:var(--linen);}
@@ -116,21 +117,21 @@ footer{border-top:1px solid var(--ash);padding:24px 60px;display:flex;align-item
 .gal-horiz-player.hovered .gal-horiz-tint{background:rgba(0,0,0,0.25);}
 .gal-horiz-iframe{position:absolute;inset:0;z-index:1;}
 .gal-horiz-iframe iframe{width:100%;height:100%;border:none;display:block;}
-.gal-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);width:72px;height:72px;border-radius:50%;background:rgba(207,192,163,0.92);display:flex;align-items:center;justify-content:center;z-index:8;opacity:0;transition:opacity 0.22s,transform 0.22s;cursor:pointer;pointer-events:none;}
+.gal-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);width:72px;height:72px;border-radius:50%;background:rgba(232,163,61,0.92);display:flex;align-items:center;justify-content:center;z-index:8;opacity:0;transition:opacity 0.22s,transform 0.22s;cursor:pointer;pointer-events:none;}
 .gal-play-btn::after{content:'';width:0;height:0;border-style:solid;border-width:12px 0 12px 22px;border-color:transparent transparent transparent var(--ink);margin-left:5px;}
 .gal-horiz-player.hovered:not(.playing) .gal-play-btn{opacity:1;pointer-events:auto;transform:translate(-50%,-50%);}
 .gal-play-btn:hover{background:var(--linen);}
-.gal-pause-btn{position:absolute;bottom:20px;right:20px;width:40px;height:40px;border-radius:50%;background:rgba(8,8,8,0.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;gap:4px;z-index:9;opacity:0;pointer-events:none;transition:opacity 0.2s;cursor:pointer;border:1px solid rgba(255,255,255,0.08);}
+.gal-pause-btn{position:absolute;bottom:20px;right:20px;width:40px;height:40px;border-radius:50%;background:rgba(43,26,18,0.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;gap:4px;z-index:9;opacity:0;pointer-events:none;transition:opacity 0.2s;cursor:pointer;border:1px solid rgba(255,255,255,0.08);}
 .gal-pause-btn span{display:block;width:3px;height:13px;background:var(--white);border-radius:2px;}
 .gal-horiz-player.playing.hovered .gal-pause-btn{opacity:1;pointer-events:auto;}
-.gal-horiz-caption{position:absolute;bottom:0;left:0;right:0;padding:48px 32px 24px;background:linear-gradient(transparent,rgba(8,8,8,0.88));z-index:5;pointer-events:none;}
-.gal-caption-project{font-family:'Neue Montreal','PP Neue Montreal','Helvetica Neue',Helvetica,sans-serif;font-size:18px;font-weight:500;color:var(--white);letter-spacing:-0.015em;line-height:1.2;margin-bottom:5px;}
+.gal-horiz-caption{position:absolute;bottom:0;left:0;right:0;padding:48px 32px 24px;background:linear-gradient(transparent,rgba(43,26,18,0.88));z-index:5;pointer-events:none;}
+.gal-caption-project{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--white);letter-spacing:-0.015em;line-height:1.2;margin-bottom:5px;}
 .gal-caption-sub{font-size:11px;letter-spacing:0.08em;color:var(--sand);font-weight:300;text-transform:uppercase;}
 .gal-photos-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:2px;}
 .gal-photo{position:relative;overflow:hidden;background:var(--charcoal);aspect-ratio:3/4;}
 .gal-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 0.5s ease;pointer-events:none;}
 .gal-photo:hover img{transform:scale(1.008);}
-.gal-photo-caption{position:absolute;bottom:0;left:0;right:0;padding:32px 16px 16px;background:linear-gradient(transparent,rgba(8,8,8,0.85));pointer-events:none;}
+.gal-photo-caption{position:absolute;bottom:0;left:0;right:0;padding:32px 16px 16px;background:linear-gradient(transparent,rgba(43,26,18,0.85));pointer-events:none;}
 @media(max-width:900px){.gallery-inner{padding:0 24px;}.gallery-section{padding:64px 0 0;}.gallery-section.gallery-bottom{padding-bottom:80px;}.gal-photos-row{grid-template-columns:repeat(2,1fr);}.gal-caption-project{font-size:15px;}}
 @media(max-width:520px){.gal-photos-row{grid-template-columns:repeat(2,1fr);}}
 </style>
